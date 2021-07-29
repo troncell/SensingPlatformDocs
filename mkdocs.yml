@@ -1,0 +1,5 @@
+site_name: SensingPlatformV4
+nav:
+    - Home: index.md
+    - About: about.md
+theme: readthedocs
