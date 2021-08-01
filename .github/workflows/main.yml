@@ -41,9 +41,9 @@ jobs:
           # 填写Bucket所在地域的域名信息，可参考访问域名和数据中心。
           endpoint: oss-cn-shanghai.aliyuncs.com	
           # AccessKey ID
-          access-key-id: ${{ACCESSKEYID}}
+          access-key-id: ${{secrets.ACCESSKEYID}}
           # AccessKeySceret
-          access-key-secret:  ${{ACCESSKEYSECRET}}
+          access-key-secret:  ${{secrets.ACCESSKEYSECRET}}
       - run: ossutil cp -rf mkdocs.yml oss://troncell-docs/SensingPlatform
       
       
