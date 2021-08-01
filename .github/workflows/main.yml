@@ -43,10 +43,13 @@ jobs:
       
       - name: Install Mkdocs
         run: pip install mkdocs
-      
+        
+      - name: Install Material Theme
+        run: pip install mkdocs-material
+        
       - name: Build Docs
         run: mkdocs build
-        
+           
       - name: Setup Ossutil
         uses: manyuanrong/setup-ossutil@v2.0
         with:
