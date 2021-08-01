@@ -35,6 +35,12 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
           
+      - name: Setup Python
+        uses: actions/setup-python@v2.2.2
+        
+      - name: Show Python Version  
+        run: python --version
+          
       - name: Setup Ossutil
         uses: manyuanrong/setup-ossutil@v2.0
         with:
