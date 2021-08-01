@@ -40,7 +40,13 @@ jobs:
         
       - name: Show Python Version  
         run: python --version
-          
+      
+      - name: Install Mkdocs
+        run: pip install mkdocs
+      
+      - name: Build Docs
+        run: mkdocs build
+        
       - name: Setup Ossutil
         uses: manyuanrong/setup-ossutil@v2.0
         with:
