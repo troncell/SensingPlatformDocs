@@ -40,7 +40,7 @@ jobs:
         with:
           # 填写Bucket所在地域的域名信息，可参考访问域名和数据中心。
           endpoint: oss-cn-shanghai.aliyuncs.com	
-          # AccessKeyID
+          # AccessKey ID
           access-key-id: ${{ACCESSKEYID}}
           # AccessKeySceret
           access-key-secret:  ${{ACCESSKEYSECRET}}
