@@ -1,5 +1,8 @@
 site_name: SensingPlatformV4
+theme: material
 nav:
-    - Home: index.md
-    - About: about.md
-theme: readthedocs
+    - '产品介绍':
+        - '产品部署文档': './产品介绍/产品部署文档.md'
+        - '项目配置结构的介绍': './产品介绍/项目配置结构的介绍.md'
+    - 关于:
+        - 'Release Notes': 'release-notes.md'
