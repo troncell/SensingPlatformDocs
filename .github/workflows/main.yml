@@ -44,7 +44,7 @@ jobs:
           access-key-id: ${{secrets.ACCESSKEYID}}
           # AccessKeySceret
           access-key-secret:  ${{secrets.ACCESSKEYSECRET}}
-      - run: ossutil cp -rf mkdocs.yml oss://troncell-docs/SensingPlatform
+      - run: ossutil cp -rf mkdocs.yml oss://troncell-docs/SensingPlatform/mkdocs.yaml
       
       
           
