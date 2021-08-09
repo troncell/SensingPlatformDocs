@@ -39,6 +39,11 @@ jobs:
         
       - name: Build Docs
         run: mkdocs build
+        
+      - name: zip out
+        run: |
+             zip -r site.zip site/
+             ls
            
       - name: Setup Ossutil
         uses: manyuanrong/setup-ossutil@v2.0
@@ -49,7 +54,7 @@ jobs:
           access-key-id: ${{secrets.ACCESSKEYID}}
           # AccessKeySceret
           access-key-secret:  ${{secrets.ACCESSKEYSECRET}}
-      - run: ossutil cp -rf site/ oss://troncell-docs/SensingPlatform/
+      - run: ossutil cp -rf site.zip oss://troncell-docs/SensingPlatform/
       
       
           
