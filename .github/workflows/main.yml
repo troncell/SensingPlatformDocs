@@ -42,7 +42,7 @@ jobs:
         
       - name: zip out
         run: |
-             zip -r site.zip site/
+             zip -r SensingPlatform.zip site/
              ls
            
       - name: Setup Ossutil
@@ -54,7 +54,7 @@ jobs:
           access-key-id: ${{secrets.ACCESSKEYID}}
           # AccessKeySceret
           access-key-secret:  ${{secrets.ACCESSKEYSECRET}}
-      - run: ossutil cp -rf site.zip oss://troncell-docs/SensingPlatform/
+      - run: ossutil cp -rf SensingPlatform.zip oss://troncell-docs/zips
       
       
           
