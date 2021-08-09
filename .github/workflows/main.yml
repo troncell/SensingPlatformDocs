@@ -55,7 +55,7 @@ jobs:
           access-key-id: ${{secrets.ACCESSKEYID}}
           # AccessKeySceret
           access-key-secret:  ${{secrets.ACCESSKEYSECRET}}
-      - run: ossutil cp -rf SensingPlatform.zip oss://troncell-docs/zips/
+      - run: ossutil cp -rf site/SensingPlatform.zip oss://troncell-docs/zips/
       
       
           
