@@ -42,7 +42,7 @@ jobs:
         
       - name: zip out
         run: |
-             zip -r SensingPlatform.zip site/
+             zip -r SensingPlatform.zip site/*
              ls
            
       - name: Setup Ossutil
