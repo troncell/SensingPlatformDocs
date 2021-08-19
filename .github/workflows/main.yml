@@ -39,17 +39,23 @@ jobs:
         
       - name: Build Docs
         run: mkdocs build
+        
+      - name: zip out
+        run: |
+             cd site
+             zip -r SensingPlatform.zip ./*
+             ls
            
       - name: Setup Ossutil
         uses: manyuanrong/setup-ossutil@v2.0
         with:
           # 填写Bucket所在地域的域名信息，可参考访问域名和数据中心。
           endpoint: oss-cn-shanghai.aliyuncs.com	
-          # AccessKey ID
+          # AccessKey I
           access-key-id: ${{secrets.ACCESSKEYID}}
           # AccessKeySceret
           access-key-secret:  ${{secrets.ACCESSKEYSECRET}}
-      - run: ossutil cp -rf site/ oss://troncell-docs/SensingPlatform/
+      - run: ossutil cp -rf site/SensingPlatform.zip oss://troncell-docs/zips/
       
       
           
