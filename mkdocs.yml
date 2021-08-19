@@ -4,6 +4,7 @@ nav:
     - '产品介绍':
         - '产品部署文档': './产品介绍/产品部署文档.md'
         - '项目配置结构的介绍': './产品介绍/项目配置结构的介绍.md'
+    - '控件一览':
+        - 'AlbumElement 飞图控件': './控件一览/AlbumElement.md'
     - 关于:
         - 'Release Notes': 'release-notes.md'
-        - 'abc': 'abc.md'
