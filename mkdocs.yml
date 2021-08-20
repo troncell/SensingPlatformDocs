@@ -9,6 +9,7 @@ nav:
         - 'BubbleElement 气泡控件': './控件一览/BubbleElement.md'
         - 'BookElement 电子书控件': './控件一览/BookElement.md'
         - 'CircleElement 环形卡片控件': './控件一览/CircleElement.md'
+        - 'CustomerElement 自定义控件': './控件一览/CustomerElement.md'
         - 'ImageElement 图片控件': './控件一览/ImageElement.md'
         - 'ImageButton 图片按钮控件': './控件一览/ImageButton.md'
         - 'TextElement 文字控件': './控件一览/TextElement.md'
