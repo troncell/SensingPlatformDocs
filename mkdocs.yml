@@ -6,6 +6,7 @@ nav:
         - '项目配置结构的介绍': './产品介绍/项目配置结构的介绍.md'
     - '控件一览':
         - 'AlbumElement 飞图控件': './控件一览/AlbumElement.md'
+        - 'ImageElement 图片控件': './控件一览/ImageElement.md'
         - 'SlideScreenElement 推拉屏控件': './控件一览/SlideScreenElement.md'
     - 关于:
         - 'Release Notes': 'release-notes.md'
