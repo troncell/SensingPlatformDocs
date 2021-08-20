@@ -43,7 +43,6 @@
 	</CustomerConfig>
 </BookElement>
 
-
 ```
 
 ## 配置说明
