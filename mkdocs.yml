@@ -11,6 +11,8 @@ nav:
         - 'CircleElement 环形卡片控件': './控件一览/CircleElement.md'
         - 'CustomerElement 自定义控件': './控件一览/CustomerElement.md'
         - 'DanceingBubbleElement 跳动的图片控件': './控件一览/DanceingBubbleElement.md'
+        - 'DataTimesElement 时间控件': './控件一览/DataTimesElement.md'
+        - 'FishEyeElement 鱼眼控件': './控件一览/FishEyeElement.md'
         - 'ImageElement 图片控件': './控件一览/ImageElement.md'
         - 'ImageButton 图片按钮控件': './控件一览/ImageButton.md'
         - 'TextElement 文字控件': './控件一览/TextElement.md'
