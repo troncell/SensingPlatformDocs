@@ -4,7 +4,7 @@
 
 电子书控件以翻书的交互方式展示一系列图片。
 
-![Placeholder](../../images/TextElement.png)
+![Placeholder](../../images/BookElement.png)
 
 ## 配置文件样例
 
