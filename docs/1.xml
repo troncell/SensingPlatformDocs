@@ -1,37 +1,6 @@
-<root>
-
-    <!-- 跳页面-->
-    <ImageButton>
-        <UIDisplay Left="100" Top="150" Width="180" Height="180" IsShow="True"  ZIndex="1" UsePercent="False"/>
-        <ImageSource UriKind="Relative">NavIcons\lianliankan.png</ImageSource>
-        <ClickEvent>Navigate?Page=HomePage&amp;Args=imageButton</ClickEvent>
-    </ImageButton>
-        
-    <!-- 跳弹出框-->
-    <ImageButton>
-        <UIDisplay Left="100" Top="150" Width="180" Height="180" IsShow="True"  ZIndex="1" UsePercent="False"/>
-        <ImageSource UriKind="Relative">NavIcons\lianliankan.png</ImageSource>
-        <ClickEvent>PopupEvent?TargetPageName=BriefingPage&amp;TargetControlName=PageLeftSecondShow&amp;X=0&amp;Y=0&amp;Height=841&amp;Width=1604&amp;EventID=PageHotBigBookShow&amp;UriKind=Application&amp;EventPath=Shell\Pages\BriefingPage\Items\PopupItems\SecondSho&amp;PageName={$PageName}</ClickEvent>
-    </ImageButton>
-        
-   <!-- 关弹出框-->
-    <ImageButton>
-        <UIDisplay Left="100" Top="150" Width="180" Height="180" IsShow="True"  ZIndex="1" UsePercent="False"/>
-        <ImageSource UriKind="Relative">NavIcons\lianliankan.png</ImageSource>
-        <ClickEvent>ChangePopupState?State=Close&amp;Args=imageButton</ClickEvent>
-    </ImageButton>
-        
-        
-    <!-- 发出两个事件-->
-    <ImageButton Name="turnoff">
-        <UIDisplay Left="1865" Top="985" Width="50" Height="50" IsShow="True"  ZIndex="10" UsePercent="False"/>
-        <ImageSource UriKind="Application">Shell\Pages\HomePage\resource\turnoff.png</ImageSource>
-        <ClickEvent>
-            <Event IsLocal="True" SyncType="Client">Navigate?Page=GraphicPage</Event>
-            <Event IsLocal="True" SyncType="Client">Navigate?Page=SweepPanelPage</Event>
-        </ClickEvent>
-    </ImageButton>
-
-
-
-</root>
+<TextElement Name="LogoText">
+    <!--参考控件公用片段的讲解中UIDdisplay片段讲解-->
+    <UIDisplay Left="800" Top="1000" Width="1100" Height="80" IsShow="True"  ZIndex="1" UsePercent="False"/>
+    <!--文本的配置 ForegroundColor文字颜色，Family为字体，Size文字大小，CultureInfo语言，Alignment对齐方式-->
+    <TextSource ForegroundColor="#FFFF0000" Family="微软雅黑" Size="50" CultureInfo="zh-CN" Alignment="Center">这里就是你放文字的地方</TextSource>
+</TextElement>
