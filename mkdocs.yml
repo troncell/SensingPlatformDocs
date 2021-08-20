@@ -19,5 +19,6 @@ nav:
         - 'ImageButton 图片按钮控件': './控件一览/ImageButton.md'
         - 'TextElement 文字控件': './控件一览/TextElement.md'
         - 'SlideScreenElement 推拉屏控件': './控件一览/SlideScreenElement.md'
+        - 'PerspectiveWallElement 幻影墙控件': './控件一览/PerspectiveWallElement.md'
     - 关于:
         - 'Release Notes': 'release-notes.md'
