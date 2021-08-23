@@ -3,7 +3,7 @@
 ## 控件作用
 
 电子书控件以翻书的交互方式展示一系列图片。
-
+## 控件UI效果
 ![Placeholder](../../images/BookElement.png)
 
 ## 配置文件样例

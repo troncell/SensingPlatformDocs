@@ -4,7 +4,7 @@
 
 气泡控件可分为连接数据库动态生成气泡个数，和用户自定义气泡个数，配置时只需要改变Items中的节点即可。
 
-
+## 控件UI效果
 ![Placeholder](../../images/BubbleElement.png)
 
 ## 配置文件样例

@@ -4,7 +4,7 @@
 
 幻影墙控件主要用来展示历史事件，使历史事件富有层级感，使人产生一种魔幻般的感觉。
 
-
+## 控件UI效果
 ![Placeholder](../../images/PerspectiveWallElement.png)
 
 ## 配置文件样例
@@ -96,7 +96,5 @@
 		CameraField: 视角（相对于中心点的角度）。
 
 		此外，需在此页面的同级目录下新建名为：PWall文件夹，在PWall文件夹下新建名为Template的文件夹，在Template文件夹下分别新建名为Template01.xml，在Template01.xml中放置配置文本样例中的样例2。
-
-
 
 
