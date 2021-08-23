@@ -4,7 +4,7 @@
 
 时间控件自动显示本台计算机上面的时间。
 
-
+## 控件UI效果
 ![Placeholder](../../images/DataTimesElement.png)
 
 ## 配置文件样例

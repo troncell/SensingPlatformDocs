@@ -4,6 +4,8 @@
 
 卡片型滑块控件以翻日历的交互方式展示一系列图片。
 
+## 控件UI效果
+
 ![Placeholder](../../images/FlipViewElement.png)
 
 ## 配置文件样例
