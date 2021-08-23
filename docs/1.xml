@@ -1,0 +1,46 @@
+
+<root>
+<PopupShowElement Name="PopItems">
+
+    <IncludeTemplate>
+    
+    <FileSource UriKind="Application">Resource\ CanMovePopup\PopupShow.xml</FileSource>
+    
+    </IncludeTemplate>
+    
+    </PopupShowElement>
+    
+    
+    <Template>
+    
+    <UIDisplay Left="0" Top="0" Width="1920" Height="1080" IsShow="True"  ZIndex="6" UsePercent="False"/>
+    
+    <CustomerConfig>
+    
+    <!--参考CanContraint是否为可变True/false BounceRect.X, BounceRect.Y为弹出框出现的位置，BounceRect.Width为碰撞宽度，BounceRect.Height为碰撞高度，MaxScale为放大最大倍数，MinScale为缩小最大倍数，ScaleMode为缩小到小于最小倍数的样式Disppear为消失  -->
+    
+    <LayoutManager LayoutType="PopupShowLayout" CanContraint="True" BounceRect.X="0" BounceRect.Y="0" BounceRect.Width="1920"  BounceRect.Height="1080" MaxScale="2" MinScale="0.45" ScaleMode="Disppear"></LayoutManager>
+    
+    </CustomerConfig>
+    
+    </Template>
+    
+     
+    
+    <Template >
+    
+    <UIDisplay Left="0" Top="0" Width="1920" Height="1080" IsShow="True"  ZIndex="6" UsePercent="False"/>
+    
+    <CustomerConfig>
+    
+    <LayoutManager  CanMove="False" CanScale="False" MaxItemCount="1"></LayoutManager>
+    
+    <HotShowMappings>
+    
+    </HotShowMappings>
+    
+    </CustomerConfig>
+    
+    </Template>
+    
+</root>

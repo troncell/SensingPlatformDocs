@@ -20,20 +20,20 @@
 ```
 ## 配置说明
 
-###节点TextSource
+### 节点TextSource
 
     需要显示的文字内容
 
-###属性说明
+    属性说明
 
-    ForegroundColor：文字的颜色；
+        ForegroundColor：文字的颜色；
 
-    Family：文字的样式；
+        Family：文字的样式；
 
-    Size：文字的大小；
+        Size：文字的大小；
 
-    CultureInfo：语言；
+        CultureInfo：语言；
 
-    Alignment：对齐方式。
+        Alignment：对齐方式。
 
 
