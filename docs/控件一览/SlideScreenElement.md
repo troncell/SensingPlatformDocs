@@ -9,30 +9,30 @@
 ## 配置文件样例
 ```
 <SlideScreenElement Name="SlideScreen">
-    <UIDisplay Left="0" Top="0" Width="1920" Height="1080" IsShow="True" ZIndex="1" UsePercent="False" />
-    <ClickEvent>PopupEvent?TargetPageName=CBPage{$ScreenIndex}&amp;TargetControlName=CBPop&amp;X=0&amp;Y=0&amp;Height=1920&amp;Width=1080&amp;EventID=CBShow&amp;sheet={$sheet}&amp;weizhi={$weizhi}&amp;UriKind=Application&amp;EventPath=Shell\Pages\CBPage\PopItems</ClickEvent>
-    <CustomerConfig>
-        <SlideScreen Vendor="lasa">
-            <Setting>
-                <IP>127.0.0.1</IP>
-                <Port>8002</Port>
-                <RecvPort>8888</RecvPort>
-                <Debug>true</Debug>
+        <UIDisplay Left="0" Top="0" Width="1920" Height="1080" IsShow="True" ZIndex="1" UsePercent="False" />
+        <ClickEvent>PopupEvent?TargetPageName=CBPage&amp;TargetControlName=CBPop&amp;X=0&amp;Y=0&amp;Height=1920&amp;Width=1080&amp;EventID={$ScreenName}&amp;sheet={$sheet}&amp;weizhi={$weizhi}&amp;UriKind=Application&amp;EventPath=Shell\Pages\CBPage\PopItems</ClickEvent>
+        <CustomerConfig>
+            <SlideScreen Vendor="lasa">
+                <Setting>
+                    <IP>127.0.0.1</IP>
+                    <Port>8002</Port>
+                    <RecvPort>8888</RecvPort>
+                    <Debug>true</Debug>
 
-                <!--判断移动误差-->
-                <Tolerance>0.01</Tolerance>
-                <!--每块屏的区间位置  -->
-                <ScreenPositions>
-                    <ScreenPosition Rate="0" Index="0" />
-                    <ScreenPosition Rate="0.25" Index="1" />
-                    <ScreenPosition Rate="0.5" Index="2" />
-                    <ScreenPosition Rate="0.75" Index="3" />
-                    <ScreenPosition Rate="1" Index="4" />
-                </ScreenPositions>
-            </Setting>
-        </SlideScreen>
-    </CustomerConfig>
-</SlideScreenElement>
+                    <!--判断移动误差-->
+                    <Tolerance>0.01</Tolerance>
+                    <!--每块屏的区间位置  -->
+                    <ScreenPositions>
+                        <ScreenPosition Rate="0" Index="0" Name="A"/>
+                        <ScreenPosition Rate="0.25" Index="1" Name="B"/>
+                        <ScreenPosition Rate="0.5" Index="2" Name="C"/>
+                        <ScreenPosition Rate="0.75" Index="3" Name="D"/>
+                        <ScreenPosition Rate="1" Index="4" Name="E"/>
+                    </ScreenPositions>
+                </Setting>
+            </SlideScreen>
+        </CustomerConfig>
+    </SlideScreenElement>
 ```
 ## 点击屏幕按钮发送移动指令
 ```
