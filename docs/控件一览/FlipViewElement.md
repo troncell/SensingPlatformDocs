@@ -50,7 +50,7 @@
 		</Template>
 	</Items>
 	<CustomerConfig>
-		<FlipView SliderFactor="0.2">
+		<FlipView SliderFactor="0.2" Orientation="Horizontal">
 		</FlipView>
 	</CustomerConfig>
 </FlipViewElement>
@@ -63,9 +63,9 @@
 
 	属性说明
 
-		SliderFactor="0.2"表示当一个页面滑动整个页面的五分之一的时候，它就会自动滑到下一个页面，该值越小该控件的灵敏度越高，若该控件中去掉该片段，即“<CustomerConfig>
+		SliderFactor="0.2"表示当一个页面滑动整个页面的五分之一的时候，它就会自动滑到下一个页面，该值越小该控件的灵敏度越高，若该控件中去掉该片段，则默认SliderFactor="0.5"，即只有滑至整个页面的二分之一时才能滑动。
+		
+		Orientation:Horizontal(水平滑动)\Vertical(垂直滑动) 
 
-		<FlipView SliderFactor="0.2"> </FlipView>
 
-		</CustomerConfig>”，则默认SliderFactor="0.5"，即只有滑至整个页面的二分之一时才能滑动。
 
