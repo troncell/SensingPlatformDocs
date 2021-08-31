@@ -31,5 +31,7 @@ nav:
         - 'WebBrowserElement 浏览器控件': './控件一览/WebBrowserElement.md'
         - 'XamlElement 包动画控件': './控件一览/XamlElement.md'
         - 'XYContainerElement 相对布局控件': './控件一览/XYContainerElement.md'
+        - 'PagerElement 长图文滑块控件': './控件一览/PagerElement.md'
+        - 'VideoBannerElement 视频滑块控件': './控件一览/VideoBannerElement.md'
     - 关于:
         - 'Release Notes': 'release-notes.md'
