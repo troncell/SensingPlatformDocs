@@ -8,7 +8,7 @@
 ## 控件UI效果
 ![Placeholder](../../images/VideoBannerElement.png)
 
-![Placeholder](../../images/VideoBannerElement_number_index.png)
+![Placeholder](../../images/VideoBannerElement_number_index.gif)
 
 ## 配置文件样例
 
