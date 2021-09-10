@@ -6,6 +6,7 @@
 
 ## 控件UI效果
 ![Placeholder](../../images/PagerElement.png)
+![Placeholder](../../images/PagerElement.gif)
 
 
 ## 配置文件样例
