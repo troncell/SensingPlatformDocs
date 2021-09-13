@@ -34,6 +34,31 @@
         </CustomerConfig>
     </SlideScreenElement>
 ```
+
+## 上海手动推拉屏配置
+```
+<SlideScreenElement Name="SlideScreen">
+    <UIDisplay Left="0" Top="0" Width="1920" Height="1080" IsShow="True" ZIndex="1" UsePercent="False" />
+    <ClickEvent>PopupEvent?TargetPageName=HomePage&amp;TargetControlName=HomePop&amp;X=0&amp;Y=0&amp;Height=1920&amp;Width=1080&amp;EventID={$ScreenName}Event&amp;UriKind=Application&amp;EventPath=Shell\Pages\HomePage\PopItems</ClickEvent>
+    <CustomerConfig>
+    <SlideScreen Vendor="shanghai">
+        <Setting>
+        <IP>127.0.0.1</IP>
+        <RecvPort>6666</RecvPort>
+        <Debug>false</Debug>
+        <ScreenPositions>
+            <ScreenPosition  Index="0" Name="A"/>
+            <ScreenPosition  Index="1" Name="B"/>
+            <ScreenPosition  Index="2" Name="C"/>
+            <ScreenPosition  Index="3" Name="D"/>
+            <ScreenPosition  Index="4" Name="E"/>
+        </ScreenPositions>
+        </Setting>
+    </SlideScreen>
+    </CustomerConfig>
+</SlideScreenElement>
+```
+
 ## 点击屏幕按钮发送移动指令
 ```
 <!-- 下一页-->
@@ -65,12 +90,14 @@
 </ImageButton>
 ```
 ## 配置说明
-1. Vendor: 暂时只支持一种lasa一种
-2. 事件：复用常规弹出框事件，其中 **{$ScreenIndex}** 为传入相应的屏的编号（从1开始）
+1. Vendor: 暂时只支持一种lasa和shanghai两种，lasa是电动屏,shanghai是手动屏
+2. 事件：复用常规弹出框事件，其中 **{$ScreenName}** 对应ScreenPosition传入的Name，替换效果为：**EventID=AEvent**， **EventID=BEvent**
+
 
 ## 测试工具下载(解压双击运行)
-  [lasa 推拉屏服务](../../tools/slidescreen_test_server_lasa.zip)
+[lasa 推拉屏服务测试](../../tools/slidescreen_test_server_lasa.zip)
 
+[shanghai 推拉屏服务测试工具](../../tools/slidescreen_test_server_shanghai.zip)
 
 
 
