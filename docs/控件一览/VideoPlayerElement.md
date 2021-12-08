@@ -14,6 +14,8 @@
 
 <VideoPlayerElement>
     <UIDisplay Left="43" Top="60" Width="780" Height="505" IsShow="True"  ZIndex="2" UsePercent="False"/>
+    <!-- 视频播放结束事件 -->
+    <FinishEvent>Navigate?Page=HomePage&amp;Args=imageButton</FinishEvent>
     <CustomerConfig>
         <!--PlayModel : AutoPlay,ManualPlay播放方式，手动OR自动。-->
         <!--LoopModel : One,Forever 播放次数-->
@@ -64,6 +66,9 @@
 
 ```
 ## 配置说明
+
+### FinishEvent
+视频结束事件， 不用可以不写
 
 ### 节点VideoPlay
 
