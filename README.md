@@ -17,6 +17,7 @@ https://markdown-docs-zh.readthedocs.io/zh_CN/latest/#_7
 
 
 ## 自动发布说明
+![image](https://user-images.githubusercontent.com/1032477/187815422-c8f90d55-f96d-456c-94d9-b9eaf9136e6b.png)
 
 
 
