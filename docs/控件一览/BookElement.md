@@ -4,11 +4,11 @@
 
 电子书控件以翻书的交互方式展示一系列图片。
 ## 控件UI效果
-![Placeholder](../../images/BookElement.png)
+![Placeholder](../../docs/images/BookElement.png)
 
 ## 配置文件样例
 
-```
+```xml
 <BookElement>
 	<UIDisplay Left="165" Top="280" Width="1396" Height="588" IsShow="True" ZIndex="3" UsePercent="False" />
 	<DataProvider>
