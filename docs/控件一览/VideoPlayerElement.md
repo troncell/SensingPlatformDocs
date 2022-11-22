@@ -10,7 +10,7 @@
 
 ## 配置文件样例
 
-```
+```xml
 
 <VideoPlayerElement>
     <UIDisplay Left="43" Top="60" Width="780" Height="505" IsShow="True"  ZIndex="2" UsePercent="False"/>
