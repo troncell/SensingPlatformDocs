@@ -8,7 +8,7 @@
 此控件时包控件，需要在UIControlDict.xml中先进行注册
 ```xml
 <Element ViewType="VideoBgElement" AssemblyFile="UI.VideoBg.dll" TypeName="UI.VideoBg.VideoBgControl, UI.VideoBg, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-<DataContext AssemblyFile="UI.VideoBg.dll" TypeName="UI.VideoBg.VideoBgControlViewModel, UI.VideoBg, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <DataContext AssemblyFile="UI.VideoBg.dll" TypeName="UI.VideoBg.VideoBgControlViewModel, UI.VideoBg, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
 </Element>
 ```
 页面的配置范例如下
