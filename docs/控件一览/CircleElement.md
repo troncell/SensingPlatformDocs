@@ -5,7 +5,7 @@
 环形卡片控件以360度环绕滑块的方式展示图片的列表。
 
 ## 控件UI效果
-![Placeholder](../images/CircleElement.png | width=500)
+![Placeholder](../images/CircleElement.png|width=500)
 
 ## 配置文件样例
 
