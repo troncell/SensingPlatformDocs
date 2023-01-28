@@ -61,7 +61,14 @@
 ### 节点LayoutManager
 
     属性说明
-        LayoutType：滑块方向，水平单一滑动：    HorizontalCardLayout；垂直单一滑动：    VerticalCardLayout；水平滑动：  HorizontalListLayout；垂直滑动：    VerticalListLayout；环形滑块：CircleListLayout；缩放模块：GraphicLayout（这是一种较为特殊的方式，“在Item里面控制缩放的大小边界，若要控制缩放图的大小，则CanScale必须为"True"，然后通过MaxScale及MinScale控制缩放的大小边界，ScaleMode为碰到边缘时的反应，Normal就是正常的情况，Bounce就是超出最小和最大值范围后，手松开后会自动弹回来，Disppear就是超出最小值，直接关闭）。
+        LayoutType：滑块方向
+            水平单一滑动：HorizontalCardLayout；
+            垂直单一滑动：VerticalCardLayout；
+            水平滑动：HorizontalListLayout；
+            垂直滑动：VerticalListLayout；
+            环形滑块：CircleListLayout；
+            缩放模块：GraphicLayout
+                这是一种较为特殊的方式，“在Item里面控制缩放的大小边界，若要控制缩放图的大小，则CanScale必须为"True"，然后通过MaxScale及MinScale控制缩放的大小边界，ScaleMode为碰到边缘时的反应，Normal就是正常的情况，Bounce就是超出最小和最大值范围后，手松开后会自动弹回来，Disppear就是超出最小值，直接关闭
 
         Margin：相邻卡片间的间距，单位为：像素；    
         Align：对齐方式：Left/Center/Right；
