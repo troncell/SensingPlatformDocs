@@ -5,7 +5,7 @@
 飞图控件以自动浮动的交互方式展示一系列图片或视频，它的特点是更换资料非常方便，只要更换文件夹里面的图片即可。
 
 ## 控件UI效果
-![Placeholder](../../images/album_1.png)
+![Placeholder](../images/album_1.png)
 
 
 ## 配置文件样例

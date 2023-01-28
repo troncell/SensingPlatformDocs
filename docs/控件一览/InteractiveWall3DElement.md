@@ -7,7 +7,7 @@
 
 ## 控件UI效果
 
-![Placeholder](../../images/InteractiveWall3DElement.png)
+![Placeholder](../images/InteractiveWall3DElement.png)
 
 ## 配置文件样例
 

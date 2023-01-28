@@ -6,7 +6,7 @@
 
 
 ## 控件UI效果
-![Placeholder](../../images/imageelement_1.png)
+![Placeholder](../images/imageelement_1.png)
 
 ## 配置文件样例
 

@@ -6,7 +6,7 @@
 
 ## 控件UI效果
 
-![Placeholder](../../images/FlipViewElement.png)
+![Placeholder](../images/FlipViewElement.png)
 
 ## 配置文件样例
 

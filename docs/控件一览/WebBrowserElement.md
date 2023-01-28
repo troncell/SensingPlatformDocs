@@ -5,7 +5,7 @@
 WebBrowser控件用于嵌入浏览器以提供一些网络信息。
 
 ## 控件UI效果
-![Placeholder](../../images/WebBrowserElement.png)
+![Placeholder](../images/WebBrowserElement.png)
 
 ## 配置文件样例
 

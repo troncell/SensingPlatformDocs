@@ -5,7 +5,7 @@
 鱼眼控件可分为连接数据库动态生成鱼眼个数，和用户自定义鱼眼个数，主要用于展示图片集合。
 
 ## 控件UI效果
-![Placeholder](../../images/FishEyeElement.png)
+![Placeholder](../images/FishEyeElement.png)
 
 
 ## 配置文件样例

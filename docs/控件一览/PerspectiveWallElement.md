@@ -6,7 +6,7 @@
 
 
 ## 控件UI效果
-![Placeholder](../../images/PerspectiveWallElement.png)
+![Placeholder](../images/PerspectiveWallElement.png)
 
 ## 配置文件样例
 

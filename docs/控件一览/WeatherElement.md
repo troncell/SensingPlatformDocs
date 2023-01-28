@@ -5,7 +5,7 @@
 天气控件自动显示中国天气网中当时的天气。
 
 ## 控件UI效果
-![Placeholder](../../images/WeatherElement.png)
+![Placeholder](../images/WeatherElement.png)
 
 ## 配置文件样例
 

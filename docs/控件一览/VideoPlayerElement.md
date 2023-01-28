@@ -6,7 +6,7 @@
 
 ## 控件UI效果
 
-![Placeholder](../../images/VideoPlayerElement.png)
+![Placeholder](../images/VideoPlayerElement.png)
 
 ## 配置文件样例
 

@@ -6,7 +6,7 @@
 
 ## 控件UI效果
 
-![Placeholder](../../images/SequenceItemsElement.png)
+![Placeholder](../images/SequenceItemsElement.png)
 
 ## 配置文件样例
 

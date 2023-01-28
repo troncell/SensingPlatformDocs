@@ -5,7 +5,7 @@
 跳动的图片控件用一跳一跳的方式突出某个按钮。
 
 ## 控件UI效果
-![Placeholder](../../images/DanceingBubbleElement.png)
+![Placeholder](../images/DanceingBubbleElement.png)
 
 ## 配置文件样例
 

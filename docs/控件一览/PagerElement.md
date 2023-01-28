@@ -5,8 +5,8 @@
 长图文上下滑动且左右切换上下一张
 
 ## 控件UI效果
-![Placeholder](../../images/PagerElement.png)
-![Placeholder](../../images/PagerElement.gif)
+![Placeholder](../images/PagerElement.png)
+![Placeholder](../images/PagerElement.gif)
 
 
 ## 配置文件样例

@@ -6,7 +6,7 @@
 
 ## 控件UI效果
 
-![Placeholder](../../images/Square3DElement.png)
+![Placeholder](../images/Square3DElement.png)
 
 ## 配置文件样例
 

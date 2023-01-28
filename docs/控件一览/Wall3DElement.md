@@ -5,7 +5,7 @@
 3D凹面墙主要将图片或视视频以3D的形式进行展示。
 
 ## 控件UI效果
-![Placeholder](../../images/Wall3DElement.png)
+![Placeholder](../images/Wall3DElement.png)
 
 ## 配置文件样例
 
