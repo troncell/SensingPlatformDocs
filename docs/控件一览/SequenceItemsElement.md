@@ -80,7 +80,7 @@
         Row: 显示几行，在水平布局的时候有效;
         Column: 显示几列，在垂直布局的时候有效;
 
-$${\color{red}在Type为CircleListLayout的时候有一下几个参数可额外进行配置，在此用例的时候，推荐使用CircleElement进行配置}$$
+        $${\color{red}在Type为CircleListLayout的时候有一下几个参数可额外进行配置，在此用例的时候，推荐使用CircleElement进行配置}$$
 
         Radius:环绕到中心点的半径；
         Center.X/Center.Y: 环绕的中心点位置
