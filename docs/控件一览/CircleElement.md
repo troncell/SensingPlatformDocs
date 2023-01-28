@@ -6,6 +6,7 @@
 
 ## 控件UI效果
 ![CircleElement Preview Image](../images/CircleElement.png|width=500px)
+[../images/CircleElement.png||width=100px]]
 
 ## 配置文件样例
 
