@@ -68,14 +68,19 @@
             垂直滑动：VerticalListLayout；
             环形滑块：CircleListLayout；
             缩放模块：GraphicLayout
-                这是一种较为特殊的方式，“在Item里面控制缩放的大小边界，若要控制缩放图的大小，则CanScale必须为"True"，然后通过MaxScale及MinScale控制缩放的大小边界，ScaleMode为碰到边缘时的反应，Normal就是正常的情况，Bounce就是超出最小和最大值范围后，手松开后会自动弹回来，Disppear就是超出最小值，直接关闭
+                这是一种较为特殊的方式，在Item里面控制缩放的大小边界，若要控制缩放图的大小，则CanScale必须为"True"，
+                然后通过MaxScale及MinScale控制缩放的大小边界，
+                ScaleMode为碰到边缘时的反应，
+                Normal就是正常的情况，
+                Bounce就是超出最小和最大值范围后，手松开后会自动弹回来，
+                Disppear就是超出最小值，直接关闭
 
         Margin：相邻卡片间的间距，单位为：像素；    
         Align：对齐方式：Left/Center/Right；
         Row: 显示几行，在水平布局的时候有效;
         Column: 显示几列，在垂直布局的时候有效;
 
-<span style="color:red">在Type为CircleListLayout的时候有一下几个参数可额外进行配置，在此用例的时候，推荐使用CircleElement进行配置</span>
+$${\color{red}在Type为CircleListLayout的时候有一下几个参数可额外进行配置，在此用例的时候，推荐使用CircleElement进行配置}
 
         Radius:环绕到中心点的半径；
         Center.X/Center.Y: 环绕的中心点位置
