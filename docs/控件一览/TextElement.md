@@ -27,22 +27,20 @@
 ### 节点TextSource
 
     需要显示的文字内容
-
+    
     属性说明
-
+    
         ForegroundColor：文字的颜色；
-
         Family：文字的样式；
-
         Size：文字的大小；
-
         CultureInfo：语言；
-
         Alignment：对齐方式。
 
 ### 节点CustomerConfig
+
     此节点主要为了实现，文字的走马灯效果，不需要此效果的，此节点可以去掉
     AutoMove节点控制走马灯的具体效果
+    
     属性说明
     
         Enable: 是否开启，True为开启，False不启用
