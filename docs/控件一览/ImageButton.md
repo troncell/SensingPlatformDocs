@@ -11,7 +11,7 @@
 
 ## 配置文件样例
 
-```
+```xml
 <!-- 跳页面-->
 <ImageButton>
     <UIDisplay Left="100" Top="150" Width="180" Height="180" IsShow="True"  ZIndex="1" UsePercent="False"/>
@@ -20,7 +20,7 @@
 </ImageButton>
 ```
     
-```    
+```xml    
 <!-- 跳弹出框-->
 <ImageButton>
     <UIDisplay Left="100" Top="150" Width="180" Height="180" IsShow="True"  ZIndex="1" UsePercent="False"/>
@@ -29,7 +29,7 @@
 </ImageButton>
 ```
     
-```    
+```xml    
 <!-- 关弹出框-->
 <ImageButton>
     <UIDisplay Left="100" Top="150" Width="180" Height="180" IsShow="True"  ZIndex="1" UsePercent="False"/>
@@ -38,7 +38,7 @@
 </ImageButton>
 ```
     
-```    
+```xml    
 <!-- 发出两个事件-->
 <ImageButton Name="turnoff">
     <UIDisplay Left="1865" Top="985" Width="50" Height="50" IsShow="True"  ZIndex="10" UsePercent="False"/>
@@ -50,7 +50,7 @@
 </ImageButton>
 ```
 
-```
+```xml
 <!-- 弹出点击 -->
 <ImageButton>
     <UIDisplay Left="228" Top="1413" Width="622" Height="163" IsShow="True" ZIndex="2" UsePercent="False" />
@@ -75,6 +75,7 @@
     第二种，实现点击进行按钮页面间跳转的效果配置 ，Navigate为响应方式（页面跳转），HomePage就是所跳到的目标页面；
 
     第三种，关闭悬浮控件(弹出窗口)，ChangePopupState是响应方式(改变悬浮控件的状态)State=Close状态为关闭。
+    其它: 整个框架内的Events都可以由ClickEvent发出，同时在EventFirers.xml的用户自定义事件也可以
 
 ### 节点Event
 

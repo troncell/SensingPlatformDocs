@@ -9,7 +9,7 @@
 
 
 ## 配置文件样例
-```
+```xml
 <AlbumElement>
     <UIDisplay Left="0" Top="0" Width="1920" Height="1080" IsShow="True" ZIndex="1" UsePercent="false" IsUseCache="false" />
     <CustomerConfig>

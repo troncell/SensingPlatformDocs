@@ -1,7 +1,7 @@
 # VideoBgElement
 
 ## 控件说明
-此控件用于循环播放视频，采用D3D硬件加速播放，效率高，解决了WPF本身VideoPlayer的过度闪烁的问题，一般作为背景的动画使用
+此控件用于循环播放视频，采用了ffpmeg组件的界面能力，先确保程序的根目录下的ffpmeg下有相应的文件，解决了WPF本身VideoPlayer的过度闪烁的问题，一般作为背景的动画使用
 
 ## 控件的配置
 
@@ -17,9 +17,6 @@
 <VideoBgElement Name="bgVideo">
     <UIDisplay Left="900" Top="0" Width="960" Height="540" IsShow="True" ZIndex="1" UsePercent="False" />
     <VideoSource UriKind="Application">Shell\Pages\HomePage\Resources\report-bg.mp4</VideoSource>
-    <CustomerConfig>
-      <VideoRender Type="EVR" IsDeeperColor="True" />
-    </CustomerConfig>
 </VideoBgElement>
 ```
 
@@ -27,7 +24,4 @@
 
 整个配置分为两个大类，一个是视频源的配置，一个是VideoRender的配置。
 ### 视频源的配置
-1.  和ImageElement中的ImageSource一样，可以配置绝对路径，Application路径或者相对控件的目录。
-### VideoRender的配置
-1. 视频渲染的Type可以配置为EVR(EnhancedVideoRenderer)和VMR9(VideoMixingRenderer9),两种，都需要安装解码器，解码器软件可以网上下载，如：ADVANCED_Codecs_v1534.exe, 有可能有些机器只支持其中一种格式，可以换类型进行测试。
-2. IsDeeperColor设置True的话，可以通过Shader提亮整个视频，使视频更加明亮清晰
+1.  和ImageElement中的ImageSource一样，可以配置绝对路径，Application路径或者相对控件的目录
