@@ -11,11 +11,17 @@
 描述：
 
 1. UIDisplay是用于控件定位使用的，是框架的配置配置节点之一，务必记清楚其属性的含义。Left为距左边框距离 Top距上边框距离 Width宽度 Height高度
+   
 2. IsShow是否显示值为True表示显示False表示不显示 
+   
 3. ZIndex表示所在的层级，值为1表示层级最低在最底层 
+   
 4. UsePercent是否根据页面的比例配置，如果值为True则是按照比例配置，若为False则不是按照比例配置，是按照页面的实际像素大小
+   
 5. Opcity设置透明度1为全不透0为全透
+   
 6. IsHitTestVisible是否可穿透它，点击层级低一点的控件，True为可穿透，False为不可穿透
+   
 7. IsUseCache控件是否缓存True是缓存，False为不缓存
    
 **其中很多为可选项，如Opcity，IsHitTestVisible，IsUseCache等**
@@ -43,8 +49,11 @@
 2. ImageSource中UrlKind是配置路径的类型
 
    Relative是相对于当前xml的位置
+
    Application是相对于整个demo的位置
+
    Absolute是真实的物理路径，如c:\Images\
+
    Project是去掉shell的路径
   
 
@@ -59,10 +68,14 @@
 描述：
 
 1. DataProvider是用于连接数据库，从数据库中动态提取信息，具体如何进行连接数据库配置请参照文档《Data配置》
+   
 2. DataProvider片段在页面中相当于把前台的页面和后台数据库的配置关联在一起
 格式为：FishEyeData?CSTable=FishEye
+
 3. FishEyeData为数据库名称既Data.xml配置中```<DbData Name="FishEyeData">```中Name的值
+   
 4. CSTable为所使用的是表的形式，一般是固定格式不需要更改
+   
 5. FishEye为表名称即Data.xml配置中 ```<Table Name="FishEye">```
 
 
