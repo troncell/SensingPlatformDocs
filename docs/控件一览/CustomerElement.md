@@ -54,15 +54,7 @@
 ![Placeholder](../images/Custome/6.png)
 6.选中添加的事件 按F12 跳转到添加事件路径的页面
 ![Placeholder](../images/Custome/7.png)
-7.在代码中增加上如图所示代码就可以，后半部分可改成其他事件，添加完成之后点击启动即可
-
-SensingPlatformEventHelper.TriggerEvent("StartProcess?Path=C:\\Users\\13754\\Desktop\\ying\\games\\paoku\\Kinect.Pickup.YingCai.exe&Name=Kinect.Pickup.YingCai", this);
-
-![Placeholder](../images/Custome/8.png)
-
-8.复制exe和dll 进入程序中即可 具体参考山东英才学院体感项目 
-
-![Placeholder](../images/Custome/9.png)
+7.在代码中添加事件（跳转页面或打开应用程序），添加完成之后点击启动即可
 
 **注释：**
 (1)添加应用程序打开的方法：
@@ -72,3 +64,10 @@ SensingPlatformEventHelper.TriggerEvent("StartProcess?Path=C:\\Users\\13754\\Des
 (2)添加跳转页面的方法：
 
 SensingPlatformEventHelper.TriggerEvent("Navigate?Page=APage&amp", this);
+
+![Placeholder](../images/Custome/8.png)
+
+8.复制exe和dll 进入程序中即可 具体案例可参考山东英才学院体感项目 
+
+![Placeholder](../images/Custome/9.png)
+
