@@ -1,0 +1,37 @@
+site_name: SensingPlatformV4
+theme: material
+nav:
+    - '产品介绍':
+        - '产品部署文档': './产品介绍/产品部署文档.md'
+        - '项目配置结构的介绍': './产品介绍/项目配置结构的介绍.md'
+    - '控件一览':
+        - 'AlbumElement 飞图控件': './控件一览/AlbumElement.md'
+        - 'BubbleElement 气泡控件': './控件一览/BubbleElement.md'
+        - 'BookElement 电子书控件': './控件一览/BookElement.md'
+        - 'CircleElement 环形卡片控件': './控件一览/CircleElement.md'
+        - 'CustomerElement 自定义控件': './控件一览/CustomerElement.md'
+        - 'DanceingBubbleElement 跳动的图片控件': './控件一览/DanceingBubbleElement.md'
+        - 'DataTimesElement 时间控件': './控件一览/DataTimesElement.md'
+        - 'FishEyeElement 鱼眼控件': './控件一览/FishEyeElement.md'
+        - 'FlipViewElement 卡片型滑块控件': './控件一览/FlipViewElement.md'
+        - 'ImageElement 图片控件': './控件一览/ImageElement.md'
+        - 'InteractiveWall3DElement 3D互动墙控件': './控件一览/InteractiveWall3DElement.md'
+        - 'ImageButton 图片按钮控件': './控件一览/ImageButton.md'
+        - 'TextElement 文字控件': './控件一览/TextElement.md'
+        - 'SlideScreenElement 推拉屏控件': './控件一览/SlideScreenElement.md'
+        - 'PerspectiveWallElement 幻影墙控件': './控件一览/PerspectiveWallElement.md'
+        - 'PopupShowElement 弹出框控件': './控件一览/PopupShowElement.md'
+        - 'ScrollViewerElement 滚动条控件': './控件一览/ScrollViewerElement.md'
+        - 'SequenceItemsElement 滑块控件': './控件一览/SequenceItemsElement.md'
+        - 'SequenceItemElement 时间轴控件': './控件一览/SequenceItemElement.md'
+        - 'Square3DElement 正方体控件': './控件一览/Square3DElement.md'
+        - 'VideoPlayerElement 视频控件': './控件一览/VideoPlayerElement.md'
+        - 'Wall3DElement 3D凹面墙控件': './控件一览/Wall3DElement.md'
+        - 'WeatherElement 天气控件': './控件一览/WeatherElement.md'
+        - 'WebBrowserElement 浏览器控件': './控件一览/WebBrowserElement.md'
+        - 'XamlElement 包动画控件': './控件一览/XamlElement.md'
+        - 'XYContainerElement 相对布局控件': './控件一览/XYContainerElement.md'
+        - 'PagerElement 长图文滑块控件': './控件一览/PagerElement.md'
+        - 'VideoBannerElement 视频滑块控件': './控件一览/VideoBannerElement.md'
+    - 关于:
+        - 'Release Notes': 'release-notes.md'
