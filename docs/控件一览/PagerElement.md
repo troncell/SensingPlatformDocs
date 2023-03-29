@@ -48,6 +48,7 @@
 ```
 
 
+<<<<<<< HEAD
 ## 配置说明
 1. 节点VerticalAlignment:；
 
@@ -58,5 +59,13 @@
 4. 节点 PageIndexSelectedColor: 配置长图文滑块中，左右滑动到该长图文时时，图标的颜色。
 
 
+=======
+<!-- ## 配置说明
+1. 节点BgType: Type:是否配置背景，1为显示，0为不显示，然后配置背景图片所在的位置即可；
+
+2. 节点Fold:配置资源文件夹所在的路径；
+
+3. 节点 IsFoldBarVisible False 表示下方分类文件夹是否显示，False 表示不显示，True则表示显示。 -->
+>>>>>>> 74cb55ff9bc1ae1b0b42df98ccf877170eec16a5
 
 
