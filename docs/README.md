@@ -168,7 +168,7 @@ SensingPlatform是居于Windows平台的一套低代码平台，采用Xml作为�
     <tr>
         <td></td>
         <td> PerspectiveWallElement</td>
-        <td> 弹出框</td>
+        <td>幻影墙控件</td>
         <td>使图片看起来有层次感，使人身临其境的感觉</td>
         <td>是</td>
         <td> <a href="https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E6%8E%A7%E4%BB%B6%E4%B8%80%E8%A7%88/PerspectiveWallElement.md"> 详细说明</td>
