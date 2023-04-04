@@ -6,30 +6,30 @@
 ## 数据的配置
 
 ```xml
-<DbData Name="BrandSqliteData">
-  <AutoFreshData Enable="True" IntervalTime="00:00:20"></AutoFreshData>
-  <CustomerConfig>
-    <Tables>
-      <Table Name="BehaviorUsers" IsRealtimeLoad="True">
-        <DataQuery Value="select * from BehaviorUser limit 1"></DataQuery>
-      </Table>
-    </Tables>
-    <DbConnection>
-      <ConnectionString Value="Data Source={$BasePath}\BehaviorTarget.db3;Version=3;Pooling=True;Max Pool Size=100;"></ConnectionString>
-      <DbType>System.Data.SQLite.EF6</DbType>
-      <Args>
-        <Args Name="Loading" Value="True"/>
-      </Args>
-    </DbConnection>
-  </CustomerConfig>
-</DbData>
+<DbData Name="CameraDbData">
+    <AutoFreshData Enable="False" IntervalTime="00:00:20"></AutoFreshData>
+    <CustomerConfig>
+      <Tables>
+        <Table Name="TotalTable" IsRealtimeLoad="False">
+          <DataQuery Value="select sum(increment) Total from CounterEntity"></DataQuery>
+        </Table>
+      </Tables>
+      <DbConnection>
+        <ConnectionString Value="Data Source={$DataPath}\CameraDbData\CameraData.db"></ConnectionString>
+        <DbType>Microsoft.Data.Sqlite</DbType>
+        <Args>
+          <Args Name="Loading" Value="True"/>
+        </Args>
+      </DbConnection>
+    </CustomerConfig>
+  </DbData>
 ```
 
 ## 配置讲解
 
 整个配置分为两个大类，一个是数据库的配置，一个是Table的配置,以及更高级的自动数据刷新功能
 ### 数据库的配置
-1.  DbType支持 System.Data.SQLite.EF6 和 System.Data.SqlClient两种，如有需要其它的数据类型，请联系平台开发者。
+1.  DbType支持 Microsoft.Data.Sqlite 一种，如有需要其它的数据类型，请联系平台开发者。
 2. 链接字符串支持变量的替换，系统自带两个默认的{$DataPath}和{$BasePath}； 其中DataPath为应用Data的根目录，不包Name的文件架，BasePath是包含Name的文件夹，推荐使用BasePath变量。 如果数据第三方已经准备好了，可以使用绝对目录配置。另外Args支持Name和Value的变量替换。
 ### Tables的配置
 1. 支持多个Table的配置，通过Name来区分，Name不能相同
