@@ -149,6 +149,8 @@
 
 		ShowColumn：3DWall的展示列数；
 
+        HasMirror：3DWall的展示的图片的镜像倒影，True为有镜像，False为没有镜像；
+
 ### 节点Animation
 
 	属性说明

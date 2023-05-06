@@ -16,10 +16,10 @@
 	<CustomerConfig>
 		<ImageSource UriKind="Application">Shell\Pages\img\独孤九剑.png</ImageSource>
 		<ImageSourceChecked UriKind="Application">Shell\Pages\img\独孤九剑高亮.png</ImageSourceChecked>
-		<ClickEvent>Navigate?Page=HomePage</ClickEvent>
-		<GroupName>img</GroupName>
-		<Button AutoClick="True" />
-		<IsChecked>False</IsChecked> 
+		  <ClickEvent>Navigate?Page=HomePage</ClickEvent>
+		  <GroupName>img</GroupName>
+		  <Button AutoClick="True" />
+		  <IsChecked>False</IsChecked> 
 	</CustomerConfig>
 </ToggleButton>
 
@@ -32,9 +32,9 @@
 
    属性说明
 
-        GroupName：
+        GroupName：给按钮分组，样例中的组名为img，若多个ToggleButton为同一个组，ToggleButton之间可以交互。
 
-        Button AutoClick：
+        Button AutoClick：自动按钮，True或False
 
         IsChecked：进入页面中图片的点击状态，True或False，True为已被点击，False为未被点击。
 

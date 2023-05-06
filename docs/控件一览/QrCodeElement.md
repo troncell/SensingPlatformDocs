@@ -11,12 +11,12 @@
 ## 配置文件样例
 
 ```
-   <QrCodeElement>
-	  	<UIDisplay Left="500" Top="500" Width="300" Height="300" IsShow="True"  ZIndex="1" UsePercent="False" Opacity="1"/>
-	  	<CustomerConfig>
-            <QrCode LightBrush="#FFFFFFFF" DarkBrush="#FF000000" IsGrayImage="True"  Text="https://troncell.com"></QrCode>
-		</CustomerConfig>
-  	</QrCodeElement>
+<QrCodeElement>
+	<UIDisplay Left="500" Top="500" Width="300" Height="300" IsShow="True"  ZIndex="1" UsePercent="False" Opacity="1"/>
+	<CustomerConfig>
+        <QrCode LightBrush="#FFFFFFFF" DarkBrush="#FF000000" IsGrayImage="True"  Text="https://troncell.com"></QrCode>
+	</CustomerConfig>
+</QrCodeElement>
 
 
 ```

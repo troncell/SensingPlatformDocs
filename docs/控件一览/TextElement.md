@@ -4,7 +4,7 @@
 
 在页面或者弹出框中直接显示文字。
 
-## 控件UI效果
+## 控件 UI 效果
 
 ![Placeholder](../images/TextElement.png)
 
@@ -22,27 +22,28 @@
     </CustomerConfig>
 </TextElement>
 ```
+
 ## 配置说明
 
-### 节点TextSource
+### 节点 TextSource
 
     需要显示的文字内容
-    
+
     属性说明
-    
+
         ForegroundColor：文字的颜色；
         Family：文字的样式；
         Size：文字的大小；
         CultureInfo：语言；
         Alignment：对齐方式。
 
-### 节点CustomerConfig
+### 节点 CustomerConfig
 
     此节点主要为了实现，文字的走马灯效果，不需要此效果的，此节点可以去掉
     AutoMove节点控制走马灯的具体效果
-    
+
     属性说明
-    
+
         Enable: 是否开启，True为开启，False不启用
-        Duration：走一遍所花的时间,格式如下 "00:00:20" 
+        Duration：走一遍所花的时间,格式如下 "00:00:20"
         Direction：走马灯的方向，分为顺时针Clockwise，和逆时针Counterclockwise
