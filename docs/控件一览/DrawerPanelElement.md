@@ -4,7 +4,7 @@
 
 抽屉控件以抽屉的效果显示图片，可以拉出和推进图片。
 ## 控件UI效果
-![Placeholder](../images/BookElement.png)
+![Placeholder](../images/DrawerPanelElement.gif)
 
 ## 配置文件样例
 

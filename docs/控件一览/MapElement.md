@@ -5,7 +5,7 @@
 楼层Map
 
 ## 控件UI效果
-![Placeholder](../images/.png)
+![Placeholder](../images/FloorsElement.png)
 
 
 

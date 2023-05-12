@@ -6,7 +6,7 @@
 
 ## 控件UI效果
 
-![Placeholder](../../images/.png)
+![Placeholder](../images/ToggleButton.gif)
 
 ## 配置文件样例
 

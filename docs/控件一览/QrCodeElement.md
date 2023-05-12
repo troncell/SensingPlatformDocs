@@ -6,7 +6,7 @@
 
 ## 控件UI效果
 
-![Placeholder](../../images/QrCodeElement.png)
+![Placeholder](../images/QrCodeElement.png)
 
 ## 配置文件样例
 

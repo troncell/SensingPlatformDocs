@@ -3,6 +3,11 @@
 ## 控件说明
 此控件用于循环播放视频，采用了ffpmeg组件的界面能力，先确保程序的根目录下的ffpmeg下有相应的文件，解决了WPF本身VideoPlayer的过度闪烁的问题，一般作为背景的动画使用
 
+
+## 控件UI效果
+![Placeholder](../images/PerspectiveWallElement.gif)
+
+
 ## 控件的配置
 
 此控件时包控件，需要在UIControlDict.xml中先进行注册
