@@ -1,10 +1,10 @@
 ## SensingPlatform 简介
 
-SensingPlatform是居于Windows平台的一套低代码平台，采用Xml作为配置文件，以Page(页面)作为最小呈现单元，集成了丰富的针对大屏的UI展示库，同时支持动态数据源(本地数据，数据库，HTTP接口数据等)作为UI的数据源，提供了无缝对接SensingStore云端接口。同时支持实时相应事件，对接了UDP，串口，SignalR接口，开箱即用。
+SensingPlatform 是居于 Windows 平台的一套低代码平台，采用 Xml 作为配置文件，以 Page(页面)作为最小呈现单元，集成了丰富的针对大屏的 UI 展示库，同时支持动态数据源(本地数据，数据库，HTTP 接口数据等)作为 UI 的数据源，提供了无缝对接 SensingStore 云端接口。同时支持实时相应事件，对接了 UDP，串口，SignalR 接口，开箱即用。
 
 整套框架居于组件模式进行开发，简单复用！
- 
-##  控件介绍
+
+## 控件介绍
 
 <table>
     <tr style="font-weight: bold">
@@ -16,7 +16,7 @@ SensingPlatform是居于Windows平台的一套低代码平台，采用Xml作为�
         <td>使用说明</td>
     </tr>
     <tr>
-    <td rowspan="11">UI.Common</td>
+    <td rowspan="12">UI.Common</td>
         <td> CustomerElement</td>
         <td> 自定义控件</td>
         <td>利用工具制作动画或功能进行引用</td>
@@ -38,7 +38,7 @@ SensingPlatform是居于Windows平台的一套低代码平台，采用Xml作为�
         <td> <a href="https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E6%8E%A7%E4%BB%B6%E4%B8%80%E8%A7%88/ImageButton.md"> 详细说明</td>
     </tr>
      <tr>
-        <td> ScrollViewerElement</td>
+        <td> ScrollViewElement</td>
         <td> 滚动条控件</td>
         <td>无法一页显示的图片或文字增加滚动条向下滚动观看</td>
         <td>是</td>
@@ -77,24 +77,31 @@ SensingPlatform是居于Windows平台的一套低代码平台，采用Xml作为�
         <td>支持两种状态的图片按钮控件</td>
         <td>支持两种状态的图片按钮控件</td>
         <td>否</td>
-        <td> <a href="https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E6%8E%A7%E4%BB%B6%E4%B8%80%E8%A7%88/AlbumElement.md"> 详细说明</td>
+        <td> <a href="https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E6%8E%A7%E4%BB%B6%E4%B8%80%E8%A7%88/ToggleButton.md"> 详细说明</td>
     </tr>
     <tr>
         <td>RotateControlElement</td>
         <td>图片旋转控件</td>
         <td>拖动图片旋转</td>
         <td>否</td>
-        <td> <a href="https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E6%8E%A7%E4%BB%B6%E4%B8%80%E8%A7%88/AlbumElement.md"> 详细说明</td>
+        <td> <a href="https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E6%8E%A7%E4%BB%B6%E4%B8%80%E8%A7%88/RotateControlElement.md"> 详细说明</td>
     </tr>
     <tr>
         <td>LongPressButton</td>
         <td>长按按钮控件</td>
         <td>长按按钮执行事件</td>
         <td>否</td>
-        <td> <a href="https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E6%8E%A7%E4%BB%B6%E4%B8%80%E8%A7%88/AlbumElement.md"> 详细说明</td>
+        <td> <a href="https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E6%8E%A7%E4%BB%B6%E4%B8%80%E8%A7%88/LongPressButton.md"> 详细说明</td>
+    </tr>
+     <tr>
+        <td>SliderElement</td>
+        <td>滑动杆控件</td>
+        <td>选择范围区间</td>
+        <td>否</td>
+        <td> <a href="https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E6%8E%A7%E4%BB%B6%E4%B8%80%E8%A7%88/SliderElement.md"> 详细说明</td>
     </tr>
     <tr>
-        <td>UI.AlbumLibrary</td>
+        <td>UI.Album.dll</td>
         <td>AlbumElement</td>
         <td>飞图控件</td>
         <td>在页面中自动浮动，展示一系列图片或视频</td>
@@ -102,13 +109,12 @@ SensingPlatform是居于Windows平台的一套低代码平台，采用Xml作为�
         <td> <a href="https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E6%8E%A7%E4%BB%B6%E4%B8%80%E8%A7%88/AlbumElement.md"> 详细说明</td>
     </tr>
     <tr>
-        <td>UI.BubbleElement</td>
+        <td>UI.BubbleElement.dll</td>
         <td> BubbleElement</td>
         <td> 气泡控件</td>
         <td>动态生成气泡</td>
         <td>是</td>
         <td> <a href="https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E6%8E%A7%E4%BB%B6%E4%B8%80%E8%A7%88/BubbleElement.md"> 详细说明</td>
-    </tr>
     <tr>
         <td>UI.SweepPanel.dll</td>
         <td> CircleElement</td>
@@ -119,7 +125,7 @@ SensingPlatform是居于Windows平台的一套低代码平台，采用Xml作为�
     </tr>
     <tr>
         <td></td>
-        <td> DanceingBubbleElement</td>
+        <td> DanceingBubbleElement.dll</td>
         <td> 跳动图片控件</td>
         <td>可以使图片跳动，以跳动的方式来突出图片或按钮</td>
         <td>否</td>
@@ -134,7 +140,7 @@ SensingPlatform是居于Windows平台的一套低代码平台，采用Xml作为�
         <td> <a href="https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E6%8E%A7%E4%BB%B6%E4%B8%80%E8%A7%88/BookElement.md"> 详细说明</td>
     </tr>
     <tr>
-        <td>UI.FishEyes</td>
+        <td>UI.FishEyes.dll</td>
         <td> FishEyeElement</td>
         <td> 鱼眼控件</td>
         <td>可自定义鱼眼个数，根据操作让图片变大缩小，主要用于展示图片集合</td>
@@ -142,7 +148,7 @@ SensingPlatform是居于Windows平台的一套低代码平台，采用Xml作为�
         <td> <a href="https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E6%8E%A7%E4%BB%B6%E4%B8%80%E8%A7%88/FishEyeElement.md"> 详细说明</td>
     </tr>
     <tr>
-        <td>UI.FlipView</td>
+        <td>UI.FlipView.dll</td>
         <td> FlipViewElement</td>
         <td> 卡片型滑块控件</td>
         <td>卡片型滑块控件以翻日历的交互方式展示一系列图片</td>
@@ -158,7 +164,7 @@ SensingPlatform是居于Windows平台的一套低代码平台，采用Xml作为�
         <td> <a href="https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E6%8E%A7%E4%BB%B6%E4%B8%80%E8%A7%88/InteractiveWall3DElement.md"> 详细说明</td>
     </tr>
     <tr>
-        <td>UI.FlipView</td>
+        <td>UI.FlipView.dll</td>
         <td> PagerElement</td>
         <td> 长图文滑块控件</td>
         <td>可以上下滑动长图文</td>
@@ -166,9 +172,9 @@ SensingPlatform是居于Windows平台的一套低代码平台，采用Xml作为�
         <td> <a href="https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E6%8E%A7%E4%BB%B6%E4%B8%80%E8%A7%88/PagerElement.md"> 详细说明</td>
     </tr>
     <tr>
-        <td></td>
+        <td>UI.PerspectiveWall.dll</td>
         <td> PerspectiveWallElement</td>
-        <td> 弹出框</td>
+        <td>幻影墙控件</td>
         <td>使图片看起来有层次感，使人身临其境的感觉</td>
         <td>是</td>
         <td> <a href="https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E6%8E%A7%E4%BB%B6%E4%B8%80%E8%A7%88/PerspectiveWallElement.md"> 详细说明</td>
@@ -182,7 +188,7 @@ SensingPlatform是居于Windows平台的一套低代码平台，采用Xml作为�
         <td> <a href="https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E6%8E%A7%E4%BB%B6%E4%B8%80%E8%A7%88/PopupShowElement.md"> 详细说明</td>
     </tr>
     <tr>
-        <td>UI.SweepPanel</td>
+        <td>UI.SweepPanel.dll</td>
         <td> SequenceItemsElement</td>
         <td> 滑块控件/时间轴控件</td>
         <td>在页面中滑动图片，支持水平滑动和垂直滑动</td>
@@ -197,16 +203,16 @@ SensingPlatform是居于Windows平台的一套低代码平台，采用Xml作为�
         <td>否</td>
         <td> <a href="https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E6%8E%A7%E4%BB%B6%E4%B8%80%E8%A7%88/Square3DElement.md"> 详细说明</td>
     </tr>
-  <tr>
-        <td></td>
+    <tr>
+        <td>UI.VideoBanner.dll</td>
         <td> VideoBannerElement</td>
         <td> 视频滑块控件</td>
         <td>多个视频可以左右滑动</td>
         <td>是</td>
         <td> <a href="https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E6%8E%A7%E4%BB%B6%E4%B8%80%E8%A7%88/VideoBannerElement.md"> 详细说明</td>
     </tr>
-<tr>
-        <td>UI.VideoBg</td>
+    <tr>
+        <td>UI.VideoBg.dll</td>
         <td> VideoBgElement</td>
         <td> 循环播放视频控件</td>
         <td>背景可以循环播放视频</td>
@@ -214,7 +220,7 @@ SensingPlatform是居于Windows平台的一套低代码平台，采用Xml作为�
         <td> <a href="https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E6%8E%A7%E4%BB%B6%E4%B8%80%E8%A7%88/VideoBgElement.md"> 详细说明</td>
     </tr>  
     <tr>
-        <td></td>
+        <td>UI.Wall3D.dll</td>
         <td> Wall3DElement</td>
         <td> 3D凹面墙控件</td>
         <td>以3D凹陷的效果展示图片</td>
@@ -229,8 +235,8 @@ SensingPlatform是居于Windows平台的一套低代码平台，采用Xml作为�
         <td>否</td>
         <td> <a href="https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E6%8E%A7%E4%BB%B6%E4%B8%80%E8%A7%88/WeatherElement.md"> 详细说明</td>
     </tr> 
- <tr>
-        <td>UI.SensingWebBrowser</td>
+     <tr>
+        <td>UI.SensingWebBrowser.dll</td>
         <td> WebBrowserElement</td>
         <td> 浏览器控件</td>
         <td>用于嵌入浏览器以提供一些网络信息</td>
@@ -243,7 +249,23 @@ SensingPlatform是居于Windows平台的一套低代码平台，采用Xml作为�
         <td>二维码控件</td>
         <td>在页面中展示二维码</td>
         <td>否</td>
-        <td> <a href="https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E6%8E%A7%E4%BB%B6%E4%B8%80%E8%A7%88/AlbumElement.md"> 详细说明</td>
+        <td> <a href="https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E6%8E%A7%E4%BB%B6%E4%B8%80%E8%A7%88/QrCodeElement.md"> 详细说明</td>
+    </tr>
+     <tr>
+        <td>UI.DrawerPanel.dll</td>
+        <td>DrawerPanelElement</td>
+        <td>抽屉控件</td>
+        <td>以抽屉的效果显示图片，可以拉出推进图片。</td>
+        <td>是</td>
+        <td> <a href="https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E6%8E%A7%E4%BB%B6%E4%B8%80%E8%A7%88/DrawerPanelElement.md"> 详细说明</td>
+    </tr>
+         <tr>
+        <td>UI.Search.dll</td>
+        <td>KeyboardSearchElement</td>
+        <td>搜索控件</td>
+        <td>在页面生成可输入的搜索框和键盘</td>
+        <td>否</td>
+        <td> <a href="https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E6%8E%A7%E4%BB%B6%E4%B8%80%E8%A7%88/KeyboardSearchElement.md"> 详细说明</td>
     </tr>
     <tr>
         <td></td>
@@ -251,7 +273,7 @@ SensingPlatform是居于Windows平台的一套低代码平台，采用Xml作为�
         <td>画图控件</td>
         <td>在页面中画图</td>
         <td>否</td>
-        <td> <a href="https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E6%8E%A7%E4%BB%B6%E4%B8%80%E8%A7%88/AlbumElement.md"> 详细说明</td>
+        <td> <a href=""> 详细说明</td>
     </tr>
       <tr>
         <td></td>
@@ -259,26 +281,30 @@ SensingPlatform是居于Windows平台的一套低代码平台，采用Xml作为�
         <td>阴影控件</td>
         <td>在页面中的文字，图片等显示阴影</td>
         <td>否</td>
-        <td> <a href="https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E6%8E%A7%E4%BB%B6%E4%B8%80%E8%A7%88/AlbumElement.md"> 详细说明</td>
+        <td> <a href=""> 详细说明</td>
     </tr>
     <tr>
-        <td></td>
-        <td>SliderBar</td>
-        <td>滑动杆控件</td>
-        <td>选择范围区间，可以是多个</td>
-        <td>否</td>
-        <td> <a href="https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E6%8E%A7%E4%BB%B6%E4%B8%80%E8%A7%88/AlbumElement.md"> 详细说明</td>
-    </tr>
-        <tr>
         <td></td>
         <td>PrinterPanelElement</td>
         <td></td>
         <td></td>
         <td>否</td>
-        <td> <a href="https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E6%8E%A7%E4%BB%B6%E4%B8%80%E8%A7%88/AlbumElement.md"> 详细说明</td>
+        <td> <a href=""> 详细说明</td>
     </tr>
-
-
-
-
+     <tr>
+        <td>UI.NavigationControl.dll</td>
+        <td>MapElement</td>
+        <td>楼层Map控件</td>
+        <td></td>
+        <td>否</td>
+        <td> <a href="https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E6%8E%A7%E4%BB%B6%E4%B8%80%E8%A7%88/MapElement.md"> 详细说明</td>
+    </tr>
+    <tr>
+        <td>UI.NavigationControl.dll</td>
+        <td>FloorsElement</td>
+        <td>楼层Floors控件</td>
+        <td></td>
+        <td>否</td>
+         <td> <a href="https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E6%8E%A7%E4%BB%B6%E4%B8%80%E8%A7%88/FloorsElement.md"> 详细说明</td>
+    </tr>
 </table>

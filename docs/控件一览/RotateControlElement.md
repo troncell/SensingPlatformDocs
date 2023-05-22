@@ -6,7 +6,7 @@
 
 ## 控件UI效果
 
-![Placeholder](../../images/RotateControlElement.png)
+![Placeholder](../images/RotateControlElement.gif)
 
 ## 配置文件样例
 

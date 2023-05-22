@@ -6,7 +6,7 @@
 
 ## 控件UI效果
 
-![Placeholder](../../images/ScrollViewerElement.png)
+![Placeholder](../images/ScrollViewerElement.png)
 
 ## 配置文件样例
 

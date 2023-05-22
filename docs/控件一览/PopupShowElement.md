@@ -6,7 +6,7 @@
 
 ## 控件UI效果
 
-![Placeholder](../../images/PopupShowElement.png)
+![Placeholder](../images/PopupShowElement.png)
 
 ## 配置文件样例
 

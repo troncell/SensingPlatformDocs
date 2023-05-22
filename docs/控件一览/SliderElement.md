@@ -6,7 +6,7 @@
 
 ## 控件 UI 效果
 
-![Placeholder](../../images/.png)
+![Placeholder](../images/SliderElement.gif)
 
 ## 配置文件样例
 

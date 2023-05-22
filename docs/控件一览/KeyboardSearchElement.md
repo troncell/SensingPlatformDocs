@@ -7,7 +7,7 @@
 
 ## 控件UI效果
 
-![Placeholder](../images/.png)
+![Placeholder](../images/KeyboardSearchElement.png)
 
 ## 配置文件样例
 
