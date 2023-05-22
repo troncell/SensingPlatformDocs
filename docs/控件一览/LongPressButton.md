@@ -2,7 +2,7 @@
 
 ## 控件作用
 
-长按按钮触发事件。
+一般作为一张透明图片，长按按钮三秒触发事件。
 
 ## 控件UI效果
 
@@ -11,11 +11,10 @@
 ## 配置文件样例
 
 ```
-（页面中）
 
 <LongPressButton>
-<UIDisplay Left="0" Top="0" Width="300" Height="300" IsShow="True" ZIndex="4" UsePercent="False" Opacity="1"/>
-<ClickEvent>Navigate?Page=HomePage</ClickEvent>
+    <UIDisplay Left="0" Top="0" Width="300" Height="300" IsShow="True" ZIndex="4" UsePercent="False" Opacity="1"/>
+    <ClickEvent>Navigate?Page=HomePage</ClickEvent>
 </LongPressButton>
 
 

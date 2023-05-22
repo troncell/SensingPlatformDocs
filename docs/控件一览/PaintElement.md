@@ -11,11 +11,9 @@
 ## 配置文件样例
 
 ```
-（页面中）
+<PaintElement>
 
-   <PaintElement>
-
-	</PaintElement>
+</PaintElement>
 
 
 

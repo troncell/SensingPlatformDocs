@@ -11,15 +11,13 @@
 ## 配置文件样例
 
 ```
-（页面中）
-
-    <RotateControlElement>
-      <UIDisplay Left="600" Top="450" Width="973" Height="913" IsShow="True" ZIndex="1" UsePercent="False" />
-      <CustomerConfig>
-        <RotateConfig Path="Images" Orientation="Y" Sensitivity="0.05" />
-        <AutoRotate Value="True" Orientation="1" Duration="00:00:04" StartTime="2" />
-      </CustomerConfig>
-    </RotateControlElement>
+<RotateControlElement>
+  <UIDisplay Left="600" Top="450" Width="973" Height="913" IsShow="True" ZIndex="1" UsePercent="False" />
+  <CustomerConfig>
+    <RotateConfig Path="Images" Orientation="Y" Sensitivity="0.05" />
+    <AutoRotate Value="True" Orientation="1" Duration="00:00:04" StartTime="2" />
+  </CustomerConfig>
+</RotateControlElement>
 
 
 
@@ -30,7 +28,9 @@
 
     属性说明
 
-        Path：图片的存放位置；
+        注：旋转方式读取文件夹的图片，顺序为图片的name，例如：image1.png → image2.png → image3.png   
+
+        Path：图片的存放路径位置；
 
         Orientation：旋转方向，X或Y；
 

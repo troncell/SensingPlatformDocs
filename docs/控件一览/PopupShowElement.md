@@ -11,8 +11,6 @@
 ## 配置文件样例
 
 ```
-（页面中）
-
 <PopupShowElement Name="PopItems">
     <IncludeTemplate>
         <FileSource UriKind="Application">Resource\ CanMovePopup\PopupShow.xml</FileSource>
