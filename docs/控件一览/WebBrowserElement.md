@@ -2,9 +2,10 @@
 
 ## 控件作用
 
-WebBrowser控件用于嵌入浏览器以提供一些网络信息。
+WebBrowser 控件用于嵌入浏览器以提供一些网络信息。
 
-## 控件UI效果
+## 控件 UI 效果
+
 ![Placeholder](../images/WebBrowserElement.png)
 
 ## 配置文件样例
@@ -20,6 +21,7 @@ WebBrowser控件用于嵌入浏览器以提供一些网络信息。
     </CustomerConfig>
 </WebBrowserElement>
 ```
+
 ```
 <WebBrowserElement Name="WebBrowser">
     <UIDisplay Left="110" Top="45" Width="1640" Height="1000" IsShow="True" ZIndex="1" UsePercent="False" Opacity="1" />
@@ -31,6 +33,7 @@ WebBrowser控件用于嵌入浏览器以提供一些网络信息。
     </CustomerConfig>
 </WebBrowserElement >
 ```
+
 ```
 <WebBrowserElement Name="WebBrowser">
     <UIDisplay Left="100" Top="40" Width="1600" Height="1000" IsShow="True" ZIndex="1" UsePercent="False" Opacity="1" />
@@ -45,19 +48,28 @@ WebBrowser控件用于嵌入浏览器以提供一些网络信息。
 
 ## 配置说明
 
-### 节点WebBrowser
-	
-	该节点主要用于设置浏览器的种类，目前只支持Chorme。
+### 节点 WebBrowser
 
-	属性说明
+    该节点主要用于设置浏览器的种类，目前只支持Chorme。
 
-		Type:浏览器种类；
+    属性说明
 
-		Zoom（只针对wpf）:放大倍数，若zoom=200，就是显示的网页是原网页的2倍。
+    	Type:浏览器种类；
 
-### 节点DefaultAddress
+    	Zoom（只针对wpf）:放大倍数，若zoom=200，就是显示的网页是原网页的2倍。
 
-	该节点主要设置的是网站的网址，不同浏览器显示的格式不完全相同，具体参照上方配置文件样例中的样例1和样例2。此外，此节点中除了嵌入网页的具体网址外，还可以嵌入某个html文件，具体方式参照上方配置文件样例中的样例3。
+### 节点 DefaultAddress
 
- 
+    该节点主要设置的是网站的网址，不同浏览器显示的格式不完全相同，具体参照上方配置文件样例中的样例1和样例2。此外，此节点中除了嵌入网页的具体网址外，还可以嵌入某个html文件，具体方式参照上方配置文件样例中的样例3。
 
+# UIControlDict.xml 添加浏览器控件
+
+如果使用浏览器控件则需要在 UIControlDict.xml 中添加浏览器控件
+
+```
+ <!--UI.SensingWebBrowser 控件包-->
+  <Element ViewType="WebBrowserElement" AssemblyFile="UI.SensingWebBrowser.dll" TypeName="UI.SensingWebBrowser.SensingWebBrowser, UI.SensingWebBrowser, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <DataContext AssemblyFile="UI.SensingWebBrowser.dll" TypeName="UI.SensingWebBrowser.WebBrowserViewModel, UI.SensingWebBrowser, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+  </Element>
+  <!--UI.SensingWebBrowser End-->
+```

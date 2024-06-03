@@ -3,7 +3,9 @@
 ## 控件作用
 
 电子书控件以翻书的交互方式展示一系列图片。
-## 控件UI效果
+
+## 控件 UI 效果
+
 ![Placeholder](../images/BookElement.png)
 
 ## 配置文件样例
@@ -45,9 +47,11 @@
 
 ```
 
+![1711456871989](image/EBookElement/1711456871989.png)
+
 ## 配置说明
 
-### 节点Book
+### 节点 Book
 
 #### 属性说明
 
@@ -59,3 +63,14 @@
 
       TouchSurface：定义点击范围的边界。
 
+## UIControlDict.xml 添加电子书控件
+
+如果使用电子书控件则需要在 UIControlDict.xml 中添加电子书控件
+
+```
+  <!--UI.EBook 控件包-->
+  <Element ViewType="EBookElement" AssemblyFile="UI.EBook.dll" TypeName="UI.EBook.EBookControl, UI.EBook, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <DataContext AssemblyFile="UI.EBook.dll" TypeName="UI.EBook.EBookControlViewModel, UI.EBook, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+  </Element>
+  <!--UI.Book End-->
+```

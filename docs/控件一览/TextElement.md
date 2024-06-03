@@ -23,6 +23,16 @@
 </TextElement>
 ```
 
+```
+ <TextElement Name="名称">
+                        <!--参考控件公用片段的讲解中UIDdisplay片段讲解-->
+                        <UIDisplay Left="100" Top="52" Width="400" Height="180" IsShow="True" ZIndex="2" UsePercent="False" />
+                        <!--文本的配置ForegroundColor文字颜色，Family为字体，Size文字大小，CultureInfo语言，Alignment对齐方式-->
+                        <TextSource ForegroundColor="#FFFFFFFF" Family="黑体" Size="24"
+                          CultureInfo="zh-CN" Alignment="Left">{$Name}</TextSource>
+                      </TextElement>
+```
+
 ## 配置说明
 
 ### 节点 TextSource
@@ -31,7 +41,7 @@
 
     属性说明
 
-        ForegroundColor：文字的颜色；
+    ForegroundColor：文字的颜色；
         Family：文字的样式；
         Size：文字的大小；
         CultureInfo：语言；
@@ -44,6 +54,16 @@
 
     属性说明
 
-        Enable: 是否开启，True为开启，False不启用
+    Enable: 是否开启，True为开启，False不启用
         Duration：走一遍所花的时间,格式如下 "00:00:20"
         Direction：走马灯的方向，分为顺时针Clockwise，和逆时针Counterclockwise
+
+# UIControlDict.xml 添加文字控件
+
+如果使用文字控件则需要在 UIControlDict.xml 中添加文字控件
+
+```
+  <Element ViewType="TextElement" AssemblyFile="UI.Common.dll" TypeName="UI.Common.SensingControl.TextControl, UI.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <DataContext AssemblyFile="UI.Common.dll" TypeName="UI.Common.SensingView.TextElementViewModel, UI.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+  </Element>
+```

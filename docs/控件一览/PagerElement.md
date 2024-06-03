@@ -4,12 +4,13 @@
 
 长图文上下滑动且左右切换上下一张
 
-## 控件UI效果
+## 控件 UI 效果
+
 ![Placeholder](../images/PagerElement.png)
 ![Placeholder](../images/PagerElement.gif)
 
-
 ## 配置文件样例
+
 ```
 <PagerElement Name="resource">
     <UIDisplay Left="125" Top="258" Width="829" Height="1372" IsShow="True" ZIndex="3" UsePercent="False" />
@@ -44,20 +45,25 @@
     <CustomerConfig>
         <PagerIndex VerticalAlignment="Top" Offset="-33" PageIndexColor="#" PageIndexSelectedColor="RED"  />
     </CustomerConfig>
-</PagerElement> 
+</PagerElement>
 ```
 
-
 ## 配置说明
-1. 节点VerticalAlignment:；
 
-2. 节点Offset:配置左右滑动圆点的位置；
+1. 节点 VerticalAlignment:；
+
+2. 节点 Offset:配置左右滑动圆点的位置；
 
 3. 节点 PageIndexColor:配置长图文滑块中，左右滑动到该长图文时，其它图标的颜色；
 
 4. 节点 PageIndexSelectedColor: 配置长图文滑块中，左右滑动到该长图文时，该图标的颜色。
 
+# UIControlDict.xml 添加长图文滑块控件
 
+如果使用长图文滑块控件则需要在 UIControlDict.xml 中添加长图文滑块控件
 
-
-
+```
+  <Element ViewType="PagerElement" AssemblyFile="UI.FlipView.dll" TypeName="UI.FlipView.PagerView, UI.FlipView, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <DataContext AssemblyFile="UI.FlipView.dll" TypeName="UI.FlipView.PagerViewModel, UI.FlipView, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+  </Element>
+```

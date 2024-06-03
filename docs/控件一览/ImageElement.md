@@ -4,8 +4,8 @@
 
 在页面或者弹出框中直接显示图片。
 
+## 控件 UI 效果
 
-## 控件UI效果
 ![Placeholder](../images/imageelement_1.png)
 
 ## 配置文件样例
@@ -21,4 +21,30 @@
 
 ## 配置说明
 
-1. 以上节点均已在别的配置文件中详细介绍，这里就不再重复了。
+1.ImageSource 中 UriKind 是配置路径的类型，Relative 是相对于当前 xml 的位置，Application 是相对于整个 demo 的位置，Absolute 是真实的物理路径，如 c:\Images\
+
+示例：
+
+```
+
+<ImageSourceUriKind="Application">Shell\Pages\CirclePage\test.jpg </ImageSource>
+```
+
+ImageElement>是相对于整个 demo 的路径
+
+```
+<ImageSourceUriKind="Relative"> lianliankan.png </ImageSource>
+```
+
+是相对于当前 xml 文件所在的相对路径下的文件夹，此文件是与当前 xml 文件同级文件夹下
+
+# UIControlDict.xml 添加图片控件
+
+如果使用图片控件则需要在 UIControlDict.xml 中添加图片控件
+
+```
+
+  <Element ViewType="ImageElement" AssemblyFile="UI.Common.dll" TypeName="UI.Common.SensingControl.ImageControl, UI.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <DataContext AssemblyFile="UI.Common.dll" TypeName="UI.Common.SensingView.ImageElementViewModel, UI.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+  </Element>
+```

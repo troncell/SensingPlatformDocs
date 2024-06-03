@@ -1,6 +1,6 @@
 # 项目配置结构的介绍
 
-System.xml文件在Shell的目录下，用于配置整个应用程序级别的；Pages.xml位于Shell/Pages目录下，用于配置这个应用程序所用到的页面。
+System.xml 文件在 Shell 的目录下，用于配置整个应用程序级别的；Pages.xml 位于 Shell/Pages 目录下，用于配置这个应用程序所用到的页面。
 
 ## System.xml 参考示例
 
@@ -18,7 +18,7 @@ System.xml文件在Shell的目录下，用于配置整个应用程序级别的�
   <!--设置屏保时间以及屏保页面,时间的格式为 hh:mm:ss，屏保页面要在Page.xml中真实存在, ToPage用于配置有人在屏保模式下，有人互动进入的页面，如果ToPage没配，进入最后一个进入屏保的页面，如果配置了，直接进入固定的页面-->
   <ScreenSaver WaitingTime="00:00:20" SaverPage="ScreenPage" ToPage="WelcomePage">
 	<!--进入屏保执行的事件，可配置任意的事件和ImageButton的Click类似-->
-	<Event>ToDeviceDataEvent?Id=001&amp;Protocol=UDP&amp;Data=right</Event>
+	<Event>ToDeviceDataEvent?Id=001&Protocol=UDP&Data=right</Event>
   </ScreenSaver>
   <Shell>
     <!--MainRegion目前只能配置一个，以后可能会扩展-->
@@ -45,12 +45,16 @@ System.xml文件在Shell的目录下，用于配置整个应用程序级别的�
 
 ## Pages.xml 示例
 
+1.对 DEMO 所实用到所有页面要进行注册配置，目的是将 demo 中涉及到的所有页面注册到系统中
+
+2.打开 Troncell 平台文件，找到 Shell 下 Pages 文件夹，在该文件夹下打开 Pages.xml 文件，使用编辑工具打开
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <Pages>
   <!-- Name是你给页面所取的名字，Folder是Page的配置目录。
        1.Name是必须配置的，如果不配置或者为空的话，忽略当前页面配置。同时Name不应重复，是页面的唯一标识,如果重复只取最前的节点。
-       2.Folder是可选的，当Folder不配置时，默认选用Name作为其默认值。如果Folder的路径不存在的话，当前Page会被忽略。
+       2.Folder是可选的，为对应文件夹名称，当Folder不配置时，默认选用Name作为其默认值。如果Folder的路径不存在的话，当前Page会被忽略。
 	     3.IsHome是可选的，当IsHome不配置时，默认值为False，如果所有的IsHome都没有配置的话，默认第一个页面节点为首页。
   -->
   <Page Name="StarPWallPage" Folder="StarPWallPage" />
@@ -58,3 +62,31 @@ System.xml文件在Shell的目录下，用于配置整个应用程序级别的�
 </Pages>
 ```
 
+3. Pages.xml 添加好后，需要对每个页面进行详细的配置
+
+**例子：**
+
+A.Pages.xml 里添加 page，如：
+
+```
+  <Page Name="TextPage" Folder="TextPage" />
+
+```
+
+B.打开 Troncell 平台文件，找到 Shell 下 Pages 文件夹，并在该文件夹下新建一个文件夹，名称为：TextPage
+
+C.在新建的文件夹下新建和文件夹相同名称的 xml 文件 TextPage.xml
+
+D.使用编辑器打开新建的 xml 文件，（这里是打开 TextPage.xml 文件），写入如下代码(一般情况下只需改动 `<SysPage Name=" TextPage">`)：
+
+```
+
+<!--SysPage中的Name值应与所在文件夹名字相同-->
+<SysPage Name=" TextPage">
+<!--<UIDisplay Left为距左边框距离 Top距上边框距离 Width宽度 Height高度 IsShow是否显
+示值为True表示显示False表示不显示 ZIndex表示所在的层级，值为1表示层级最低在最底层
+层 UsePercent是否根据页面的比例配置，如果值为True则是按照比例配置，若为False则不
+是按照比例配置，是按照页面的实际像素大小/>-->
+<UIDisplay Left="0" Top="0" Width="1920" Height="1080" IsShow="True" ZIndex="1"
+UsePercent="False"/>
+```

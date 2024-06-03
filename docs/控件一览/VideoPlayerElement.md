@@ -4,7 +4,7 @@
 
 在页面或者弹出框中播放视频。
 
-## 控件UI效果
+## 控件 UI 效果
 
 ![Placeholder](../images/VideoPlayerElement.png)
 
@@ -15,7 +15,7 @@
 <VideoPlayerElement>
     <UIDisplay Left="43" Top="60" Width="780" Height="505" IsShow="True"  ZIndex="2" UsePercent="False"/>
     <!-- 视频播放结束事件 -->
-    <FinishEvent>Navigate?Page=HomePage&amp;Args=imageButton</FinishEvent>
+    <FinishEvent>Navigate?Page=HomePage&Args=imageButton</FinishEvent>
     <CustomerConfig>
         <!--PlayModel : AutoPlay,ManualPlay播放方式，手动OR自动。-->
         <!--LoopModel : One,Forever 播放次数-->
@@ -65,14 +65,12 @@
 </VideoPlayerElement>
 
 ```
+
 ## 配置说明
 
-### FinishEvent
-视频结束事件， 不用可以不写
+### FinishEvent：视频结束事件， 不用可以不写
 
-### 节点VideoPlay
-
-    播放属性
+### 节点 VideoPlay：播放属性
 
     属性说明
 
@@ -80,34 +78,31 @@
 
     LoopModel：播放次数，One OR Forever，一次或者一直循环播放。
 
-### 节点Player
+### 节点 Player:整段视频的一些属性
 
-    整段视频的一些属性
+### 节点 Controller
 
-### 节点Controller
+    视频属性，如播放按钮，进度条，暂停按钮等
 
-    除了视频本身，其他一些细小属性，如播放按钮，进度条，暂停按钮等
+### PlayButton：控制播放
 
-### PlayButton
+### PauseButton:控制视频暂停
 
-    播放按钮的一些属性
+### StopButton：控制视频停止播放
 
-### PauseButton
+### Slider：控制视频播放进度条的属性
 
-    暂停按钮的一些属性
+### Track：控制进度条图片的属性
 
-### StopButton
+### Thumb:进度条上面的进度点的属性
 
-    停止播放按钮的一些属性
+# UIControlDict.xml 添加视频控件
 
-### Slider
+如果使用视频控件则需要在 UIControlDict.xml 中添加视频控件
 
-    整个进度条的一些属性
+```
+ <Element ViewType="VideoPlayerElement" AssemblyFile="UI.Common.dll" TypeName="UI.Common.SensingControl.VideoPlayer, UI.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <DataContext AssemblyFile="UI.Common.dll" TypeName="UI.Common.SensingView.VideoPlayerViewModel, UI.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+  </Element>
 
-### Track
-
-    进度条的属性
-
-### Thumb
-
-    进度条上面的进度点的属性
+```

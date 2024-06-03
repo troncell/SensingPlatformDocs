@@ -4,11 +4,12 @@
 
 鱼眼控件可分为连接数据库动态生成鱼眼个数，和用户自定义鱼眼个数，主要用于展示图片集合。
 
-## 控件UI效果
+## 控件 UI 效果
+
 ![Placeholder](../images/FishEyeElement.png)
 
-
 ## 配置文件样例
+
 ```
 <!-- Name为鱼眼控件在页面中的名字，为可选项 -->
 <FishEyeElement Name="FishEye">
@@ -41,21 +42,32 @@
 </FishEyeElement>
 ```
 
-
 ## 配置说明
-### 节点FishEye
+
+### 节点 FishEye
 
     属性说明
 
         ItemGap：上面配置的各个Items中节点直接的间隙；
 
-### 节点AutoPlay 
+### 节点 AutoPlay
 
     只要放置该片段，就会自动播放。
-    
-    属性说明    
+
+    属性说明
 
         IdleTime：等待在指定的时间内没有操作将会执行自动播放，单位是毫秒;
 
         Step：移动的速度。
 
+# UIControlDict.xml 添加鱼眼控件
+
+如果使用鱼眼控件则需要在 UIControlDict.xml 中添加鱼眼控件
+
+```
+ <!--UI.FishEye控件包-->
+  <Element ViewType="FishEyeElement" AssemblyFile="UI.FishEye.dll" TypeName="UI.FishEye.FishEyeControl, UI.FishEye, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <DataContext AssemblyFile="UI.FishEye.dll" TypeName="UI.FishEye.FishEyeViewModel, UI.FishEye, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+  </Element>
+  <!--UI.FishEye End-->
+```

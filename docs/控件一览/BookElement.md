@@ -1,21 +1,24 @@
-# 电子书控件（BookElement）
+电子书控件（BookElement）
 
 ## 控件作用
 
 电子书控件以翻书的交互方式展示一系列图片。
-## 控件UI效果
+
+## 控件 UI 效果
+
 ![Placeholder](../images/BookElement.png)
 
 ## 配置文件样例
 
 ```xml
 <BookElement>
+<!--参考控件公用片段CommonElement.md讲解中UIDisplay片段讲解-->
 	<UIDisplay Left="165" Top="280" Width="1396" Height="588" IsShow="True" ZIndex="3" UsePercent="False" />
-	<DataProvider>
-		EBookData?CSTable=TEduBook5
-	</DataProvider>
+	<!--参考控件公用片段CommonElement.md讲解中DataProvide片段讲解-->
+	<DataProvider>EBookData?CSTable=TEduBook5</DataProvider>
 	<Items>
 		<Item>
+		<!--放置简单的控件ImageButton，如何配置控件请参考基本控件配置中ImageButton控件的配置方法-->
 			<ImageButton>
 				<UIDisplay Left="100" Top="100" Width="392" Height="390" IsShow="True" ZIndex="1" UsePercent="False" />
 				<ImageSource UriKind="Application">
@@ -27,7 +30,9 @@
 			</ImageButton>
 		</Item>
 	</Items>
+	<!--放置CustomerConfig片段-->
 	<CustomerConfig>
+	<!--放置Book片段 IsCacheUI是否预加载，True为是，False为否-->
 		<Book IsCacheUI="True" ShadowLevel="0.6" Width="865" Height="665">
 			<TouchSurface>
 				<TouchRect Left="0.0" Top="0.0" Height="0.5" Width="0.2" BookState="LT2RT">
@@ -47,15 +52,26 @@
 
 ## 配置说明
 
-### 节点Book
+### 节点 Book
 
 #### 属性说明
 
-      IsCaCheUI:  是否预加载，就是是否在刚进入放电子书的页面时就加载所有页面，True为是，False为否；
+    IsCaCheUI:  是否预加载，是否在刚进入放电子书的页面时就加载所有页面，True为是，False为否；
 
-      ShadowLevel：阴影的宽度；
+    ShadowLevel：阴影的宽度；
 
-      这里的Width、Height指的是书本的大小；
+    这里的Width、Height指的是书本的大小；
 
-      TouchSurface：定义点击范围的边界。
+    TouchSurface：定义点击范围的边界。
 
+## UIControlDict.xml 添加电子书控件
+
+如果使用电子书控件则需要在 UIControlDict.xml 中添加电子书控件
+
+```
+ <!--UI.Book 控件包-->
+  <Element ViewType="BookElement" AssemblyFile="UI.Book.dll" TypeName="UI.Book.BookControl, UI.Book, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <DataContext AssemblyFile="UI.Book.dll" TypeName="UI.Book.BookElementViewModel, UI.Book, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+  </Element>
+  <!--UI.Book End-->
+```

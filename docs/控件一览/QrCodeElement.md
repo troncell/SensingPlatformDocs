@@ -4,7 +4,7 @@
 
 在页面中显示二维码。
 
-## 控件UI效果
+## 控件 UI 效果
 
 ![Placeholder](../images/QrCodeElement.png)
 
@@ -20,9 +20,10 @@
 
 
 ```
+
 ## 配置说明
 
-### 节点CustomerConfig
+### 节点 CustomerConfig
 
     属性说明
 
@@ -34,8 +35,14 @@
 
         Text：填写想要生成二维码的url；
 
-        
+# UIControlDict.xml 添加二维码控件
 
+如果使用二维码控件则需要在 UIControlDict.xml 中添加二维码控件
 
-
-
+```
+  <!--UI.QrCode 控件包-->
+  <Element ViewType="QrCodeElement" AssemblyFile="UI.QrCode.dll" TypeName="UI.QrCode.QrCodeControl, UI.QrCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <DataContext AssemblyFile="UI.QrCode.dll" TypeName="UI.QrCode.QrCodeControlViewModel, UI.QrCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+  </Element>
+  <!--UI.QrCode END-->
+```
