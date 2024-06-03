@@ -73,7 +73,7 @@
 
 PopupEvent：是响应方式(打开悬浮控件)，
 
-argetPageName：在指定页面使用悬浮控件
+TargetPageName：在指定页面使用悬浮控件
 
 &amp;是&的转义字符：表示与、和、连接的意思
 
