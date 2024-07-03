@@ -1,8 +1,14 @@
 ## SensingPlatform 平台中的事件说明
 
-### 1.ClickEvent
+事件配置和Http 中 Url Request 类似，采用如下格式进行：
+Action?key1=value1&key2=value2
+Action为事件的名称，后面的Query为事件所需要的参数，各个事件所需的参数都不一样，理解事件的过程就是理解参数逻辑的过程。
 
-此节点是按钮点击后触发事件的核心，也是框架配置项的核心。事件配置和 Http 中 Request 类似，采用如下格式进行： Action?key1=value1&value2=value2
+平台事件可以在ImageButton下的ClickEvent下配置，
+
+### 1. Navigate (导航事件)
+
+此节点是按钮点击后触发事件的核心，也是框架配置项的核心。
 
 在 ClickEvent 中根据不同的配置会做出不同的事件响应，以下配置文件样例中就是不同的响应效果；
 
@@ -24,6 +30,7 @@
 Navigate 为响应方式（页面跳转）
 
 Page=StarPWallPageA 就是所跳到的目标页面；
+
 
 ##### 1.1.2 发两个事件
 
