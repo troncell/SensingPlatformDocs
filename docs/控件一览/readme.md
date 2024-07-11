@@ -1,5 +1,9 @@
-###
-
+### 控件的通用配置介绍
+  一个基础的UI控件，一般由以下的几个通用的配置项组成:
+  1. UIDisplay，必须项， 用于控制UI加载的位置相关的信息
+  2. Transitions 可选项，用于控制UI加载的动画部分
+  3. DataProvider 可选项，用户控制UI展示的数据源，
+  4. CustomerConfig 可选项, 用于控制UI具体的表现形式的参数，每个控件都不太一样，详细参考每个特定的控件的配置
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <SysPage Name="PWallPage">
@@ -18,6 +22,12 @@
         IsUseCache: 是否使用缓存，目前支持的状态有：True, False
       -->
       <UIDisplay Left="1065" Top="1000" Width="155" Height="80" IsShow="True" ZIndex="5" UsePercent="False" Rotate="35" />
+
+      <!-- DataProvider的配置说明:
+        wyfData: 数据源的名称
+        CSTable: 数据源的具体分项表
+        -->
+      <DataProvider>wyfData?CSTable=Floors</DataProvider>
       <ImageSource UriKind="Application">Shell\Pages\Common\VideoPlayer\icon-Play.png</ImageSource>
       <ClickEvent>ToDeviceDataEvent?Id=001&amp;Protocol=TCP&amp;Data=11050000FF008EAA&amp;IsHex=True</ClickEvent>
       <Transitions>
