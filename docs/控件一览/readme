@@ -1,0 +1,45 @@
+### 控件的通用配置介绍
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<SysPage Name="PWallPage">
+  <UIDisplay Left="0" Top="0" Width="1920" Height="1080" IsShow="True" ZIndex="1" UsePercent="True" IsUseCache="True" />
+  <Controls>
+    <ImageButton Name="resource">
+      <!-- UIDisplay的配置说明:
+        Left: 控件左上角的X坐标
+        Top: 控件左上角的Y坐标
+        Width: 控件的宽度
+        Height: 控件的高度
+        IsShow: 控件是否显示，目前支持的状态有：True, False
+        ZIndex: 控件的层级，数值越大，层级越高
+        UsePercent: 控件的位置和大小是否使用百分比，目前支持的状态有：True, False
+        Rotate: 控件的旋转角度
+        IsUseCache: 是否使用缓存，目前支持的状态有：True, False
+      -->
+      <UIDisplay Left="1065" Top="1000" Width="155" Height="80" IsShow="True" ZIndex="5" UsePercent="False" Rotate="35" />
+      <ImageSource UriKind="Application">Shell\Pages\Common\VideoPlayer\icon-Play.png</ImageSource>
+      <ClickEvent>ToDeviceDataEvent?Id=001&amp;Protocol=TCP&amp;Data=11050000FF008EAA&amp;IsHex=True</ClickEvent>
+      <Transitions>
+        <!-- Transition的配置说明:
+          Type: 动画类型，目前支持的动画类型有：Translate, Scale, Rotate, Fade, Color
+          Delay: 动画延迟时间，单位为毫秒
+          Duration: 动画持续时间，单位为毫秒
+          From: 动画起始值，如Translate Scale 时格式为"x,y"，x和y为数值,如果是Color类型，格式为"#FF0000" 或者"#FF000000" ，如果是Fade时，格式为"0.1" 表示透明度，0表示全透明   
+          To: 动画结束值，如Translate Scale 时格式为"x,y"，x和y为数值,如果是Color类型，格式为"#FF0000" 或者"#FF000000" ，如果是Fade时，格式为"1" 表示不透明，1表示全不透明
+          TransitionOn: 动画触发时机，目前支持的触发时机有：Once,OnLoaded, DataContextChanged,Visibility
+          Ease: 动画缓动效果，目前支持的缓动效果有：Linear, Quadratic, Cubic, Quartic, Quintic, Sinusoidal, Exponential, Circular, Elastic, Back, Bounce
+          ReverseEase: 动画反向缓动效果，目前支持的缓动效果有：Linear, Quadratic, Cubic, Quartic, Quintic, Sinusoidal, Exponential, Circular, Elastic, Back, Bounce
+          Fill: 动画结束后的状态，目前支持的状态有：HoldEnd, Stop
+          AutoReverse: 动画是否自动反向播放，目前支持的状态有：True, False
+          Repeat: 动画重复次数，目前支持的状态有：Forever, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+         -->
+        <Transition Type="Translate" Delay="100" Duration="1000" From='-10,-10' To="0,0" TransitionOn="Loaded" Easing="BackEase,EaseIn,1.0" ReverseEasing="BackEase,EaseIn,1.0" Fill="Stop" AutoReverse="True" Repeat="Forever" />
+      </Transitions>
+      <CustomerConfig>
+        <!--是针对此UI控件的一些特殊的配置，每个控件都不一样，详细参照每个UI控件的详细配置说明 -->
+      </CustomerConfig>
+    </ImageButton>
+  </Controls>
+</SysPage>
+```
