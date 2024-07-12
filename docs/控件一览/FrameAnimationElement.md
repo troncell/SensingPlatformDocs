@@ -14,7 +14,7 @@
 ```xml
 <FrameAnimationElement>
       <UIDisplay Left="100" Top="100" Width="515" Height="292" IsShow="True" ZIndex="1" UsePercent="false" IsUseCache="True" />
-      <!-- 帧动画资源路径:
+      <!-- PathSource帧动画资源路径:
         UriKind: 资源路径类型，Application表示应用内路径，Absolute表示绝对路径，Relative表示相对路径，Project表示工程路径
         Filter: 资源过滤器，支持多个格式，用逗号分隔
       -->
