@@ -3,6 +3,10 @@
 事件配置和Http 中 Url Request 类似，采用如下格式进行：
 Action?key1=value1&key2=value2
 Action为事件的名称，后面的Query为事件所需要的参数，各个事件所需的参数都不一样，理解事件的过程就是理解参数逻辑的过程。
+系统默认的全局Key如下:
+EDelay=1000 : 表示配置的事件会延时1000ms(毫秒)=1秒，触发该事件
+
+这些全局的Key不要在特定事件中用同样的Key名称
 
 平台事件可以在ImageButton下的ClickEvent下配置，
 
