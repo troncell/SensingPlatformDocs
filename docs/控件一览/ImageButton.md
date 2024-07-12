@@ -23,6 +23,7 @@
 <!-- 跳弹出框-->
 <ImageButton>
     <UIDisplay Left="100" Top="150" Width="180" Height="180" IsShow="True"  ZIndex="1" UsePercent="False"/>
+    <!--ImageSource若不配，相当于透明按钮，程序不会出错，也不会出现加载动画 -->
     <ImageSource UriKind="Relative">NavIcons\lianliankan.png</ImageSource>
     <ClickEvent>PopupEvent?TargetPageName=BriefingPage&TargetControlName=PageLeftSecondShow&X=0&Y=0&Height=841&Width=1604&EventID=PageHotBigBookShow&UriKind=Application&EventPath=Shell\Pages\BriefingPage\Items\PopupItems\SecondSho&PageName={$PageName}</ClickEvent>
 </ImageButton>
