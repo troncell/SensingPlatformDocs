@@ -1,25 +1,25 @@
 ## SensingPlatform 简介
 
 SensingPlatform 是居于 Windows 平台的一套低代码平台，采用 Xml 作为配置文件，通过简单可重用的配置文件，就可以完成面向用户的互动程序。从配置层面整个平台包含一下的结构
-1. UI层，以 Page(页面)作为最小 UI 呈现单元，集成了丰富的针对大屏的 UI 展示库。
-2. Data层，数据层面以 Data(数据源)为基础，支持动态数据源，包括本地数据，如文件夹文件图片，Excel，本地 Sqlite 等本地数据；远程数据源，如远程数据库，HTTP 接口等数据，作为 UI 的底层数据。同时提供了无缝对接 SensingStore 云端接口的数据源。
-3. Device层，支持不同的通讯接口，与不同的外设进行实时的通讯，这些是通过Module化的InputManger进行集成的，如对接了 UDP，TCP，串口，SignalR 等标准协议，开箱即用。
-4. 组件层，整个系统有一些特殊组件的配置，如是否支持ffmpeg解码，是否支持chromium的内核浏览器(与居于Edge的WebView2有所不同)，资源加载的线程数等全局组件的配置
+
+1. UI 层，以 Page(页面)作为最小 UI 呈现单元，集成了丰富的针对大屏的 UI 展示库。
+2. Data 层，数据层面以 Data(数据源)为基础，支持动态数据源，包括本地数据，如文件夹文件图片，Excel，本地 Sqlite 等本地数据；远程数据源，如远程数据库，HTTP 接口等数据，作为 UI 的底层数据。同时提供了无缝对接 SensingStore 云端接口的数据源。
+3. Device 层，支持不同的通讯接口，与不同的外设进行实时的通讯，这些是通过 Module 化的 InputManger 进行集成的，如对接了 UDP，TCP，串口，SignalR 等标准协议，开箱即用。
+4. 组件层，整个系统有一些特殊组件的配置，如是否支持 ffmpeg 解码，是否支持 chromium 的内核浏览器(与居于 Edge 的 WebView2 有所不同)，资源加载的线程数等全局组件的配置
 
 整套框架居于组件模式进行开发，简单复用！支持扩展 UI 依赖注入，支持数据源依赖注入，支持事件依赖注入，支持模块依赖注入。
 
-在进行具体的配置之前，先要了解这个产品的介绍，如使用环境，System.xml是什么，这个项目的目录结构是如何构成的，都有哪些可用的模块等。也了解这些，请把<<产品介绍>>目录下的所有教程先通读一遍!
+在进行具体的配置之前，先要了解这个产品的介绍，如使用环境，System.xml 是什么，这个项目的目录结构是如何构成的，都有哪些可用的模块等。也了解这些，请把<<产品介绍>>目录下的所有教程先通读一遍!
 
 ## 本培训教程的目录结构说明(张婷)
-1. 产品介绍 
-2. 控件一览
-3. 数据一览
-4. 模块一览
-5. 事件一览
 
+1. 产品介绍 [详细说明](https://github.com/troncell/SensingPlatformDocs/tree/master/docs/%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D)
+2. 控件一览 [详细说明](https://github.com/troncell/SensingPlatformDocs/tree/master/docs/%E6%8E%A7%E4%BB%B6%E4%B8%80%E8%A7%88)
+3. 数据一览 [详细说明](https://github.com/troncell/SensingPlatformDocs/tree/master/docs/%E6%95%B0%E6%8D%AE%E4%B8%80%E8%A7%88)
+4. 模块一览 [详细说明](https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E6%A8%A1%E5%9D%97%E4%B8%80%E8%A7%88/InputManager%E5%8C%85%E4%B8%AD%E6%A8%A1%E5%9D%97.md)
+5. 事件一览[详细说明](https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E4%BA%8B%E4%BB%B6%E4%B8%80%E8%A7%88/README.md)
 
-
-## UI控件介绍一栏
+## UI 控件介绍一栏
 
 <table>
     <tr style="font-weight: bold">
@@ -324,21 +324,49 @@ SensingPlatform 是居于 Windows 平台的一套低代码平台，采用 Xml �
     </tr>
 </table>
 
-## Data数据源一栏
+## Data 数据源一栏
 
-需要继续完善(张婷)
+| 数据源            | 名称         | 描述                                                              | 使用说明                                                                                                                            |
+| ----------------- | ------------ | ----------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| ExcelData         | excel 表格   | 主要用 Excel 配置数据源，通过表格可以拿到配置的数据               | [详细说明](https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E6%95%B0%E6%8D%AE%E4%B8%80%E8%A7%88/ExcelData.md)         |
+| DbData            | 数据库       | 主要用于配置数据库中的数据，通过数据库可以拿到动态的数据          | [详细说明](https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E6%95%B0%E6%8D%AE%E4%B8%80%E8%A7%88/DbData.md)            |
+| CameraData        | 摄像头       | 主要用于显示 VCA 摄像头的实时数据和签名的互动数据                 | [详细说明](https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E6%95%B0%E6%8D%AE%E4%B8%80%E8%A7%88/CameraData.md)        |
+| ExcelTimeLineData | 时间轴表格   | 主要用 Excel 配置数据源，ExcelTimeLineData 仅作用于配置时间轴控件 | [详细说明](https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E6%95%B0%E6%8D%AE%E4%B8%80%E8%A7%88/ExcelTimeLineData.md) |
+| TimeLineData      | 时间轴数据库 | 主要用于配置数据库中的数据，TimeLineData 仅作用于配置时间轴控件   | [详细说明](https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E6%95%B0%E6%8D%AE%E4%B8%80%E8%A7%88/TimeLineData.md)      |
+| FolderData        | 文件夹       | 主要用于配置文件夹中的文件作为数据源                              | [详细说明](https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E6%95%B0%E6%8D%AE%E4%B8%80%E8%A7%88/FolderData.md)        |
+| XmlData           | Xml          | 主要用 Xml 作为数据源                                             | [详细说明](https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E6%95%B0%E6%8D%AE%E4%B8%80%E8%A7%88/XmlData.md)           |
 
-## Device协议层一览
+## Device 协议层一览
 
-需要继续完善(张婷)
+| 协议           | 描述                      | 使用说明                                                                                                                                                           |
+| -------------- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| UdpServerInput | 接受和发送 Udp 协议的消息 | [详细说明](https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E6%A8%A1%E5%9D%97%E4%B8%80%E8%A7%88/InputManager%E5%8C%85%E4%B8%AD%E6%A8%A1%E5%9D%97.md) |
+| TcpServerInput | 接受和发送 Tcp 协议的消息 | [详细说明](https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E6%A8%A1%E5%9D%97%E4%B8%80%E8%A7%88/InputManager%E5%8C%85%E4%B8%AD%E6%A8%A1%E5%9D%97.md) |
+| SerialInput    | 串口交互                  | [详细说明](https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E6%A8%A1%E5%9D%97%E4%B8%80%E8%A7%88/InputManager%E5%8C%85%E4%B8%AD%E6%A8%A1%E5%9D%97.md) |
+
+## 事件一览
+
+| 事件                | 描述                 | 使用说明                                                                                                                 |
+| ------------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| Navigate            | 导航事件             | [详细说明](https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E4%BA%8B%E4%BB%B6%E4%B8%80%E8%A7%88/README.md) |
+| ClosePopup          | 关闭指定弹框         | [详细说明](https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E4%BA%8B%E4%BB%B6%E4%B8%80%E8%A7%88/README.md) |
+| PopupEvent          | 弹出框               | [详细说明](https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E4%BA%8B%E4%BB%B6%E4%B8%80%E8%A7%88/README.md) |
+| ChangePopupState    | 修改 PopupShow 状态  | [详细说明](https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E4%BA%8B%E4%BB%B6%E4%B8%80%E8%A7%88/README.md) |
+| ChangeWebViewSource | 修改 webbview 的路径 | [详细说明](https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E4%BA%8B%E4%BB%B6%E4%B8%80%E8%A7%88/README.md) |
+| IndexChanged        | 切上一张或下一张图片 | [详细说明](https://github.com/troncell/SensingPlatformDocs/blob/master/docs/%E4%BA%8B%E4%BB%B6%E4%B8%80%E8%A7%88/README.md) |
 
 ## 组件层配置说明
 
-需要继续完善(张婷)
+在 TronSensingShow.dll.config 文件中appSettings模块设置
+
+| key          | value      | 描述                                                                                 |
+| ------------ | ---------- | ------------------------------------------------------------------------------------ |
+| ProjectFolde | shell      | 项目主配置文件夹名称                                                                 |
+| IsUseWebView | True       | 是否使用 Webview                                                                     |
+| FFmpegFolder | C:\\ffmpeg | 如果要支持 ffmpeg 的视频支持的控件，需要把对应的 ffmpeg 版本拷贝到 c:\\ffmpeg 目录下 |
 
 # 配置实践(张婷)
 
-当您完成上面所有的教程后，您就可以自己尝试配置互动软件程序了，当然可以边学边实践，同时在公司的bilibili上也有很多视频的配置教程，可进行学习。具体的视频如下：
+当您完成上面所有的教程后，您就可以自己尝试配置互动软件程序了，当然可以边学边实践，同时在公司的 bilibili 上也有很多视频的配置教程，可进行学习。具体的视频如下：
 
 配置结构 https://ddasdfasdfasdfasdfasdf
-

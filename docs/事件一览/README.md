@@ -171,7 +171,7 @@ TargetControlName：目标 PopupShowElement
 
 SourcePath：web资源路径
 
-### 6.IndexChanged（切上一页或下一页图片）
+### 6.IndexChanged（切上一张或下一张图片）
 
 ```xml
 <ImageButton Name="left">
