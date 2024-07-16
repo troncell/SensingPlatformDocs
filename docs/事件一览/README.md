@@ -169,7 +169,7 @@ TargetPageName：目标页面
 
 TargetControlName：目标 PopupShowElement
 
-SourcePath：资源路径
+SourcePath：web资源路径
 
 ### 6.IndexChanged（切上一页或下一页图片）
 
@@ -196,6 +196,6 @@ TargetControlName：目标 PopupShowElement
 
 Index：跳转到具体某一页面
 
-Next：下一页
+Next：下一张图片
 
-Pre：前一页
+Pre：前一张图片
