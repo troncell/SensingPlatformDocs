@@ -11,7 +11,7 @@ Action?key1=value1&key2=value2
 
 **2. TargetControl=flipViewList : 表示配置的事件会触发给特定的UI控件，同时该组件有能力处理此事件，详细说明查看控件的具体配置** 
 
-**3. UriKind= : 表示配置的事件，会用到文件或者路径之类的参数，用于定于获取文件的路径方式，Relative(相对当前控件的目录，如有Name的话，会有对应的文件夹),Application(程序的启动目录),Project(具体工程目录，默认为Shell的文件夹下** 
+**3. UriKind=Project : 表示配置的事件，会用到文件或者路径之类的参数，用于定于获取文件的路径方式，Relative(相对当前控件的目录，如有Name的话，会有对应的文件夹),Application(程序的启动目录),Project(具体工程目录，默认为Shell的文件夹下** 
 
 **4. ImageSource=trocell_logo.png : 表示配置的事件会用到图片，通常和UriKind参数一起使用，用于改变图片的显示，具体业务要去对应的控件上参考具体的配置功能，ImageElement就支持** 
 
