@@ -9,13 +9,17 @@ Action?key1=value1&key2=value2
 
 **1. EDelay=1000 : 表示配置的事件会延时1000ms(毫秒)=1秒，触发该事件** 
 
-**2. TargetControl=flipViewList : 表示配置的事件会触发给特定的UI控件，同时该组件有能力处理此事件，详细说明查看控件的具体配置** 
+**2. TargetControlName=flipViewList : 表示配置的事件会触发给特定的UI控件，同时该组件有能力处理此事件，详细说明查看控件的具体配置** 
 
-**3. UriKind=Project : 表示配置的事件，会用到文件或者路径之类的参数，用于定于获取文件的路径方式，Relative(相对当前控件的目录，如有Name的话，会有对应的文件夹),Application(程序的启动目录),Project(具体工程目录，默认为Shell的文件夹下** 
+**3. TargetPageName=flipViewList : 表示配置的事件会触发给特定的页面，同时该组件有能力处理此事件，详细说明查看控件的具体配置** 
 
-**4. ImageSource=trocell_logo.png : 表示配置的事件会用到图片，通常和UriKind参数一起使用，用于改变图片的显示，具体业务要去对应的控件上参考具体的配置功能，ImageElement就支持** 
+**4. TargetDataSource=excelData : 表示配置的事件会触发给特定的数据源，同时该组件有能力处理此事件，详细说明查看控件的具体配置** 
 
-**5. PathSource=troncell : 表示配置的事件会用到文件夹下的资源，通常和UriKind参数一起使用，用于改变资源的显示，具体业务要去对应的控件上参考具体的配置功能，FrameElement就支持** 
+**5. UriKind=Project : 表示配置的事件，会用到文件或者路径之类的参数，用于定于获取文件的路径方式，Relative(相对当前控件的目录，如有Name的话，会有对应的文件夹),Application(程序的启动目录),Project(具体工程目录，默认为Shell的文件夹下** 
+
+**6. ImageSource=trocell_logo.png : 表示配置的事件会用到图片，通常和UriKind参数一起使用，用于改变图片的显示，具体业务要去对应的控件上参考具体的配置功能，ImageElement就支持** 
+
+**7. PathSource=troncell : 表示配置的事件会用到文件夹下的资源，通常和UriKind参数一起使用，用于改变资源的显示，具体业务要去对应的控件上参考具体的配置功能，FrameElement就支持** 
 
 
 > [!WARNING]
