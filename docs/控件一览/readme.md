@@ -2,6 +2,48 @@
   一个基础的UI控件，一般由以下的几个通用的配置项组成:
   1. UIDisplay，必须项， 用于控制UI加载的位置相关的信息
   2. Transitions 可选项，用于控制UI加载的动画部分
+      BackEase
+      
+      模拟倒退效果，即动画开始或结束时先倒退一小段距离，然后再往前。
+      具有 Amplitude 属性，控制倒退的幅度。
+      BounceEase
+      
+      模拟弹跳效果。
+      具有 Bounces 属性，控制弹跳次数。
+      具有 Bounciness 属性，控制每次弹跳的弹性。
+      CircleEase
+      
+      模拟圆形曲线运动。
+      使用圆形运动的方式实现缓动效果。
+      CubicEase
+      
+      模拟立方曲线运动。
+      使用立方曲线实现缓动效果。
+      ElasticEase
+      
+      模拟弹性运动。
+      具有 Oscillations 属性，控制振荡次数。
+      具有 Springiness 属性，控制弹性系数。
+      ExponentialEase
+      
+      模拟指数曲线运动。
+      具有 Exponent 属性，控制指数的大小。
+      QuadraticEase
+      
+      模拟二次方曲线运动。
+      使用二次方曲线实现缓动效果。
+      QuarticEase
+      
+      模拟四次方曲线运动。
+      使用四次方曲线实现缓动效果。
+      QuinticEase
+      
+      模拟五次方曲线运动。
+      使用五次方曲线实现缓动效果。
+      SineEase
+      
+      模拟正弦曲线运动。
+      使用正弦曲线实现缓动效果。
   3. DataProvider 可选项，用户控制UI展示的数据源，
   4. CustomerConfig 可选项, 用于控制UI具体的表现形式的参数，每个控件都不太一样，详细参考每个特定的控件的配置
 ```xml
@@ -38,7 +80,7 @@
           From: 动画起始值，如Translate Scale 时格式为"x,y"，x和y为数值,如果是Color类型，格式为"#FF0000" 或者"#FF000000" ，如果是Fade时，格式为"0.1" 表示透明度，0表示全透明   
           To: 动画结束值，如Translate Scale 时格式为"x,y"，x和y为数值,如果是Color类型，格式为"#FF0000" 或者"#FF000000" ，如果是Fade时，格式为"1" 表示不透明，1表示全不透明
           TransitionOn: 动画触发时机，目前支持的触发时机有：Once,OnLoaded, DataContextChanged,Visibility
-          Ease: 动画缓动效果，目前支持的缓动效果有：Linear, Quadratic, Cubic, Quartic, Quintic, Sinusoidal, Exponential, Circular, Elastic, Back, Bounce
+          Ease: 动画缓动效果，目前支持的缓动效果有：LinearEase, QuadraticEase, CubicEase, QuarticEase, QuinticEase, SinusoidalEase, ExponentialEase, CircleEase, ElasticEase, BackEase, BounceEase,SineEase
           ReverseEase: 动画反向缓动效果，目前支持的缓动效果有：Linear, Quadratic, Cubic, Quartic, Quintic, Sinusoidal, Exponential, Circular, Elastic, Back, Bounce
           Fill: 动画结束后的状态，目前支持的状态有：HoldEnd, Stop
           AutoReverse: 动画是否自动反向播放，目前支持的状态有：True, False
