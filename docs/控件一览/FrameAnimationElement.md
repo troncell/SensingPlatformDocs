@@ -28,8 +28,9 @@
         <!-- Frame控制帧率:
           Interval: 帧率间隔，单位ms
           Repeat: 重复次数，Forever表示无限循环
+          AutoPlay:是否加载后自动播放动画，默认是自动播放 
            -->
-        <Frame Interval="50" Repeat="1" />
+        <Frame Interval="50" Repeat="1" AutoPlay="False" />
       </CustomerConfig>
     </FrameAnimationElement>
 ```
@@ -37,6 +38,10 @@
 ## 配置说明
 
 详细的配置说明，请参照配置样例中的注释文件
+
+## 支持的事件
+
+Control事件，用于控制动画的播放，暂停以及停止，如 Action=Play/Pause/Stop
 
 ## UIControlDict.xml 添加飞图控件
 
