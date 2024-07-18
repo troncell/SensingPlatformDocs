@@ -125,6 +125,35 @@ State=Pin 固定弹窗，不可移动
 
 State=Unpin 弹窗取消固定，可以移动
 
+
+### 6. Control（控制事件，一般用户控制动画，视频，PPT等播放和翻页之类的）
+
+```xml
+<ImageButton Name="left">
+	<UIDisplay Left="77" Top="470" Width="27" Height="51" IsShow="True" ZIndex="4" UsePercent="False" />
+	<ImageSource UriKind="Application">Shell\Pages\qiyePage\resource\箭头2.png</ImageSource>
+	<!--
+	Control是个通用的事件，很多组件都可以处理此类事件，如动画帧组件，视频组件等
+	Action: 控制的具体操作，如播放(Play),停止(Stop), 暂停(Pause),往前(Prev),往后（Next),特定位置(Index)等。
+	-->
+	<ClickEvent>Control?Action=Play&Index=0&IndexString=Pre&TargetControlName=imageButton</ClickEvent>
+</ImageButton>
+```
+
+**说明**
+
+IndexChanged：响应方式（跳转对应索引图片）
+
+TargetPageName：：目标页面
+
+TargetControlName：目标 PopupShowElement
+
+Index：跳转到具体某一页面
+
+Next：下一张图片
+
+Pre：前一张图片
+
 ### 5.ChangeWebViewSource(修改 webbview 的路径)
 
 ```xml
