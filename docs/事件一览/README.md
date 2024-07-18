@@ -23,7 +23,7 @@ Action?key1=value1&key2=value2
 
 ## 平台事件可以在 ImageButton 下的 ClickEvent 下配置
 
-### 1. Navigate (导航事件)
+### Navigate (导航事件)
 
 Navigate:点击图片，可以跳转到指定页面,此节点是按钮点击后触发事件的核心，也是框架配置项的核心。
 
@@ -46,32 +46,7 @@ Navigate 为响应方式（页面跳转）
 
 Page=StarPWallPageA 就是所跳到的目标页面；
 
-### 2.ClosePopup（关闭指定弹框）
-
-**样例：**
-
-```xml
-  <ImageButton>
-      <UIDisplay Left="0" Top="130" Width="373" Height="111" IsShow="True" ZIndex="4" UsePercent="False" />
-      <ImageSource UriKind="Application">Shell\Pages\daoshiPage\img\Search.png</ImageSource>
-      <ClickEvent>
-        <Event>ClosePopup?TargetPageName=HomePage&TargetControlName=StorePop&EffectName=ScaleClose&EventID=Store&UriKind=Application&EventPath=Shell\Pages\HomePage\CategoryPopItems&Filter=[LargeClassId={$Id}]</Event>
-        <Event>PopupEvent?TargetPageName=HomePage&TargetControlName=CategoryPop&EffectName=ScaleClose&EventID=SeachStore&UriKind=Application&EventPath=Shell\Pages\HomePage\CategoryPopItems&C={$Id}</Event>
-      </ClickEvent>
-    </ImageButton>
-```
-
-**说明：**
-
-ClosePopup:是响应方式（可以关闭目标页的弹窗）
-
-TargetPageName：目标页面
-
-TargetControlName：目标 PopupShowElement
-
-EventID：为所要使用到的悬浮控件的模板,对应要关闭的弹窗 ID
-
-### 3.PopupEvent（弹出框）
+### PopupEvent（弹出框）
 
 ```xml
 <ImageButton>
@@ -104,6 +79,33 @@ IsAllowMove：弹出框允许移动
 
 IsAllowRotate：弹出框允许旋转
 
+### ClosePopup（关闭指定弹框）
+
+**样例：**
+
+```xml
+  <ImageButton>
+      <UIDisplay Left="0" Top="130" Width="373" Height="111" IsShow="True" ZIndex="4" UsePercent="False" />
+      <ImageSource UriKind="Application">Shell\Pages\daoshiPage\img\Search.png</ImageSource>
+      <ClickEvent>
+        <Event>ClosePopup?TargetPageName=HomePage&TargetControlName=StorePop&EffectName=ScaleClose&EventID=Store&UriKind=Application&EventPath=Shell\Pages\HomePage\CategoryPopItems&Filter=[LargeClassId={$Id}]</Event>
+        <Event>PopupEvent?TargetPageName=HomePage&TargetControlName=CategoryPop&EffectName=ScaleClose&EventID=SeachStore&UriKind=Application&EventPath=Shell\Pages\HomePage\CategoryPopItems&C={$Id}</Event>
+      </ClickEvent>
+    </ImageButton>
+```
+
+**说明：**
+
+ClosePopup:是响应方式（可以关闭目标页的弹窗）
+
+TargetPageName：目标页面
+
+TargetControlName：目标 PopupShowElement
+
+EventID：为所要使用到的悬浮控件的模板,对应要关闭的弹窗 ID
+
+
+
 ### 4.ChangePopupState（修改 PopupShow 状态）
 
 ```xml
@@ -126,7 +128,7 @@ State=Pin 固定弹窗，不可移动
 State=Unpin 弹窗取消固定，可以移动
 
 
-### 6. Control（控制事件，一般用户控制动画，视频，PPT等播放和翻页之类的）
+### Control（控制事件，一般用户控制动画，视频，PPT等播放和翻页之类的）
 
 ```xml
 <ImageButton Name="left">
@@ -154,7 +156,7 @@ Next：下一张图片
 
 Pre：前一张图片
 
-### 5.ChangeWebViewSource(修改 webbview 的路径)
+### ChangeWebViewSource(修改 webbview打开的html页面地址)
 
 ```xml
   <CameraData Name="CameraLocalData">
@@ -200,7 +202,7 @@ TargetControlName：目标 PopupShowElement
 
 SourcePath：web资源路径
 
-### 6.IndexChanged（切上一张或下一张图片）
+### IndexChanged（位置变化事件，如切上一张，下一张图片或者特定位置的图片）
 
 ```xml
 <ImageButton Name="left">
