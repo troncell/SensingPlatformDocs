@@ -106,7 +106,7 @@ EventID：为所要使用到的悬浮控件的模板,对应要关闭的弹窗 ID
 
 
 
-### 4.ChangePopupState（修改 PopupShow 状态）
+### ChangePopupState（修改 PopupShow 状态）
 
 ```xml
 
@@ -155,6 +155,33 @@ Index：跳转到具体某一页面
 Next：下一张图片
 
 Pre：前一张图片
+
+### SourceChanged(展示源变化事件 用于改变图片，视频，帧动画文件夹，页面地址等的切换)
+
+```xml
+  <ImageButton Name="left">
+	<UIDisplay Left="77" Top="470" Width="27" Height="51" IsShow="True" ZIndex="4" UsePercent="False" />
+	<ImageSource UriKind="Application">Shell\Pages\qiyePage\resource\箭头2.png</ImageSource>
+	<!--
+	SourceChanged:是个通用的事件，很多组件都可以处理此类事件，如ImageElement,ImageButtonElement等
+	UriKind: 找图片的途径参数，如Project，Application等。
+	ImageSource: 新图片资源的地址，用于改变图片的控件
+	VideoSource: 新视频资源的地址，用于改变视频的控件
+	PathSource: 新文件夹的地址，用于需要文件夹的控件
+	-->
+	<ClickEvent>SourceChanged?UriKind=Project&TargetControlName=imageButton&ImageSource=Page\HomePage\CheckBg.png</ClickEvent>
+</ImageButton>
+```
+
+**说明**
+
+ChangeWebViewSource:响应方式（修改 webview 资源）
+
+TargetPageName：目标页面
+
+TargetControlName：目标 PopupShowElement
+
+SourcePath：web资源路径
 
 ### ChangeWebViewSource(修改 webbview打开的html页面地址)
 
