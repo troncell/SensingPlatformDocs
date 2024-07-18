@@ -38,6 +38,10 @@ ImageElement>是相对于整个 demo 的路径
 
 是相对于当前 xml 文件所在的相对路径下的文件夹，此文件是与当前 xml 文件同级文件夹下
 
+## 可接受的事件
+
+1. SourceChanged, 用户动态变更此ImageElement的图片
+
 # UIControlDict.xml 添加图片控件
 
 如果使用图片控件则需要在 UIControlDict.xml 中添加图片控件
