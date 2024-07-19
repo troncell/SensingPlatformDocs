@@ -7,7 +7,7 @@
 
 ## 控件 UI 效果
 
-<iframe height=498 width=510 src="https://sensingstore.oss-cn-shanghai.aliyuncs.com/Troncell/SensingPlatfrom/FrameAnimation1.mp4">
+<video src="https://sensingstore.oss-cn-shanghai.aliyuncs.com/Troncell/SensingPlatfrom/FrameAnimation1.mp4" />
 
 
 ## 配置文件样例
