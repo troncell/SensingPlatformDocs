@@ -7,7 +7,9 @@
 
 ## 控件 UI 效果
 
-![Placeholder](../images/album_1.png)
+![Placeholder](https://sensingstore.oss-cn-shanghai.aliyuncs.com/Troncell/SensingPlatfrom/FrameAnimation1.mp4)
+
+
 
 ## 配置文件样例
 
