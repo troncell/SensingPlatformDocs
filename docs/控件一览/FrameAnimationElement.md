@@ -7,8 +7,6 @@
 
 ## 控件 UI 效果
 
-![输入图片说明](https://sensingstore.oss-cn-shanghai.aliyuncs.com/Troncell/SensingPlatfrom/FrameAnimation1.gif)
-
 ![输入图片说明](https://sensingstore.oss-cn-shanghai.aliyuncs.com/Troncell/SensingPlatfrom/FrameAnimation2.gif)
 
 ## 配置文件样例
