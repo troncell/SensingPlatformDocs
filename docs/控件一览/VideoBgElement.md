@@ -3,8 +3,8 @@
 ## 控件说明
 
 此控件用于循环播放视频，采用了 ffpmeg 组件的界面能力，先确保程序的根目录下的 ffpmeg 下有相应的文件，，解决了 WPF 本身 VideoPlayer 的过度闪烁的问题，一般作为背景的动画使用
->[notice}
->确保主程序的配置文件启用了ffpmeg能力，在TronSensingShow.dll.config种修改
+>[!WARNING]
+>确保主程序的配置文件启用了ffpmeg能力，在TronSensingShow.dll.config种修改， IsUseFFmpeg的值为True
 ```xml
   <appSettings>
     <add key="ProjectFolder" value="Shell"/>
@@ -35,6 +35,10 @@
 ```xml
 <VideoBgElement Name="bgVideo">
     <UIDisplay Left="900" Top="0" Width="960" Height="540" IsShow="True" ZIndex="1" UsePercent="False" />
+    <!-- 视频文件的地址，跟ImageSource的配置一样，
+    UriKind：视频文件的跟目录类型，是居于Application的，还是居于Project项目的文件夹，或者是Absolute的绝对目录
+    里面的值为具体的视频文件，确保视频文件是存在的
+    -->
     <VideoSource UriKind="Application">Shell\Pages\HomePage\Resources\report-bg.mp4</VideoSource>
 </VideoBgElement>
 ```
