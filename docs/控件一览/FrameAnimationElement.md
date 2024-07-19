@@ -7,8 +7,9 @@
 
 ## 控件 UI 效果
 
-<video src="https://sensingstore.oss-cn-shanghai.aliyuncs.com/Troncell/SensingPlatfrom/FrameAnimation1.mp4" />
+![输入图片说明](https://sensingstore.oss-cn-shanghai.aliyuncs.com/Troncell/SensingPlatfrom/FrameAnimation1.gif")
 
+![输入图片说明](https://sensingstore.oss-cn-shanghai.aliyuncs.com/Troncell/SensingPlatfrom/FrameAnimation2.gif")
 
 ## 配置文件样例
 
