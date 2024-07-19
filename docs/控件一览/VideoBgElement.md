@@ -2,8 +2,20 @@
 
 ## 控件说明
 
-此控件用于循环播放视频，采用了 ffpmeg 组件的界面能力，先确保程序的根目录下的 ffpmeg 下有相应的文件，解决了 WPF 本身 VideoPlayer 的过度闪烁的问题，一般作为背景的动画使用
-
+此控件用于循环播放视频，采用了 ffpmeg 组件的界面能力，先确保程序的根目录下的 ffpmeg 下有相应的文件，，解决了 WPF 本身 VideoPlayer 的过度闪烁的问题，一般作为背景的动画使用
+>[notice}
+>确保主程序的配置文件启用了ffpmeg能力，在TronSensingShow.dll.config种修改
+```xml
+  <appSettings>
+    <add key="ProjectFolder" value="Shell"/>
+    <add key="IsUseWebView" value="True"/>
+    <add key="IsUseFFmpeg" value ="True"/>
+    <add key="FFmpegFolder" value="C:\\ffmpeg"/>
+    <add key="ProductName" value="SensingPlatform Main"/>
+    <add key="ProjectName" value="SensingPlatform Main"/>
+    <add key="SensingSiteUrl" value="http://58.214.31.206:2015/api/"/>
+  </appSettings>
+```
 ## 控件 UI 效果
 
 ![Placeholder](../images/PerspectiveWallElement.gif)
