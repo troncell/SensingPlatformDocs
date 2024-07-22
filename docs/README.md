@@ -363,7 +363,9 @@ SensingPlatform 是居于 Windows 平台的一套低代码平台，采用 Xml �
 | ------------ | ---------- | ------------------------------------------------------------------------------------ |
 | ProjectFolde | shell      | 项目主配置文件夹名称                                                                 |
 | IsUseWebView | True       | 是否使用 Webview                                                                     |
-| FFmpegFolder | C:\\ffmpeg | 如果要支持 ffmpeg 的视频支持的控件，需要把对应的 ffmpeg 版本拷贝到 c:\\ffmpeg 目录下 |
+|IsUseFFmpeg   |True        |是否使用FFmpeg的视频支持的控件                                                          |
+| FFmpegFolder | C:\\ffmpeg | 要把对应的 ffmpeg 版本拷贝到 c:\\ffmpeg 目录下                                         |
+|ProjectName   |SensingPlatform Main|项目名称                                                                      |
 
 # 配置实践(张婷)
 
