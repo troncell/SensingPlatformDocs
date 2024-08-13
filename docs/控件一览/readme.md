@@ -84,22 +84,22 @@
       <ClickEvent>ToDeviceDataEvent?Id=001&amp;Protocol=TCP&amp;Data=11050000FF008EAA&amp;IsHex=True</ClickEvent>
       <Transitions>
         <!-- Transition的配置说明:
+          Name: 动画名称，用于唯一标识一个动画,可不配置，如果配置的话，必须唯一，主要用户动画的控制，可通过事件进行控制，事件为Transition?TargetControlName=animation&TransitionName=move&Action=Play&Reverse=True
           Type: 动画类型，目前支持的动画类型有：Translate, Scale, Rotate, Fade, Color
           Delay: 动画延迟时间，单位为毫秒
           Duration: 动画持续时间，单位为毫秒
           From: 动画起始值，如Translate Scale 时格式为"x,y"，x和y为数值,如果是Color类型，格式为"#FF0000" 或者"#FF000000" ，如果是Fade时，格式为"0.1" 表示透明度，0表示全透明   
           To: 动画结束值，如Translate Scale 时格式为"x,y"，x和y为数值,如果是Color类型，格式为"#FF0000" 或者"#FF000000" ，如果是Fade时，格式为"1" 表示不透明，1表示全不透明
           TransitionOn: 动画触发时机，目前支持的触发时机有：Once,OnLoaded, DataContextChanged,Visibility
-          Ease: 动画缓动效果，目前支持的缓动效果有：LinearEase, QuadraticEase, CubicEase, QuarticEase, QuinticEase, SinusoidalEase, ExponentialEase, CircleEase, ElasticEase, BackEase, BounceEase,SineEase
-                动画参考地址：https://easings.net/#
+          Ease: 动画缓动效果，目前支持的缓动效果有：Linear, Quadratic, Cubic, Quartic, Quintic, Sinusoidal, Exponential, Circular, Elastic, Back, Bounce
           ReverseEase: 动画反向缓动效果，目前支持的缓动效果有：Linear, Quadratic, Cubic, Quartic, Quintic, Sinusoidal, Exponential, Circular, Elastic, Back, Bounce
           Fill: 动画结束后的状态，目前支持的状态有：HoldEnd, Stop
           AutoReverse: 动画是否自动反向播放，目前支持的状态有：True, False
           Repeat: 动画重复次数，目前支持的状态有：Forever, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
          -->
-        <Transition Type="Translate" Delay="100" Duration="1000" From='-10,-10' To="0,0" TransitionOn="Loaded" Easing="BackEase,EaseIn,1.0" ReverseEasing="BackEase,EaseIn,1.0" Fill="Stop" AutoReverse="True" Repeat="Forever" />
- <!-- <Transition Type="Scale" Delay="100" Duration="1000" From='0.8,0.8' To="1.2,1.2" TransitionOn="Loaded" Easing="BackEase,EaseIn,1.0" ReverseEasing="BackEase,EaseIn,1.0" Fill="Stop" AutoReverse="True" Repeat="Forever" /> -->
-        <!-- <Transition Type="Fade" Delay="0" Duration="2000" From='0.0' To="1.0" TransitionOn="Loaded" Easing="Linear,EaseIn,1.0" ReverseEasing="Linear,EaseIn,1.0" Fill="HoldEnd" AutoReverse="True" Repeat="Forever" /> -->
+        <Transition Name="move" Type="Translate" Delay="0" Duration="1000" From='0,0' To="300,0" TransitionOn="Loaded" Easing="CircularEase,EaseIn,1.0" ReverseEasing="BackEase,EaseIn,1.0" Fill="HoldEnd" AutoReverse="False" Repeat="1" />
+        <Transition Type="Scale" Delay="100" Duration="1000" From='0.8,0.8' To="1.2,1.2" TransitionOn="Loaded" Easing="Linear,EaseIn,1.0" ReverseEasing="Linear,EaseIn,1.0" Fill="Stop" AutoReverse="True" Repeat="Forever" />
+        <Transition Type="Fade" Delay="0" Duration="1000" From='0.0' To="1.0" TransitionOn="Loaded" Easing="Linear,EaseIn,1.0" ReverseEasing="Linear,EaseIn,1.0" Fill="HoldEnd" AutoReverse="False" Repeat="1" />
       </Transitions>
       <CustomerConfig>
         <!--是针对此UI控件的一些特殊的配置，每个控件都不一样，详细参照每个UI控件的详细配置说明 -->
