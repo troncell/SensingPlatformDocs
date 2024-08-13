@@ -201,13 +201,7 @@ SourcePath：web资源路径
 
 **说明**
 
-ChangeWebViewSource:响应方式（修改 webview 资源）
-
-TargetPageName：目标页面
-
-TargetControlName：目标 PopupShowElement
-
-SourcePath：web资源路径
+见注释说明
 
 ### ChangeWebViewSource(修改 webbview打开的html页面地址)
 
