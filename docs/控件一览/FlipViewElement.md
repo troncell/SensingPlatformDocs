@@ -75,6 +75,18 @@
 
     	Orientation:Horizontal(水平滑动)\Vertical(垂直滑动)
 
+		IsLoop : True\False 是否循环播放
+
+		SelectedIndex：默认为0 默认选中项
+		
+		CanAutoPlay：True\False 是否自动播放
+
+		IdleTime ： 10000 默认10秒，自动播放时间间隔
+
+		PageReload：True\False 是否在翻页时重新加载
+
+
+
 # UIControlDict.xml 添加卡片型滑块控件
 
 如果使用卡片型滑块控件则需要在 UIControlDict.xml 中添加卡片型滑块控件

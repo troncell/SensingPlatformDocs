@@ -18,6 +18,8 @@ Action?key1=value1&key2=value2
 
 **5. PathSource=troncell : 表示配置的事件会用到文件夹下的资源，通常和 UriKind 参数一起使用，用于改变资源的显示，具体业务要去对应的控件上参考具体的配置功能，FrameElement 就支持**
 
+**6. Loop=2 : 表示该事件会循环调用一定次数，如果想要一直循环下去，就使用Loop=-1，如果想要停止这个循环，那就在任意事件后面加上StopLoop=True**
+
 > [!WARNING]
 > 这些全局的 Key 不要在特定事件中用同样的 Key 名称
 
