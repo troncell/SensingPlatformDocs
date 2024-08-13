@@ -183,6 +183,32 @@ TargetControlName：目标 PopupShowElement
 
 SourcePath：web资源路径
 
+### Transition(用户控制控件的动画，目前仅支持Translate位移动画的控制，若项目需要联系开发)
+
+```xml
+  <ImageButton Name="left">
+	<UIDisplay Left="77" Top="470" Width="27" Height="51" IsShow="True" ZIndex="4" UsePercent="False" />
+	<ImageSource UriKind="Application">Shell\Pages\qiyePage\resource\箭头2.png</ImageSource>
+	<!--
+	Transition:是个通用的事件，所有的框架提供的组件都支持，自己居于wpf写的组件不支持
+	TransitionName: 对应组件的具体的Transition的名字，用于控制特定的动画。
+	Action: 播放动画，目前仅支持播放，可以不配置
+	Reverse: 动画中的开始位置和结束位置是否调换，这样的话，一个transiton就能事件实现往复运动
+	-->
+	<Event>Transition?TargetControlName=animation&amp;TransitionName=move&amp;Action=Play&amp;Reverse=True</Event>
+</ImageButton>
+```
+
+**说明**
+
+ChangeWebViewSource:响应方式（修改 webview 资源）
+
+TargetPageName：目标页面
+
+TargetControlName：目标 PopupShowElement
+
+SourcePath：web资源路径
+
 ### ChangeWebViewSource(修改 webbview打开的html页面地址)
 
 ```xml
