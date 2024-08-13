@@ -20,6 +20,8 @@ Action?key1=value1&key2=value2
 
 **6. Loop=2 : 表示该事件会循环调用一定次数，如果想要一直循环下去，就使用Loop=-1，如果想要停止这个循环，那就在任意事件后面加上StopLoop=True**
 
+**7. Async=true : 表示该事件是异步发送的，一般是发送一些事件给后台的模块；false则是发给UI线程，是发给UI控件的，不配置默认是false**
+
 > [!WARNING]
 > 这些全局的 Key 不要在特定事件中用同样的 Key 名称
 
@@ -102,7 +104,7 @@ ClosePopup:是响应方式（可以关闭目标页的弹窗）
 
 TargetPageName：目标页面
 
-TargetControlName：目标 PopupShowElement
+TargetControlName：目标 PopupShowElement ， 如果TargetControlName=ALL，那么就可以关闭对应页面所有的PopupShow
 
 EventID：为所要使用到的悬浮控件的模板,对应要关闭的弹窗 ID
 
@@ -279,3 +281,14 @@ Index：跳转到具体某一页面
 Next：下一张图片
 
 Pre：前一张图片
+
+### ToDeviceDataEvent (发送数据到设备)
+```xml
+<Event>ToDeviceDataEvent?Id=001&amp;Protocol=UDP&amp;Data=right&amp;IsHex=False</Event>
+```
+说明
+Id : 设备ID或者命令的ID
+Protocol : 协议类型 UDP/TCP/SerialPort/SignalR
+Data : 发送的数据
+IsHex : 是否是16进制数据
+SubKey : 目标设备的Subkey
