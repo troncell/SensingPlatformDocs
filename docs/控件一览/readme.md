@@ -90,7 +90,7 @@
           Duration: 动画持续时间，单位为毫秒
           From: 动画起始值，如Translate Scale 时格式为"x,y"，x和y为数值,如果是Color类型，格式为"#FF0000" 或者"#FF000000" ，如果是Fade时，格式为"0.1" 表示透明度，0表示全透明   
           To: 动画结束值，如Translate Scale 时格式为"x,y"，x和y为数值,如果是Color类型，格式为"#FF0000" 或者"#FF000000" ，如果是Fade时，格式为"1" 表示不透明，1表示全不透明
-          TransitionOn: 动画触发时机，目前支持的触发时机有：Once,OnLoaded, DataContextChanged,Visibility
+          TransitionOn: 动画触发时机，目前支持的触发时机有：Program（仅事件控制，默认不播放),Once,OnLoaded, DataContextChanged,Visibility
           Ease: 动画缓动效果，目前支持的缓动效果有：Linear, Quadratic, Cubic, Quartic, Quintic, Sinusoidal, Exponential, Circular, Elastic, Back, Bounce
           ReverseEase: 动画反向缓动效果，目前支持的缓动效果有：Linear, Quadratic, Cubic, Quartic, Quintic, Sinusoidal, Exponential, Circular, Elastic, Back, Bounce
           Fill: 动画结束后的状态，目前支持的状态有：HoldEnd, Stop
