@@ -196,7 +196,7 @@ SourcePath：web资源路径
 	<!--
 	Transition:是个通用的事件，所有的框架提供的组件都支持，自己居于wpf写的组件不支持
 	TransitionName: 对应组件的具体的Transition的名字，用于控制特定的动画。
-	Action: 播放动画，目前仅支持播放，可以不配置
+	Action: 播放动画，目前仅支持播放与停止，Play/Stop
 	Reverse: 动画中的开始位置和结束位置是否调换，这样的话，一个transiton就能事件实现往复运动
 	-->
 	<Event>Transition?TargetControlName=animation&amp;TransitionName=move&amp;Action=Play&amp;Reverse=True</Event>

@@ -31,6 +31,13 @@ System.xml 文件在 Shell 的目录下，用于配置整个应用程序级别�
     <UIDisplay Left="0" Top="0" Width="1" Height="0.666" IsShow="True"  ZIndex="1" UsePercent="True"/>
   </CopyRegion>-->
   </Shell>
+    <!-- 音频节点，用于配置应用中的背景音乐 -->
+  <!-- 配置项说明：Name 别名，发送播放事件的时候用，IsDefault 是否为默认背景音乐，IsLoop 是否循环播放，UriKind 背景音乐的资源路径类型，值是文件路径
+ -->
+  <Audios>
+    <Audio Name="A" IsDefault="false" IsLoop="true" UriKind="Application">AudioSource/音频1.mp3</Audio>
+    <Audio Name="A" IsDefault="false" IsLoop="true" UriKind="Application">AudioSource/音频2.mp3</Audio>
+  </Audios>
   <!--InputDevice节点用于配置用户以何种方式操控CobonSensing应用
      1.目前可配置的参数为Mouse,Touch,NUI。默认方式为Touch
      2.如需要同时支持多种操作方式的话，配置项各单项的组合。例如：“Mouse|Touch|NUI”
