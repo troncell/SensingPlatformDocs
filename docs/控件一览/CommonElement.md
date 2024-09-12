@@ -26,7 +26,9 @@ IsHitTestVisible 是否可穿透它，点击层级低一点的控件，True 为�
 
 IsUseCache 控件是否缓存 True 是缓存，False 为不缓存
 
-其中很多为可选项，如 Opcity，IsHitTestVisible，IsUseCache 等。
+ClipToBounds 控件是否裁剪画布外的部分 True 为裁剪，False 为不裁剪
+
+其中很多为可选项，如 Opcity，IsHitTestVisible，IsUseCache，ClipToBounds 等。
 
 示例：
 

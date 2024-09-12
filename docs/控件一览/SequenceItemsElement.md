@@ -105,6 +105,8 @@ $$
 
     属性说明
 
+    IsCanTouch="True" 是否可以触摸滑动，值为True/False；
+
     IsCacheUI：是否预加载，值为True/False；
 
     IsAutoSweep：是否自动默认循环滑动，值为True/False；
@@ -114,7 +116,7 @@ $$
     MaxEllapsedTime：为进入自动滑动的时间，单位为毫秒(场景如下，一段时间无人操作后，进入自动滑动模式)；
 
     SweepDelta.X：左右移动的距离，单位为像素，负数为向左.
-        SweepDelta.Y：上下移动的距离，单位为像素，负数为向右.
+    SweepDelta.Y：上下移动的距离，单位为像素，负数为向右.
 
 # UIControlDict.xml 添加滑块控件
 
