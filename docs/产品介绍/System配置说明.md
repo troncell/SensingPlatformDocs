@@ -17,7 +17,7 @@ System.xml 文件在 Shell 的目录下，用于配置整个应用程序级别�
   <DebugMode Value="True" />
   <!--设置屏保时间以及屏保页面,时间的格式为 hh:mm:ss，屏保页面要在Page.xml中真实存在, ToPage用于配置有人在屏保模式下，有人互动进入的页面，如果ToPage没配，进入最后一个进入屏保的页面，如果配置了，直接进入固定的页面-->
   <ScreenSaver WaitingTime="00:00:20" SaverPage="ScreenPage" ToPage="WelcomePage">
-	<!--进入屏保执行的事件，可配置任意的事件和ImageButton的Click类似-->
+	<!--进入屏保执行的事件，可配置任意的事件和ImageButton的Click类似，可以配置多个Event-->
 	<Event>ToDeviceDataEvent?Id=001&Protocol=UDP&Data=right</Event>
   </ScreenSaver>
   <Shell>

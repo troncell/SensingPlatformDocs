@@ -2,7 +2,7 @@
 
 ## 控件作用
 
-一般作为一张透明图片，长按按钮三秒触发事件。
+一般作为一张透明图片，长按按钮三秒触发事件，可以配置序列帧，长按可以触发动画效果，动画效果结束触发事件。
 
 ## 控件 UI 效果
 
@@ -14,6 +14,7 @@
 
 <LongPressButton>
     <UIDisplay Left="0" Top="0" Width="300" Height="300" IsShow="True" ZIndex="4" UsePercent="False" Opacity="1"/>
+    <ImageSource UriKind="Project" Interval="20">Pages\HomePage\resource\圈\分离</ImageSource>
     <ClickEvent>Navigate?Page=HomePage</ClickEvent>
 </LongPressButton>
 

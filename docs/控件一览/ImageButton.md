@@ -25,6 +25,9 @@ PopupEvent?TargetPageName=BriefingPage&TargetControlName=PageLeftSecondShow&X=0&
     <CustomerConfig>
         <!-- AutoClick: 表示页面加载后会自动触发点击事件，执行一次 -->
         <Button AutoClick="True" />
+        <!-- ElapsedTime 防抖动，两次点击时间超过这个时间才能触发事件，单位毫秒 MobileThreshold移动距离，超过此距离，则不触发触发点击事件 -->
+        <Image ElapsedTime="300" MobileThreshold="600">
+        </Image>
     </CustomerConfig>
 </ImageButton>
 ```
