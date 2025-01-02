@@ -2,7 +2,7 @@
 
 ## 控件作用
 
-支持两种状态的图片按钮控件,点击图片按钮触发事件。
+支持两种状态的图片按钮控件,点击图片按钮触发事件。也可以通过事件(control)来控制按钮是否选中。
 
 ## 控件 UI 效果
 
@@ -23,8 +23,10 @@
 	</CustomerConfig>
 </ToggleButton>
 
-
-
+```
+```xml
+ <!-- 触发对应togglebutton的check事件并且按钮会触发相关动画，也可以UnCheck -->
+  <Event>Control?TargetPageName=SlidingScreen&amp;TargetGroup=A&amp;TargetControlName=2006&amp;Action=Check</Event>
 ```
 
 ````

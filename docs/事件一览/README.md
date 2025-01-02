@@ -132,7 +132,7 @@ State=Pin 固定弹窗，不可移动
 State=Unpin 弹窗取消固定，可以移动
 
 
-### Control（控制事件，一般用户控制动画，视频，PPT等播放和翻页之类的,还有通过事件触发一个按钮的事件）
+### Control（控制事件，一般用户控制动画，视频，PPT等播放和翻页之类的,还有通过事件触发一个按钮的事件,可以控制PopupShow的显示和隐藏）
 
 ```xml
 <ImageButton Name="left">
@@ -140,18 +140,26 @@ State=Unpin 弹窗取消固定，可以移动
 	<ImageSource UriKind="Application">Shell\Pages\qiyePage\resource\箭头2.png</ImageSource>
 	<!--
 	Control是个通用的事件，很多组件都可以处理此类事件，如动画帧组件，视频组件等
-	Action: 控制的具体操作，如播放(Play),停止(Stop), 暂停(Pause),往前(Prev),往后（Next),特定位置(Index)等。
+	Action: 控制的具体操作，如播放(Play),停止(Stop), 暂停(Pause),往前(Prev),往后（Next),特定位置(Index),Click(触发ImageButton的Click事件),Check(ToggleButton的Check、UnCheck事件)等。
 	-->
 	<ClickEvent>
   <Event>Control?Action=Play&Index=0&IndexString=Pre&TargetControlName=imageButton</Event>
   <!-- 触发按钮的事件，主要用于SignalR发送事件 -->
   <<Event>Control?TargetPageName=HomePage&amp;TargetControlName=Fenli&amp;Action=Click</Event>
   <!-- 触发对应togglebutton的check事件并且按钮会触发相关动画，也可以UnCheck -->
-  <Event>Control?TargetPageName=SlidingScreen&amp;TargetGroup=A&amp;TargetControlName=2006&amp;Action=Check</Event
+  <Event>Control?TargetPageName=SlidingScreen&amp;TargetGroup=A&amp;TargetControlName=2006&amp;Action=Check</Event>
   </ClickEvent>
 </ImageButton>
 ```
+### IndexChanged(通过事件，使scrollviewer滚动到指定位置，或者让filpview翻页)
+```xml
+filpview 翻页
+<ClickEvent>IndexChanged?TargetControlName=FlipView3&amp;Index=0&amp;IndexString=Pre&amp;Args=imageButton</ClickEvent>
 
+<!-- 到第五个点位 -->
+<!-- Move ：ToIndex：跳转到指定索引位置, Pre 前一个点位，Next：下一个点位 -->
+ <Event>IndexChanged?TargetPageName=SlidingScreen&amp;TargetControlName=Items&amp;Move=ToIndex&amp;Index=5&amp;ToInput=false</Event>
+```
 **说明**
 
 IndexChanged：响应方式（跳转对应索引图片）

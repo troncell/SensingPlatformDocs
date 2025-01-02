@@ -14,7 +14,7 @@
 
 <LongPressButton>
     <UIDisplay Left="0" Top="0" Width="300" Height="300" IsShow="True" ZIndex="4" UsePercent="False" Opacity="1"/>
-    <ImageSource UriKind="Project" Interval="20">Pages\HomePage\resource\圈\分离</ImageSource>
+    <PathSource UriKind="Project" Interval="20">Pages\HomePage\resource\圈\分离</PathSource>
     <ClickEvent>Navigate?Page=HomePage</ClickEvent>
 </LongPressButton>
 
