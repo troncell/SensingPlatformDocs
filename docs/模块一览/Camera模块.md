@@ -64,3 +64,15 @@ Camera中主要是集成了摄像头的外设模块，目前支持RealSense,Kine
 ```xml
      请参考UI.camera
 ```
+
+5.配置功能解释
+Id  =通过这个来找摄像头流
+Name = 随意
+Type = 目前支持的是realsense，后期会支持网络和kinent
+IP = 网络摄像头的配置，等更新
+Port = 端口摄像头的配置，等更新
+Vendor = 哪个厂商的，目前只有interl，等更新
+Algorithms = 功能模块，用于识别人脸还是其他，目前只支持face，其他等更新
+IsShowControl = 是否更新画面
+IsEnable = 是否启用
+DetectionSkipFrameCount = 这个是跳帧，因为
