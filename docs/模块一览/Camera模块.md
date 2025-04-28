@@ -65,6 +65,7 @@ Camera中主要是集成了摄像头的外设模块，目前支持RealSense,Kine
      请参考UI.camera
 ```
 
+```xml
 5.配置功能解释
 Id  =通过这个来找摄像头流
 Name = 随意
@@ -76,3 +77,4 @@ Algorithms = 功能模块，用于识别人脸还是其他，目前只支持face
 IsShowControl = 是否更新画面
 IsEnable = 是否启用
 DetectionSkipFrameCount = 这个是跳帧，因为
+```xml
