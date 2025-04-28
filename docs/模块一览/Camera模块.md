@@ -76,5 +76,23 @@ Vendor = 哪个厂商的，目前只有interl，等更新
 Algorithms = 功能模块，用于识别人脸还是其他，目前只支持face，其他等更新
 IsShowControl = 是否更新画面
 IsEnable = 是否启用
-DetectionSkipFrameCount = 这个是跳帧，因为
-```xml
+DetectionSkipFrameCount = 这个是跳帧，因为可以减少性能的消耗
+Roi配置通过Data="10,10,1000,1000" 前两个值是框的左上角，后两个值是框的长和宽
+Scale= 是图像的整体缩放
+
+class = 这个功能是这个检测的class是什么 class=  类
+DistanceMeterRange = 触发距离的 范围是多少 
+EmotionRange = 暂定，不用
+AgeRange = 暂定不用，年龄的范围
+EnterEvents 是class进入范围后会进行触发
+LeaveEvents = 是class离开返回后会触发，只要里面还有一个class都不会触发
+
+
+
+测试模式：
+IsShowRoiBox= 是否开启roi框，效果是roi的框和标记的框会显示在UI.Camera上
+IsShowFps = 是否开启帧数显示，再左上角
+IsShowDistance = 是否开启距离显示，会显示标记距离摄像头多远
+
+
+```
