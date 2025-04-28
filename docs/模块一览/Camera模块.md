@@ -62,11 +62,5 @@ Camera中主要是集成了摄像头的外设模块，目前支持RealSense,Kine
    Protocol 是协议类型, 目前支持 UDP/SerialPort/Scanner/Camera,Id是 Camera 的之前配置的唯一 Id，Data 发送到 Camera 的数据
 
 ```xml
-     <ImageButton name="AboutUs.png">
-       <UIDisplay Left="456" Top="701" Width="290" Height="94" IsShow="True" ZIndex="2" UsePercent="False" />
-       <ImageSource UriKind="Application">Shell\Pages\HomePage\resource\签到BUTTON.png</ImageSource>
-       <ClickEvent>
-         ToDeviceDataEvent?Id=003&Protocol=Camera&Data=right
-       </ClickEvent>
-     </ImageButton>
+     请参考UI.camera
 ```
