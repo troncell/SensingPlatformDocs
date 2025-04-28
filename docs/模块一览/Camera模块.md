@@ -28,31 +28,32 @@ Camera中主要是集成了摄像头的外设模块，目前支持RealSense,Kine
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <Cameras>
-  <!--Type="RealSense"/"Kinect"/"USB"/"Web"-->
-  <Camera Id="001" Name="Com1" Type="RealSense" IP="" Port="Com3" Url="" Vendor="Intel" IsShowControl="True" Enable="True" Algorithms="Face" DetectionSkipFrameCount="10">
-    <CustomerConfig>
-      <ROIs>
-        <ROI Data="10,10,1000,1000" Scale="1" ShowRoiBox="True" ShowFps="True" ShowDistance="True">
-          <!--DistanceMeterRange="*-1.2" - 第一个值是离摄像头距离近的值，第二个是离摄像头远的值
+	<!--Type="RealSense"/"Kinect"/"USB"/"Web"-->
+	<Camera Id="001" Name="Com1" Type="RealSense" IP="" Port="Com3" Url="" Vendor="Intel" Algorithms="Face" IsShowControl="True" IsEnable="True" DetectionSkipFrameCount="1">
+		<CustomerConfig>
+			<ROIs IsShowRoiBox="True" IsShowFps="True" IsShowDistance="True">
+				<ROI Data="10,10,1000,1000" Scale="1" >
+					<!--DistanceMeterRange="*-1.2" - 第一个值是离摄像头距离近的值，第二个是离摄像头远的值
           例子 *-1.2 -> 表示1.2米内的物体有效
           -->
-            <Object Class="Person"  DistanceMeterRange="0.5~0.9" EmotionRange="-1~-1" AgeRange="-1~-1">
-              <EnterEvents>
-                <Event>Navigate?Page=OPage</Event>
-                <!--<Event>Navigate?Page=OPage</Event>
+					<Object Class="Person"  DistanceMeterRange="0.5~0.9" EmotionRange="-1~-1" AgeRange="-1~-1">
+						<EnterEvents>
+							<Event>Navigate?Page=OPage</Event>
+							<!--<Event>Navigate?Page=OPage</Event>
                 <Event>Navigate?Page=OPage</Event>-->
-              </EnterEvents>
-              <LeaveEvents>
-                <Event>Navigate?Page=AllPage</Event>
-                <!--<Event>Navigate?Page=AllPage</Event>
+						</EnterEvents>
+						<LeaveEvents>
+							<Event>Navigate?Page=AllPage</Event>
+							<!--<Event>Navigate?Page=AllPage</Event>
                 <Event>Navigate?Page=AllPage</Event>-->
-              </LeaveEvents>
-            </Object>
-        </ROI>
-      </ROIs>
-    </CustomerConfig>
-  </Camera>
+						</LeaveEvents>
+					</Object>
+				</ROI>
+			</ROIs>
+		</CustomerConfig>
+	</Camera>
 </Cameras>
+
 
 
 ```
