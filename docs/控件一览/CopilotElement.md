@@ -3,100 +3,71 @@
 
 ## 控件作用
 
-环形卡片控件以 360 度环绕滑块的方式展示图片的列表。
+可以进行对整个seingplayform进行控制。
 
 ## 控件 UI 效果
 
 <!-- <img alt="CircleElement Preview Image" src="../images/CircleElement.png" width="900"> -->
 
-![Placeholder](../images/CircleElement.png)
+暂无效果
 
 ## 配置文件样例
 
 ```
-<!--Name 为控件在页面中的名字，为可选项-->
-<CircleElement Name="CircleElement">
-<!--参考控件公用片段CommonElement.md讲解中UIDisplay片段讲解-->
-	<UIDisplay Left="0" Top="0" Width="1920" Height="1080" IsShow="True" ZIndex="3" UsePercent="False" />
-	<!--参考控件公用片段CommonElement.md讲解中DataProvide片段讲解-->
-	<DataProvider>CirclePanelData?CSTable=Circle</DataProvider>
-	<Items>
-		<Template>
-			<ImageButton Name="TestPageNav">
-				<UIDisplay Left="100" Top="100" Width="150" Height="113" IsShow="True" ZIndex="1" UsePercent="False" />
-				<ImageSource UriKind="Absolute">{$ImagePath}</ImageSource>
-				<ClickEvent>Navigate?Page=TestPage&Args=imageButton</ClickEvent>
-			</ImageButton>
-		</Template>
-	</Items>
-	<!-- 放置CustomerConfig片段 -->
+<?xml version="1.0" encoding="utf-8" ?>
+<CopilotElement>
+	<UIDisplay Left="220" Top="165" Width="300" Height="300" IsShow="True" ZIndex="20" UsePercent="False" />
 	<CustomerConfig>
-		<!-- 放置CirClePanel片段 -->
-		<CirClePanel>
-			<!-- 一放圈多少个 -->
-			<MaxItemCount>17</MaxItemCount>
-			<!-- 环形圈半径 -->
-			<Radius>500</Radius>
-			<!-- 倾斜角度 -->
-			<CameraAngle>45</CameraAngle>
-			<!-- 梯形角度 -->
-			<ZoomAngle>0</ZoomAngle>
-			<!-- 中心点位置 -->
-			<Center X="800" Y="500">
-			</Center>
-			<!-- 配置滑块倒影是否显示 -->
-			<ShowShadow>true</ShowShadow>
-			<!-- 放置CirClePanel片段用户没有交互时，自动滚动时间间隔 -->
-			<AutoScrollTime>00:00:14</AutoScrollTime>
-			<!-- 滑动模式 横向：Horizontal，纵向：Vertical -->
-			<ArrangeMode>Horizontal</ArrangeMode>
-			<!-- 放置ClickSensity片段，配置点击灵明度 -->
-			<ClickSensity>
-				<!-- 最大响应时间，单位为毫秒 -->
-				<MaxTime>800</MaxTime>
-				<!-- 最小相应时间，单位为毫秒 -->
-				<MinTime>2</MinTime>
-			</ClickSensity>
-		</CirClePanel>
+		<LLMs>
+			<LLM Source="DeepSeek" Data="InConfig" />
+		</LLMs>
+		<McpServer></McpServer>
+
+		<Director Id="001" Name="鸟头运动的导演" Enable="True" IsLoop="True" IsAutoPlay="True">
+			<Chapter Type="Prepare" Id="001-001" WaitTime="00:00:00 000"  Name="回零章节" >
+				<Event Name="回零" WaitTime="00:00:00 000" Duration="00:00:20 000" EndTriggerEvent="">
+					ToDeviceDataEvent?Id=COM2&amp;Protocol=SerialPort&amp;Data=3f 08 a0 04 02 00 00 20 c7 21&amp;IsHex=true
+				</Event>
+				<Event Name="回初始运动位置" WaitTime="00:00:05 000" Duration="00:00:10 000" EndTriggerEvent="">
+					ToDeviceDataEvent?Id=COM2&amp;Protocol=SerialPort&amp;Data=3f 08 a0 04 02 00 00 10 c7 21&amp;IsHex=true
+				</Event>
+			</Chapter>
+			<Chapter Type="Perform" Id="001-002"  Name="向前章节" >
+				<Event Name="向前运动" WaitTime="00:00:10 000" Duration="00:00:02 000" EndTriggerEvent="">
+					ToDeviceDataEvent?Id=COM2&amp;Protocol=SerialPort&amp;Data=3f 08 a0 04 02 00 00 11 87 24&amp;IsHex=true
+				</Event>
+				<Event Name="向后运动" WaitTime="00:00:10 000" Duration="00:00:02 000" EndTriggerEvent="">
+					ToDeviceDataEvent?Id=COM2&amp;Protocol=SerialPort&amp;Data=3f 08 a0 04 02 00 00 12 87 24&amp;IsHex=true
+				</Event>
+			</Chapter>
+		</Director>
 	</CustomerConfig>
-</CircleElement>
+</CopilotElement>
 
 ```
 
 ## 配置说明
 
-### 节点 CirClePanel
-
+### 参数具体详解
+```
     该节点主要设置整个环形360的形态。
 
     属性说明
 
-    MaxItemCount:放几个圈；
+    LLM  =暂无
+    Id  = 唯一标识符
+    Name =名称
+    WaitTime = 结束这个章节后的等待时间
+    IsLoop = 这个章节是否要循环
+    IsAutoPlay = 是否自动运行
+    Type = 有两种选择Prepare  Perform  Prepare开始时只运行一次，Perform 如果循环则一直运行
+    Duration = 这个程序运行时间
+    WaitTime = 运行结束后等待时间
+    EndTriggerEvent = 后期被动触发运行
+ToDeviceDataEvent?Id=COM2&amp;Protocol=SerialPort&amp;Data=3f 08 a0 04 02 00 00 11 87  = 命令
 
-    Radius:环形圈的半径；
-
-    CameraAngle：整个环形圈的倾斜角度；
-
-    ZoomAngle：环形圈的梯形角度；
-
-    Center：环形圈的中心点位置；
-
-    ShowShadow：环形圈的倒影是否显示；
-
-    AutoScrollTime： 用户没有交互时，自动滚动时间间隔，若不需要自动滚动，则将该属性去掉即可；
-
-    ArrangeMode：滑动模式， 横向：Horizontal，纵向：Vertical；
-
-### 节点 ClickSensity
-
-    设置环形圈的点击灵敏度。
-
-    属性说明:
-
-    MaxTime：最大响应时间，单位为毫秒
-
-    MinTime：最小响应时间，单位为毫秒
-
+```	
+    
 ## UIControlDict.xml 添加环形卡片控件
 
 如果使用环形卡片控件则需要在 UIControlDict.xml 中添加环形卡片控件
