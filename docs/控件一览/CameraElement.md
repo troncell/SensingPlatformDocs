@@ -1,4 +1,4 @@
-数据流控件（BookElement）
+摄像头数据流控件（CameraElement）
 
 ## 控件作用
 
@@ -32,7 +32,7 @@
 
 ## UIControlDict.xml 添加数据流控件
 
-如果使用电子书控件则需要在 UIControlDict.xml 中添加电子书控件
+如果使用摄像头数据流控件则需要在 UIControlDict.xml 中添加摄像头数据流控件
 
 ```
  <!--UI.Camera 控件包-->
