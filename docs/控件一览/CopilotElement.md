@@ -73,8 +73,10 @@ ToDeviceDataEvent?Id=COM2&amp;Protocol=SerialPort&amp;Data=3f 08 a0 04 02 00 00 
 如果使用环形卡片控件则需要在 UIControlDict.xml 中添加环形卡片控件
 
 ```
-<!--UI.SweepPanel 控件包-->
-  <Element ViewType="CircleElement" AssemblyFile="UI.SweepPanel.dll" TypeName="UI.SweepPanel.Ellipse.CirclePanelControl, UI.SweepPanel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-    <DataContext AssemblyFile="UI.SweepPanel.dll" TypeName="UI.SweepPanel.Ellipse.CirclePanelViewModel, UI.SweepPanel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+<!--UI.Copilot 控件包-->
+<Element ViewType="CopilotElement" AssemblyFile="UI.Copilot.dll" TypeName="UI.Copilot.CopilotControl, UI.Copilot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <DataContext AssemblyFile="UI.Copilot.dll" TypeName="UI.Copilot.CopilotControlViewModel, Copilot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+  </Element>
+
   </Element>
 ```
