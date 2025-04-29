@@ -3,7 +3,7 @@
 
 Camera中主要是集成了摄像头的外设模块，目前支持RealSense,Kinect,以及普通的摄像头处理摄像头的一些码流之外，还集成了一些视觉相关的算法，需要显示摄像头画面，可以和UI.Camera集合，详细请参考UI.Camera组件
 
-### 1.1 CameraModule 模块集成，主要功能是接受和发送 Udp 协议的消息
+### 1.1 CameraModule 模块集成，主要功能是接受和发送 Udp 协议的消息，以及传递图像信息和对图像进行处理
 
 1. 在 TronSensingShow.exe.config 文件中的 modules 节点的最后配置 CameraModule 模块
 
