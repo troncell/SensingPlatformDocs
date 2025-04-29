@@ -35,11 +35,11 @@
 如果使用电子书控件则需要在 UIControlDict.xml 中添加电子书控件
 
 ```
- <!--UI.Book 控件包-->
+ <!--UI.Camera 控件包-->
 
 <Element ViewType="CameraElement" AssemblyFile="UI.Camera.dll" TypeName="UI.Camera.CameraControl, UI.Camera, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
     <DataContext AssemblyFile="UI.Camera.dll" TypeName="UI.Camera.CameraControlViewModel, UI.Camera, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
   </Element>
-  <!--UI.Book End-->
+  <!--UI.Camera End-->
 ```
 
