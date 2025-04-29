@@ -15,7 +15,7 @@
   <UIDisplay Left="220" Top="165" Width="300" Height="300" IsShow="True" ZIndex="20" UsePercent="False" />
   <CustomerConfig>
     <Stream CameraId="001" Display="Color/Depth"></Stream>
-
+    ####具体摄像头功能设置请看moudule.Camera
   </CustomerConfig>
 </CameraElement>
 
