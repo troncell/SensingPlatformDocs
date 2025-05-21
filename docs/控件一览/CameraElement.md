@@ -14,8 +14,8 @@
 <CameraElement>
   <UIDisplay Left="220" Top="165" Width="300" Height="300" IsShow="True" ZIndex="20" UsePercent="False" />
   <CustomerConfig>
-    <Stream CameraId="001" Display="Color/Depth"></Stream>
-    ####具体摄像头功能设置请看moudule.Camera
+    <Stream CameraId="001" Display="Color/Depth"></Stream> <!-- 只能选一个Color或者Depth，Color是彩色图像 -->
+    <!具体摄像头功能设置请看moudule.Camera/>
   </CustomerConfig>
 </CameraElement>
 
