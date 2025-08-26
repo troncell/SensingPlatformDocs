@@ -184,6 +184,17 @@ SerialPortInput 模块主要用于与串口设备的通讯
 			  </Command>
       </Commands>
     </Serial>
+ <!-- Hex收信息的配置 -->
+	<Serial Id="001" Port="COM9" Baudrate="9600" Parity="None" Databits="8" Stopbits="One" Format="Hex"   Enable="True" Provider="">
+			<Commands>
+		          <Command Text="000102030A"  Format="Hex">
+			            <ClickEvent>
+			                <Event>Navigate?Page=JianZuPage</Event>
+							<Event>Navigate?Page=JianZuPage</Event>
+			            </ClickEvent>
+		          </Command>
+	      </Commands>
+	    </Serial>
 	</Serials>
 ```
 
