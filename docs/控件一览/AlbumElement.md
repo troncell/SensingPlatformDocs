@@ -39,7 +39,7 @@ Type:是否配置背景，1 为显示，0 为不显示，然后配置背景图�
 ```
  <!--UI.AlbumLibrary 控件包-->
   <Element ViewType="AlbumElement" AssemblyFile="UI.Album.dll" TypeName="UI.Album.AlbumControl, UI.Album, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-    <DataContext AssemblyFile="UI.CoverFlow.dll" TypeName="UI.AlbumLibrary.AlbumControlViewModel, UI.Album, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <DataContext AssemblyFile="UI.Album.dll" TypeName="UI.Album.AlbumControlViewModel, UI.Album, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
   </Element>
   <!--UI.AlbumLibrary  END-->
 ```
