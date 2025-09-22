@@ -43,3 +43,40 @@ Type:是否配置背景，1 为显示，0 为不显示，然后配置背景图�
   </Element>
   <!--UI.AlbumLibrary  END-->
 ```
+
+## 系统DLL配置，文件UI.Album.dll.config
+```
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <appSettings>
+    <add key="Fold" value="Resources"/>
+    <!--1左移2右移-->
+    <add key="Direction" value="2"/>
+    <!--摆动幅度-->
+    <add key="SwingAngle" value="0"/>
+    <!--摆动角度最大速度(0.1~1)-->
+    <add key="SwingAngleMaxSpeed" value="0.0"/>
+    <!--滑动速度-->
+    <add key="SweepSpeed" value="1"/>
+    <!--滑动频率毫秒-->
+    <add key="SweepInterval" value="1"/>
+    <!--是否随机显示-->
+    <add key="RandomShow" value="true"/>
+    <!--自动关闭弹出窗口时间，整数s-->
+    <add key="AutoClostInterval" value="3"/>
+    <!--本地web资源文件夹-->
+    <add key="LocalWebPath" value="WebResources\LocalWebs"/>
+    <!--ie图标文件夹-->
+    <add key="IEImages" value="WebResources\IEImages"/>
+    <!--签名对应名称-->
+    <add key="SignMark" value="Sign"/>
+    <!--背景类型（1：picture,2:video,3:web）#后面加bg文件夹下的资源,web例子：3#XXX.htm-->
+    <add key="BgType" value="1#bg.png"/>
+    <!--选择保存路径，0：temp文件夹；1：领导文件夹-->
+    <add key="SavePath" value="0"/>
+    <add key="KeepAngle" value="True"/>
+    <!-- 随机摆动范围 -->
+    <add key="ROTATESCROPE" value="0"/>
+  </appSettings>
+</configuration>
+```
