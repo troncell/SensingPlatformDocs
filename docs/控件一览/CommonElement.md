@@ -30,10 +30,19 @@ ClipToBounds 控件是否裁剪画布外的部分 True 为裁剪，False 为不�
 
 其中很多为可选项，如 Opcity，IsHitTestVisible，IsUseCache，ClipToBounds 等。
 
+Rotate:图片旋转角度。所有图片角度一致时可设置
+
+RotateRandom="False"：图片角度是否随机显示   LowRotateRange="-10"：随机的最小角度   HighRotateRange="10"：随机的最大角度 
+
+
+
 示例：
 
 ```
   <UIDisplay Left="0" Top="0" Width="1920" Height="1080" IsShow="True"  ZIndex="1" UsePercent="False" Opacity="1" IsHitTestVisible="True" IsUseCache="True"/>
+```
+```
+<UIDisplay Left="0" Top="0" Width="300" Height="600" IsShow="True" ZIndex="7" UsePercent="False" Opacity="1" IsUseCache="True" RotateRandom="False" LowRotateRange="-10" HighRotateRange="10"/>
 ```
 
 ## ImageSource、FileSource 片段讲解
