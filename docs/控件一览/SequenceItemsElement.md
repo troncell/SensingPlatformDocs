@@ -11,6 +11,7 @@
 ## 配置文件样例
 
 ```xml
+//数据源是EXCEL表格
 <SequenceItemsElement>
     <UIDisplay Left="500" Top="800" Width="920" Height="100" IsShow="True"  ZIndex="6" UsePercent="False"/>
     <DataProvider>SequenceData?CSTable=Sequence</DataProvider>
@@ -33,6 +34,7 @@
 ```
 
 ```xml
+//分两个区域
 <SequenceItemsElement>
     <UIDisplay Left="0" Top="250" Width="1920" Height="476" IsShow="True"  ZIndex="6" UsePercent="False"/>
     <Items>
@@ -57,7 +59,48 @@
     </SequenceItemsElement>
 
 ```
+```
+//数据源文件夹
+	<SequenceItemsElement Name="FolderListSequence">
+			<UIDisplay Left="0" Top="300" Width="2160" Height="600" IsShow="True" ZIndex="1" UsePercent="False" />
+			<DataProvider>FolderData?CSTable=1</DataProvider>
+			<Items>
+				<Template>
+					<XYContainerElement>
+						<UIDisplay Left="0" Top="195" Width="173" Height="147" IsShow="True" ZIndex="6" UsePercent="False"/>
+						<Controls>
+							<ToggleButton>
+								<UIDisplay Left="0" Top="195" Width="300" Height="200" IsShow="True" ZIndex="7" UsePercent="False" />
+								<CustomerConfig>
+									<ImageSource UriKind="Application">Shell\Pages\AllPage\resource\B.png</ImageSource>
+									<ImageSourceChecked UriKind="Application">Shell\Pages\AllPage\resource\组 11.png</ImageSourceChecked>
+									<CheckedEvent>
+										<Event>ClosePopup?TargetPageName=tthdPage&amp;TargetControlName=PopItems&amp;EffectName=ScaleClose&amp;EventID=PopupShow&amp;EventPath=Shell\Pages\tthdPage\PopItems</Event>
+										<Event>PopupEvent?TargetPageName=tthdPage&amp;TargetControlName=PopItems&amp;X=0&amp;Y=800&amp;Height=3040&amp;Width=2160&amp;UriKind=Application&amp;EventID=PopupShow&amp;EventPath=Shell\Pages\tthdPage\PopItems&amp;CSTable={$DataTableName}&amp;FolderPath={$FolderPath}</Event>
+									</CheckedEvent>
+									<GroupName>Z</GroupName>
+									<Button AutoClick="{$IsDefault}" />
+									<IsChecked>{$IsDefault}</IsChecked>
+								</CustomerConfig>
+							</ToggleButton>
 
+							<TextElement>
+								<UIDisplay Left="0" Top="250" Width="300" Height="200" IsShow="True" ZIndex="8" UsePercent="False" IsHitTestVisible="False"/>
+								<TextSource ForegroundColor="#FF5e5e5e" Family="微软雅黑" Size="30" CultureInfo="zh-CN" Alignment="Center" LineHeight="80" VerticalAlignment="Center">{$FolderName}({$FileCount})</TextSource>
+							</TextElement >
+						</Controls>
+					</XYContainerElement>
+
+				</Template>
+			</Items>
+			<CustomerConfig>
+				<LayoutManager LayoutType="HorizontalListLayout" Margin="0" Align="Left" Row="1"/>
+				<Data DataName="FolderData" ListDataName="Detail" Cycle="True" />
+>
+				<SequenceConfig IsCacheUI="True" IsCombineTemplate="False" IsAutoSweep="false" SweepInterval="30" MaxEllapsedTime="2000" SweepDelta.X="-0.2" SweepDelta.Y="-0.2" />
+			</CustomerConfig>
+		</SequenceItemsElement>
+```
 ## 配置说明
 
 ### 节点 LayoutManager
