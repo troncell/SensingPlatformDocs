@@ -6,7 +6,7 @@
 
 ## 数据的配置
 
-在文件 Data.xml 里添加，添加后同时需要在 Data 文件夹下有对应文件夹和子文件夹
+1.在文件 Data.xml 里添加，添加后同时需要在 Data 文件夹下有对应文件夹和子文件夹
 
 ```xml
 <FolderData Name="FolderData">
@@ -20,6 +20,18 @@
 ```
 
 ![1711462029664](image/FolderData/1711462029664.png)
+2.来源为多个文件夹
+```
+ <FolderData Name="FolderData">
+    <CustomerConfig>
+	   <Folders Name="test" ContainSubFolder="True"  Directory="test" Depth="3" FileExtensions=".jpg;.png" DefaultFolder="1" OrderBy="Asc" UriKind="Relative"  >
+        <Folder Name="Detail" UriKind="Relative" Directory="Detail" IsDefault="True"/>
+        <Folder Name="Page" UriKind="Relative" Directory="Page" />      
+	   </Folders>
+		
+    </CustomerConfig>
+  </FolderData>
+```
 
 ### Folder 文件夹的配置
 
@@ -28,6 +40,10 @@
 3. Directory，子文件夹作为目标文件夹
 4. EnableListen，是否启动目标文件夹的监听，来更新数据源,用户刷新绑定控件的数据源
 5. IsKeySource, 是一个特殊的场景，主要是用于大图和小图的场景，在不同的文件夹，但是文件名又相同的场合，这个时候，所有的文件夹的数据以 Key 的数据作为主，然后 Key 的数据源多扩展出以下三个字段，LargeFullName，LargeExtension，LargeFileName，用于数据绑定
+6. ContainSubFolder：是否包含子文件夹
+7. Depth：层级深度，3表示子文件test的下面两层
+8. FileExtensions：显示的文件后缀名配置
+9. DefaultFolder：默认文件夹，第几个。OrderBy：Asc是正数第几个，Desc是倒数第几个
 
 ## 配置讲解
 
