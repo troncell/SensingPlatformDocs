@@ -101,6 +101,46 @@
 			</CustomerConfig>
 		</SequenceItemsElement>
 ```
+```
+随机不同角度滑动
+<SequenceItemsElement>
+                <UIDisplay Left="0" Top="800" Width="2160" Height="3840" IsShow="True" ZIndex="1" UsePercent="False"  />
+                <DataProvider>hzhbData?CSTable=tthd</DataProvider>
+<Items>
+				<Template  Left="0" Top="0" Width="488" Height="1000" TemplateID="10004">
+					<XYContainerElement>
+						<UIDisplay Left="0" Top="0" Width="488" Height="800"/>
+						<Controls>
+							
+
+							<ImageButton>
+								<UIDisplay Left="0" Top="0" Width="800" Height="800" IsShow="True" ZIndex="2" UsePercent="False" RotateRandom="True" LowRotateRange="-30" HighRotateRange="30"/>
+								<ImageSource UriKind="Application">Shell\Pages\AllPage\resource\团体活动\1\{$TP1}</ImageSource>
+								<ClickEvent>
+									PopupEvent?TargetPageName=tthdPage&amp;TargetControlName=Open2&amp;X=0&amp;Y=0&amp;Width=1600&amp;Height=1080&amp;EventID=ShowPhoto&amp;UriKind=Application&amp;EventPath=Shell\Pages\tthdPage\PopItems&amp;TP2={$TP2}
+								</ClickEvent>
+							                <CustomerConfig>
+                                        <!-- AutoClick: 表示页面加载后会自动触发点击事件，执行一次 -->
+                                        <Button AutoClick="False" />
+                                        <!-- ElapsedTime 防抖动，两次点击时间超过这个时间才能触发事件，单位毫秒 MobileThreshold移动距离，超过此距离，则不触发触发点击事件 -->
+                                        <Image ElapsedTime="300" MobileThreshold="600">
+                                        </Image>
+                                    </CustomerConfig>
+                            
+                            </ImageButton>
+
+							
+						</Controls>
+					</XYContainerElement>
+				</Template>
+			</Items>
+                <CustomerConfig>
+                    <LayoutManager LayoutType="HorizontalListLayout" Margin="800" Align="Left"  Row="3"/>
+                    <Data DataName="hzhbData" ListDataName="tthd"  Cycle="True"/> 
+                    <SequenceConfig  IsCanTouch="True" IsCacheUI="True" IsCombineTemplate="False" IsAutoSweep="True" SweepInterval="1" MaxEllapsedTime="1" SweepDelta.X="-8" SweepDelta.Y="10"/>
+                </CustomerConfig>
+            </SequenceItemsElement>
+```
 ## 配置说明
 
 ### 节点 LayoutManager
@@ -159,7 +199,14 @@ $$
     MaxEllapsedTime：为进入自动滑动的时间，单位为毫秒(场景如下，一段时间无人操作后，进入自动滑动模式)；
 
     SweepDelta.X：左右移动的距离，单位为像素，负数为向左.
+	
     SweepDelta.Y：上下移动的距离，单位为像素，负数为向右.
+	
+	RotateRandom="True" 是否随机旋转，值为True/False；
+
+    LowRotateRange：最小旋转角度，单位为度；
+
+    HighRotateRange：最大旋转角度，单位为度；
 
 # UIControlDict.xml 添加滑块控件
 
