@@ -6,10 +6,7 @@
 
 ## 控件 UI 效果
 
-<video width="600" height="400" controls>
-  <source src="image/CircularItemsElement/1762413089731.mp4" type="video/mp4">
-  你的浏览器不支持视频播放
-</video>
+<img style="width:200px;height:350px" src="image/CircularItemsElement/1762413423947.png" alt="输入图片说明" />
 
 ## 配置文件样例
 
