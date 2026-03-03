@@ -16,7 +16,8 @@
 	<CustomerConfig>
 				<WeatherImage Left="40" Top="20" Width="96" Height="96" IsShow="true" ZIndex="5"/>
 				<Temperature Left="160" Top="45" Width="180" Height="70" Size="56" ForegroundColor="#FFFFFFFF" Family="微软雅黑" IsShow="true" ZIndex="4" />
-				<City Left="60" Top="130" Width="240" Height="40" Size="28" ForegroundColor="#FFFFFFFF" Family="微软雅黑" ShowText="无锡" Value="无锡" />		
+				<City Left="60" Top="130" Width="240" Height="40" Size="28" ForegroundColor="#FFFFFFFF" Family="微软雅黑" ShowText="无锡" Value="无锡" />
+				<AmapApiKey Value="8115ff966647cf762d247ae9d1a73733" />		
 	</CustomerConfig>
 </WeatherElement>
 
@@ -54,6 +55,10 @@
     Family：字体样式
     ShowText：页面上显示的名称
     Value：要查询的城市
+
+## WeatherImage(对应的ApiKey)
+	目前调用高德的Api，可以替换为自己的Key
+
 
 ## UIControlDict.xml 添加天气控件
 
