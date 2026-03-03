@@ -56,7 +56,7 @@
     ShowText：页面上显示的名称
     Value：要查询的城市
 
-## WeatherImage(对应的ApiKey)
+## AmapApiKey(对应的ApiKey)
 	目前调用高德的Api，可以替换为自己的Key
 
 
