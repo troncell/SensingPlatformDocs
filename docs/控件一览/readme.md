@@ -108,3 +108,11 @@
   </Controls>
 </SysPage>
 ```
+### 配置文件的重用
+当配置文件很多，很臃肿的时候，就可以利用IncludeTemplate进行分割，把一些可重复利用的逻辑写成小片段的xml，进行复用
+
+```XML
+<IncludeTemplate>
+        <FileSource UriKind="Application">Resource\ CanMovePopup\PopupShow.xml</FileSource>
+</IncludeTemplate>
+```
