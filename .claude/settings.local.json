@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp C:/Users/william/.claude/skills/sensing-platform-config/SKILL.md D:/gits/SensingPlatformDocs/sensing-platform-config-skill/SKILL.md)",
+      "Bash(cp C:/Users/william/.claude/skills/sensing-platform-config/references/xml-patterns.md D:/gits/SensingPlatformDocs/sensing-platform-config-skill/references/xml-patterns.md)",
+      "Bash(git *)",
+      "Bash(cp \"C:/Users/william/.claude/skills/sensing-platform-config/references/docs-lookup.md\" \"D:/gits/SensingPlatformDocs/sensing-platform-config-skill/references/docs-lookup.md\")",
+      "Bash(cp \"C:/Users/william/.claude/skills/sensing-platform-config/references/controls-reference.md\" \"D:/gits/SensingPlatformDocs/sensing-platform-config-skill/references/controls-reference.md\")",
+      "Bash(cp \"C:/Users/william/.claude/skills/sensing-platform-config/references/xml-patterns.md\" \"D:/gits/SensingPlatformDocs/sensing-platform-config-skill/references/xml-patterns.md\")",
+      "Bash(cp \"C:/Users/william/.claude/skills/sensing-platform-config/SKILL.md\" \"D:/gits/SensingPlatformDocs/sensing-platform-config-skill/SKILL.md\")",
+      "Bash(cp \"C:/Users/william/.claude/skills/sensing-platform-config/references/events-reference.md\" \"D:/gits/SensingPlatformDocs/sensing-platform-config-skill/references/events-reference.md\")"
+    ]
+  }
+}
