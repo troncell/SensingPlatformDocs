@@ -33,7 +33,7 @@
 	<!--放置CustomerConfig片段-->
 	<CustomerConfig>
 	<!--放置Book片段 IsCacheUI是否预加载，True为是，False为否-->
-		<Book IsCacheUI="True" ShadowLevel="0.6" Width="865" Height="665">
+		<Book IsCacheUI="True" IsLoop="true" ShadowLevel="0.6" Width="865" Height="665">
 			<TouchSurface>
 				<TouchRect Left="0.0" Top="0.0" Height="0.5" Width="0.2" BookState="LT2RT">
 				</TouchRect>
@@ -57,6 +57,8 @@
 #### 属性说明
 
     IsCaCheUI:  是否预加载，是否在刚进入放电子书的页面时就加载所有页面，True为是，False为否；
+
+	 IsLoop：是否循环翻页。true 时翻到最后一页后自动回到第一页，倒翻到第一页后自动回到最后一页；false 时翻到边界停止。
 
     ShadowLevel：阴影的宽度；
 
