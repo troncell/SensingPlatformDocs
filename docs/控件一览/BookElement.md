@@ -1,14 +1,29 @@
-电子书控件（BookElement）
+# 电子书控件（BookElement）
 
-## 控件作用
+## 1.控件作用
 
-电子书控件以翻书的交互方式展示一系列图片。
+电子书控件以翻书的交互方式展示一系列图片或页面内容。用户可以通过点击页面边缘实现翻页效果，常用于电子画册、产品手册、宣传册、图书展示等场景。
 
-## 控件 UI 效果
+## 2.适用场景
+
+- 产品画册、企业宣传册翻页展示
+- 电子图书、杂志阅读
+- 相册集、荣誉证书翻页浏览
+- 需要左右翻页交互的图文展示页面
+
+## 3.前置依赖
+
+使用电子书控件前，必须满足以下条件：
+
+1. 项目目录中存在 `UI.Book.dll`；
+2. 在 `SysConfig/UIControlDict.xml` 中注册 `BookElement`；
+3. 如需动态加载内容，需在 `Shell/Data/Data.xml` 中配置数据源并在页面中使用 `<DataProvider>`。
+
+## 4.控件 UI 效果
 
 ![Placeholder](../images/BookElement.png)
 
-## 配置文件样例
+## 5.配置文件样例
 
 ```xml
 <BookElement>
@@ -32,7 +47,7 @@
 	</Items>
 	<!--放置CustomerConfig片段-->
 	<CustomerConfig>
-	<!--放置Book片段 IsCacheUI是否预加载，True为是，False为否-->
+	<!--放置Book片段 IsCacheUI 是否预加载；IsLoop 是否循环；ShadowLevel 阴影宽度；Width/Height 为书本大小-->
 		<Book IsCacheUI="True" IsLoop="true" ShadowLevel="0.6" Width="865" Height="665">
 			<TouchSurface>
 				<TouchRect Left="0.0" Top="0.0" Height="0.5" Width="0.2" BookState="LT2RT">
@@ -50,30 +65,168 @@
 
 ```
 
-## 配置说明
+## 6.UIDisplay 说明
 
-### 节点 Book
+`UIDisplay` 用法参考 [CommonElement.md](CommonElement.md)。针对电子书控件：
 
-#### 属性说明
+- `Width` / `Height`：控件在页面上的整体显示区域，书本会按 `Book` 节点中的 `Width` / `Height` 渲染，并在此区域内居中或按实际位置摆放；
+- `ZIndex`：如果页面上有按钮、弹窗等覆盖层，注意层级关系；
+- `UsePercent`：若需要按父容器百分比布局，可设为 `True`。
 
-    IsCaCheUI:  是否预加载，是否在刚进入放电子书的页面时就加载所有页面，True为是，False为否；
+## 7.DataProvider 与 Items
 
-	 IsLoop：是否循环翻页。true 时翻到最后一页后自动回到第一页，倒翻到第一页后自动回到最后一页；false 时翻到边界停止。
+- `DataProvider`：指定数据源，用于动态生成书页内容。数据源中每一行通常会生成一个 `Item`。
+- `Items`：书页项集合，每个 `Item` 代表一个可翻页的内容模板。
+- `Item` 内部：可以放置 `ImageButton`、`ImageElement`、`TextElement` 等简单控件，并通过 `{$变量名}` 绑定数据源中的列。
 
-    ShadowLevel：阴影的宽度；
+示例中只有一个 `Item`，通常用于固定内容或作为数据源绑定的模板。如果数据源有多行数据，运行时可能会根据模板重复生成多页。
 
-    这里的Width、Height指的是书本的大小；
+## 8.CustomerConfig 参数说明
 
-    TouchSurface：定义点击范围的边界。
+### 8.1Book 节点
 
-## UIControlDict.xml 添加电子书控件
+| 属性          | 必填 | 说明                                                                            | 示例   |
+| ------------- | ---- | ------------------------------------------------------------------------------- | ------ |
+| `IsCacheUI`   | 否   | 是否在页面加载时预加载所有页面。`True` 翻页流畅但占用更多内存；`False` 按需加载 | `True` |
+| `IsLoop`      | 否   | 是否循环翻页。`true` 翻到最后一页后回到第一页，`false` 翻到边界停止             | `true` |
+| `ShadowLevel` | 否   | 翻页时阴影效果的强度或宽度，取值范围通常为 `0` ~ `1`                            | `0.6`  |
+| `Width`       | 否   | 书本的宽度                                                                      | `865`  |
+| `Height`      | 否   | 书本的高度                                                                      | `665`  |
 
-如果使用电子书控件则需要在 UIControlDict.xml 中添加电子书控件
+### 8.2属性说明
 
+- **IsCacheUI**：设为 `True` 时，进入页面后会预先把所有页面加载到内存，翻页动画更流畅；页面内容较多时建议评估内存占用。设为 `False` 时延迟加载，可节省内存。
+- **IsLoop**：控制翻页边界行为。`true` 表示最后一页之后继续翻回到第一页，形成循环；`false` 表示翻到有边界时停止，无法继续同方向翻页。
+- **ShadowLevel**：翻页过程中书页下方阴影的深浅或宽度。数值越大阴影越明显，`0` 表示无阴影。
+- **Width / Height**：定义电子书显示区域的书本大小，建议与背景图、页面内容尺寸匹配。
+
+## 9.TouchSurface 与 TouchRect
+
+`TouchSurface` 用于定义书本四周的点击热区，用户点击这些区域时触发翻页。
+
+### 9.1TouchRect 属性
+
+| 属性        | 必填 | 说明                                      | 示例    |
+| ----------- | ---- | ----------------------------------------- | ------- |
+| `Left`      | 是   | 热区左边距，取值为 `0.0` ~ `1.0` 的相对值 | `0.0`   |
+| `Top`       | 是   | 热区上边距，取值为 `0.0` ~ `1.0` 的相对值 | `0.0`   |
+| `Width`     | 是   | 热区宽度，取值为 `0.0` ~ `1.0` 的相对值   | `0.2`   |
+| `Height`    | 是   | 热区高度，取值为 `0.0` ~ `1.0` 的相对值   | `0.5`   |
+| `BookState` | 是   | 翻页方向状态                              | `LT2RT` |
+
+### 9.2BookState 取值说明
+
+| 取值    | 含义                     | 典型位置     |
+| ------- | ------------------------ | ------------ |
+| `LT2RT` | 从左上区域触发，向右翻页 | 左侧上半部分 |
+| `LB2RB` | 从左下区域触发，向右翻页 | 左侧下半部分 |
+| `RT2LT` | 从右上区域触发，向左翻页 | 右侧上半部分 |
+| `RB2LB` | 从右下区域触发，向左翻页 | 右侧下半部分 |
+
+> 热区坐标是相对书本区域（`0,0` 到 `1,1`）的百分比。例如 `Left="0.8" Width="0.2"` 表示右侧 20% 的宽度范围。
+
+## 10.UIControlDict.xml 添加电子书控件
+
+如果使用电子书控件，需要在 `UIControlDict.xml` 中添加注册节点：
+
+```xml
+<!--UI.Book 控件包-->
+<Element ViewType="BookElement" AssemblyFile="UI.Book.dll" TypeName="UI.Book.BookControl, UI.Book, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+  <DataContext AssemblyFile="UI.Book.dll" TypeName="UI.Book.BookElementViewModel, UI.Book, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+</Element>
+<!--UI.Book End-->
 ```
- <!--UI.Book 控件包-->
-  <Element ViewType="BookElement" AssemblyFile="UI.Book.dll" TypeName="UI.Book.BookControl, UI.Book, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-    <DataContext AssemblyFile="UI.Book.dll" TypeName="UI.Book.BookElementViewModel, UI.Book, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
-  </Element>
-  <!--UI.Book End-->
+
+## 11.部署说明
+
+1. 将 `UI.Book.dll` 复制到应用根目录（与 `TronSensingShow.exe` 同级）；
+2. 在 `SysConfig/UIControlDict.xml` 中添加上方注册节点；
+3. 如需动态数据，在 `Shell/Data/Data.xml` 中配置数据源，并在页面中使用 `<DataProvider>`；
+4. 在页面 XML 中使用 `<BookElement>`，配置 `UIDisplay`、`DataProvider`、`Items` 和 `CustomerConfig`。
+
+## 12.常见问题
+
+### 翻页没反应
+
+- 检查 `TouchSurface` 中 `TouchRect` 的 `BookState` 是否配置正确；
+- 确认热区范围没有重叠或被上层控件遮挡；
+- 检查 `UIDisplay` 的 `IsShow` 是否为 `True`。
+
+### 图片不显示
+
+- 检查 `ImageSource` 的 `UriKind` 和路径是否正确；
+- 图片路径中的 `&` 在 XML 中应写成 `&amp;`；
+- 确认图片文件真实存在。
+
+### 翻页到最后一页后无法继续
+
+- 检查 `IsLoop` 是否为 `true`，`false` 时翻到边界会停止。
+
+### 阴影效果不明显
+
+- 调整 `ShadowLevel` 数值，通常 `0.5` 以上效果较明显；
+- 若设为 `0`，则完全无阴影。
+
+### 数据源内容没有生成多页
+
+- 确认 `DataProvider` 中的数据源名称和表名正确；
+- 确认数据源中有多条数据；
+- 确认 `Item` 模板中使用了正确的 `{$变量名}` 绑定。
+
+## 13.版本说明
+
+- `IsLoop` 为较新版本新增属性，用于控制翻页循环行为。
+- 若使用旧版本运行时，`IsLoop` 可能不被识别，建议升级到支持该属性的版本。
+
+## 14.BookElement 与 EBookElement 的区别
+
+两者都是以翻书交互方式展示内容的控件，但在实现和用法上有以下区别：
+
+| 对比项        | BookElement           | EBookElement            |
+| ------------- | --------------------- | ----------------------- |
+| 控件类型      | `BookElement`         | `EBookElement`          |
+| 所属 DLL      | `UI.Book.dll`         | `UI.EBook.dll`          |
+| Items 子节点  | 使用 `Template`       | 使用 `Item`             |
+| 注册 ViewType | `BookElement`         | `EBookElement`          |
+| 注册 TypeName | `UI.Book.BookControl` | `UI.EBook.EBookControl` |
+
+### 选择建议
+
+- **BookElement**：适合数据源驱动的翻书场景，`Items` 中使用 `Template` 绑定数据列，通过 `DataProvider` 动态生成多页。
+- **EBookElement**：适合固定页面或按 `Item` 单独配置每一页的场景，结构上与 `BookElement` 类似，但使用 `Item` 组织页面内容。
+
+### 配置差异示例
+
+**BookElement（使用 Template）：**
+
+```xml
+<BookElement>
+    <DataProvider>EBookData?CSTable=TEduBook5</DataProvider>
+    <Items>
+        <Template>
+            <ImageButton>...</ImageButton>
+        </Template>
+    </Items>
+    <CustomerConfig>
+        <Book IsCacheUI="True" IsLoop="true" ShadowLevel="0.6" Width="865" Height="665" />
+    </CustomerConfig>
+</BookElement>
 ```
+
+**EBookElement（使用 Item）：**
+
+```xml
+<EBookElement>
+    <DataProvider>EBookData?CSTable=TEduBook5</DataProvider>
+    <Items>
+        <Item>
+            <ImageButton>...</ImageButton>
+        </Item>
+    </Items>
+    <CustomerConfig>
+        <Book IsCacheUI="True" ShadowLevel="0.6" Width="865" Height="665" />
+    </CustomerConfig>
+</EBookElement>
+```
+
+> 注：两者 `CustomerConfig` 中的 `Book` 节点属性基本一致，如 `IsCacheUI`、`ShadowLevel`、`Width`、`Height` 等。新版本两者均可能支持 `IsLoop` 属性，具体以运行时版本为准。
