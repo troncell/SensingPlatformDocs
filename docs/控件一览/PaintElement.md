@@ -53,7 +53,7 @@
 
 		 <!--保存设置--> 
 		<SaveSettings>
-			<Folder>Desktop\画板签名</Folder>
+			<Folder UriKind="Project" >Desktop\画板签名</Folder>
 			<FilePrefix>签名_</FilePrefix>
 			<Extension>.png</Extension>
 			<ShowMessageAfterSave>true</ShowMessageAfterSave>
@@ -89,7 +89,7 @@
 	BorderColor边框颜色
 
 ## SaveSettings
-	Folder保存文件夹
+	Folder保存文件夹,UriKind是folder的方式，跟系统的保持一致，如果UriKind没有的情况下，如果folder是Desktop开头的话，会保存到桌面上，不是Desktop开头就是按照相对目录来保存，建议明确制定UriKind
 	FilePrefix文件名前缀
 	Extension文件扩展名
 	ShowMessageAfterSave保存后是否弹出提示	
