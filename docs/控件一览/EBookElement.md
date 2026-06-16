@@ -23,26 +23,27 @@
 
 ## 4.配置文件样例
 
+Template：
+
 ```xml
 <EBookElement>
 	<UIDisplay Left="165" Top="280" Width="1396" Height="588" IsShow="True" ZIndex="3" UsePercent="False" />
 	<DataProvider>
 		EBookData?CSTable=TEduBook5
 	</DataProvider>
-	<Items>
-		<Item>
-<!--Item 内可放置 ImageButton 等简单控件，具体参考 ImageButton 控件配置-->
-			<ImageButton>
-				<UIDisplay Left="100" Top="100" Width="392" Height="390" IsShow="True" ZIndex="1" UsePercent="False" />
-				<ImageSource UriKind="Application">
-					Shell\Data\KPIRedA.png
-				</ImageSource>
-				<ClickEvent>
-					Navigate?Page=HomePage&Args=imageButton
-				</ClickEvent>
-			</ImageButton>
-		</Item>
-	</Items>
+ <Items>
+        <Template Left="0" Top="0" Width="671" Height="1080" TemplateID="Image">
+            <XYContainerElement TrackingData="{$FileName}">
+                <UIDisplay Left="0" Top="0" Width="671" Height="1080" IsShow="True" ZIndex="1" UsePercent="False" />
+                <Controls>
+                    <ImageElement>
+                        <UIDisplay Left="0" Top="0" Width="671" Height="1080" IsShow="True" ZIndex="1" UsePercent="False" />
+                        <ImageSource UriKind="Absolute">{$FullName}</ImageSource>
+                    </ImageElement>
+                </Controls>
+            </XYContainerElement>
+        </Template>
+    </Items>
 	<CustomerConfig>
 	  <!--Book 节点：IsCacheUI 是否预加载；IsLoop 是否循环；ShadowLevel 阴影宽度；Width/Height 为书本大小-->
 		<Book IsCacheUI="True" ShadowLevel="0.6" Width="865" Height="665">
@@ -62,6 +63,44 @@
 
 ```
 
+Item:
+
+```xml
+<EBookElement>
+	<UIDisplay Left="165" Top="280" Width="1396" Height="588" IsShow="True" ZIndex="3" UsePercent="False" />
+	<DataProvider>
+		EBookData?CSTable=TEduBook5
+	</DataProvider>
+	<Items>
+		<Item>
+			<ImageButton>
+				<UIDisplay Left="100" Top="100" Width="392" Height="390" IsShow="True" ZIndex="1" UsePercent="False" />
+				<ImageSource UriKind="Application">
+					Shell\Data\KPIRedA.png
+				</ImageSource>
+				<ClickEvent>
+					Navigate?Page=HomePage&Args=imageButton
+				</ClickEvent>
+			</ImageButton>
+		</Item>
+	</Items>
+	<CustomerConfig>
+		<Book IsCacheUI="True" ShadowLevel="0.6" Width="865" Height="665">
+			<TouchSurface>
+				<TouchRect Left="0.0" Top="0.0" Height="0.5" Width="0.2" BookState="LT2RT">
+				</TouchRect>
+				<TouchRect Left="0.0" Top="0.5" Height="0.5" Width="0.2" BookState="LB2RB">
+				</TouchRect>
+				<TouchRect Left="0.8" Top="0.0" Height="0.5" Width="0.2" BookState="RT2LT">
+				</TouchRect>
+				<TouchRect Left="0.8" Top="0.5" Height="0.5" Width="0.2" BookState="RB2LB">
+				</TouchRect>
+			</TouchSurface>
+		</Book>
+	</CustomerConfig>
+</EBookElement>
+```
+
 ![1711456871989](image/EBookElement/1711456871989.png)
 
 ## 5.UIDisplay 说明
@@ -74,30 +113,45 @@
 
 ## 6.DataProvider 与 Items
 
-### 6.1动态数据源模式
+### 6.1动态数据源模式（Template + DataProvider）
 
-通过 `DataProvider` 绑定数据源，数据源中的每一行会生成一个书页。
+通过 `DataProvider` 绑定数据源，`Items` 中使用 `Template` 作为页面模板，数据源中的每一行会生成一个书页。
 
 ```xml
 <DataProvider>EBookData?CSTable=TEduBook5</DataProvider>
+<Items>
+    <Template Left="0" Top="0" Width="671" Height="1080" TemplateID="Image">
+        <!-- 页面模板，可通过 {$列名} 绑定数据 -->
+    </Template>
+</Items>
 ```
 
 - `EBookData`：数据源实例名称，需在 `Shell/Data/Data.xml` 中定义；
 - `CSTable=TEduBook5`：数据表/集合名称；
 - `Item` 中的控件可以通过 `{$变量名}` 绑定数据源中的列。
 
-### 6.2自定义固定模式
+### 6.2固定页面模式（Item）
 
-如果不配置 `DataProvider`，可以在 `Items` 中直接放置多个 `Item` 节点，手动定义每一页的内容。
+如果不配置 `DataProvider`，可以在 `Items` 中直接放置多个 `Item` 节点，每个 `Item` 对应一个固定页面：
 
-### 6.3Item
+```xml
+<Items>
+    <Item>
+        <ImageElement>
+            <UIDisplay Left="0" Top="0" Width="671" Height="1080" />
+            <ImageSource UriKind="Absolute">Images/Page1.png</ImageSource>
+        </ImageElement>
+    </Item>
+    <Item>
+        <ImageElement>
+            <UIDisplay Left="0" Top="0" Width="671" Height="1080" />
+            <ImageSource UriKind="Absolute">Images/Page2.png</ImageSource>
+        </ImageElement>
+    </Item>
+</Items>
+```
 
-每个 `Item` 代表一个书页内容。与 `BookElement` 使用 `Template` 不同，`EBookElement` 使用 `Item` 组织页面：
-
-- 当使用 `DataProvider` 时，`Item` 作为模板，运行时根据数据行数重复生成页面；
-- 当不使用 `DataProvider` 时，每个 `Item` 对应一个固定页面。
-
-`Item` 内部可以放置 `ImageButton`、`ImageElement`、`TextElement` 等简单控件。
+`Item` 内部放置一个根控件（如 `ImageElement`、`XYContainerElement`、`ImageButton` 等）。
 
 ## 7.CustomerConfig 参数说明
 
@@ -195,20 +249,20 @@
 
 两者都是以翻书交互方式展示内容的控件，主要区别如下：
 
-| 对比项        | BookElement           | EBookElement            |
-| ------------- | --------------------- | ----------------------- |
-| 控件类型      | `BookElement`         | `EBookElement`          |
-| 所属 DLL      | `UI.Book.dll`         | `UI.EBook.dll`          |
-| Items 子节点  | 使用 `Template`       | 使用 `Item`             |
-| 注册 ViewType | `BookElement`         | `EBookElement`          |
-| 注册 TypeName | `UI.Book.BookControl` | `UI.EBook.EBookControl` |
+| 对比项        | BookElement           | EBookElement               |
+| ------------- | --------------------- | -------------------------- |
+| 控件类型      | `BookElement`         | `EBookElement`             |
+| 所属 DLL      | `UI.Book.dll`         | `UI.EBook.dll`             |
+| 渲染方式      | 基于 WPF 3D 翻页效果  | 基于自定义 Canvas 翻页效果 |
+| 注册 ViewType | `BookElement`         | `EBookElement`             |
+| 注册 TypeName | `UI.Book.BookControl` | `UI.EBook.EBookControl`    |
 
 ### 选择建议
 
-- **BookElement**：适合数据源驱动的翻书场景，`Items` 中使用 `Template` 绑定数据列。
-- **EBookElement**：适合固定页面或按 `Item` 单独配置每一页的场景，结构上使用 `Item` 组织页面内容。
+- **BookElement**：适合需要逼真 3D 翻页效果的场景。
+- **EBookElement**：适合需要更灵活页面容器（如 `XYContainerElement`）或自定义触摸热区的场景。
 
-> 注：两者 `CustomerConfig` 中的 `Book` 节点属性基本一致，新版本两者均可能支持 `IsLoop` 属性，具体以运行时版本为准。
+两者都支持 `Template + DataProvider`（数据驱动）和 `Item`（固定页面）。**推荐优先使用 `Template + DataProvider`**，固定页面再使用 `Item`。
 
 ## 13.版本说明
 

@@ -50,18 +50,18 @@
 </PopupShowElement>
 ```
 
-### 6.1IncludeTemplate 说明
+### 6.1 1IncludeTemplate 说明
 
 | 节点         | 说明                     | 示例                                  |
 | ------------ | ------------------------ | ------------------------------------- |
 | `FileSource` | 引用的弹出框配置文件路径 | `Resource\CanMovePopup\PopupShow.xml` |
 | `UriKind`    | 路径解析方式             | `Application`                         |
 
-## 7.公共弹出框配置
+### 6.2公共弹出框配置
 
 在 `FileSource` 指定的路径下创建 `PopupShow.xml`，定义弹出框的布局行为。
 
-### 7.1可改变型弹出框
+### 6.3可改变型弹出框
 
 ```xml
 （在上述FileSource指定的文件夹下新建上述指定名称的xml文件，这里是PopupShow.xml，分为固定型和可改变型，第一种为可改变型，第二种为固定型）
@@ -75,7 +75,7 @@
 </Template>
 ```
 
-### 7.2固定型弹出框
+### 6.4固定型弹出框
 
 ```xml
 <Template >
@@ -89,7 +89,7 @@
 
 ```
 
-### 7.3CustomerConfig 参数说明
+### 6.5CustomerConfig 参数说明
 
 1.LayoutManager 节点
 
@@ -120,7 +120,7 @@
 
 `HotShowMappings` 用于配置热点映射，具体参数以实际版本为准。
 
-## 8.调用弹出框
+## 7.调用弹出框
 
 配置好弹出框后，通过按钮的 `ClickEvent` 调用 `PopupEvent` 来显示弹出框。
 
@@ -133,7 +133,7 @@ ImageButton 中 ClickEvent 属性进行调用弹出框，ClickEvent 中的参数
 
 ```
 
-### 8.1参数说明
+### 7.1参数说明
 
 | 参数                | 必填 | 说明                             | 示例                                                  |
 | ------------------- | ---- | -------------------------------- | ----------------------------------------------------- |
@@ -149,11 +149,11 @@ ImageButton 中 ClickEvent 属性进行调用弹出框，ClickEvent 中的参数
 
 > 注意：事件 URL 中的 `&` 必须转义为 `&amp;`。
 
-## 9弹出框内容文件
+### 7.2弹出框内容文件
 
 调用 `PopupEvent` 时，`EventID` 指定了弹出框内容的标识。需要在 `EventPath` 目录下创建与 `EventID` 同名的文件夹，并在该文件夹下创建同名 XML 文件。
 
-### 9.1目录结构
+### 7.3目录结构
 
 ```
 Shell/
@@ -166,7 +166,7 @@ Shell/
                         └── PageHotBigBookShow.xml
 ```
 
-### 9.2内容文件示例
+### 7.4内容文件示例
 
 `PageHotBigBookShow.xml` 的内容通常是一个 `SysPage`：
 
@@ -197,9 +197,9 @@ Shell/
 </Template>
 ```
 
-### 9.3关闭弹出框
+## 8.关闭弹出框
 
-## 在弹出框内容文件中，通常使用 `ImageButton` 触发 `ChangePopupState` 事件关闭弹出框：
+### 8.1在弹出框内容文件中，通常使用 `ImageButton` 触发 `ChangePopupState` 事件关闭弹出框：
 
 ```xml
 <ClickEvent>ChangePopupState?State=Close&Args=imageButton</ClickEvent>
@@ -209,7 +209,7 @@ Shell/
 | ------- | ---------------------------- | ------- |
 | `State` | 弹出框状态，`Close` 表示关闭 | `Close` |
 
-## 9.4控制弹出框显示与隐藏
+### 8.2控制弹出框显示与隐藏
 
 弹出框控件支持 `Control` 事件，用于控制弹出框的显示和隐藏。
 
@@ -222,7 +222,7 @@ Shell/
 | `TargetControlName` | 目标弹出框控件名称                 | `PopItems` |
 | `Action`            | 操作类型，`Show` 显示，`Hide` 隐藏 | `Show`     |
 
-## 10.UIControlDict.xml 添加弹出框控件
+## 9.UIControlDict.xml 添加弹出框控件
 
 如果使用弹出框控件则需要在 UIControlDict.xml 中添加弹出框控件
 
@@ -233,7 +233,7 @@ Shell/
   </Element>
 ```
 
-## 11.部署说明
+## 10.部署说明
 
 1. 将 `UI.SweepPanel.dll` 复制到应用根目录（与 `TronSensingShow.exe` 同级）；
 2. 在 `SysConfig/UIControlDict.xml` 中添加上方注册节点；
@@ -242,7 +242,7 @@ Shell/
 5. 在 `EventPath` 目录下创建与 `EventID` 同名的文件夹和 XML 文件；
 6. 在页面中添加触发 `PopupEvent` 的按钮。
 
-## 12.常见问题
+## 11.常见问题
 
 ### 弹出框不显示
 
@@ -272,7 +272,7 @@ Shell/
 - 检查内容文件中的 `UIDisplay` 是否覆盖整个弹出框区域；
 - 检查内容文件路径和文件名是否与 `EventID` 一致。
 
-## 13.注意事项
+## 12.注意事项
 
 - 弹出框内容文件必须放在 `EventPath\EventID\EventID.xml` 路径下；
 - `PopupShowElement` 的 `ZIndex` 应设置较高，确保弹出框显示在其他控件之上；

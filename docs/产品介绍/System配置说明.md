@@ -86,7 +86,7 @@ C.在新建的文件夹下新建和文件夹相同名称的 xml 文件 TextPage.
 
 D.使用编辑器打开新建的 xml 文件，（这里是打开 TextPage.xml 文件），写入如下代码(一般情况下只需改动 `<SysPage Name=" TextPage">`)：
 
-```
+```xml
 
 <!--SysPage中的Name值应与所在文件夹名字相同-->
 <SysPage Name=" TextPage">
