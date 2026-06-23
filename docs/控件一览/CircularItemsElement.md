@@ -28,77 +28,44 @@
 ## 5.配置文件样例
 
 ```xml
-<CircularItemsElement >
-	<UIDisplay Left="200" Top="700" Width="1600" Height="1600" IsShow="True" ZIndex="4" UsePercent="false" />
-	<Items IsCacheUI="True">
-      <!-- Items下支持现有的XYContainerElement、ImageButton、TextElement等控件 -->
-			<XYContainerElement>
-				<UIDisplay Left="0" Top="0" Width="461" Height="460" />
-				<Controls>
-					<ImageButton>
-						<UIDisplay Left="0" Top="0" Width="461" Height="460" IsShow="True" ZIndex="1" UsePercent="False"/>
-						<ImageSource UriKind="Application">Shell\Pages\AllPage\resource\社会责任.png</ImageSource>
-						<ClickEvent>
-							<Event>Navigate?Page=FirstPage</Event>
-						</ClickEvent>
-					</ImageButton>
-				</Controls>
-			</XYContainerElement>
+    <!-- 旋转控件：环形轨道 + 菜单项 -->
+    <CircularItemsElement Name="CircularItems">
+      <UIDisplay Left="222" Top="1135" Width="1370" Height="1489" IsShow="True" ZIndex="3" UsePercent="False" ClipToBounds="False" />
+      <Items IsCacheUI="True">
+        <ImageButton>
+          <UIDisplay Left="1272" Top="17" Width="461" Height="460" IsShow="True" ZIndex="1" UsePercent="False" />
+          <ImageSource UriKind="Application">Shell\Pages\CircularItems\resource\社会责任.png</ImageSource>
+          <ClickEvent>Navigate?Page=qiyePage</ClickEvent>
+        </ImageButton>
 
-			<XYContainerElement>
-				<UIDisplay Left="0" Top="0" Width="461" Height="460" />
-				<Controls>
-					<ImageButton>
-						<UIDisplay Left="0" Top="0" Width="461" Height="461" IsShow="True" ZIndex="2" UsePercent="False"/>
+        <ImageButton>
+          <UIDisplay Left="1180" Top="1255" Width="661" Height="661" IsShow="True" ZIndex="1" UsePercent="False" />
+          <ImageSource UriKind="Application">Shell\Pages\CircularItems\resource\主要业绩介绍.png</ImageSource>
+          <ClickEvent>Navigate?Page=SolutionPage</ClickEvent>
+        </ImageButton>
 
-						<ImageSource UriKind="Application">Shell\Pages\AllPage\resource\文化风貌.png</ImageSource>
+        <ImageButton>
+          <UIDisplay Left="450" Top="1480" Width="461" Height="461" IsShow="True" ZIndex="1" UsePercent="False" />
+          <ImageSource UriKind="Application">Shell\Pages\CircularItems\resource\文化风貌.png</ImageSource>
+          <ClickEvent>Navigate?Page=ztPage</ClickEvent>
+        </ImageButton>
 
-						<ClickEvent>
-							<Event>Navigate?Page=SecondPage</Event>
-						</ClickEvent>
-					</ImageButton>
-				</Controls>
-			</XYContainerElement>
+        <ImageButton>
+          <UIDisplay Left="-133" Top="-414" Width="460" Height="460" IsShow="True" ZIndex="1" UsePercent="False" />
+          <ImageSource UriKind="Application">Shell\Pages\CircularItems\resource\实体模型互动.png</ImageSource>
+          <ClickEvent>Navigate?Page=RotatePage</ClickEvent>
+        </ImageButton>
+      </Items>
 
-			<XYContainerElement>
-				<UIDisplay Left="500" Top="0" Width="461" Height="460" />
-				<Controls>
-					<ImageButton>
-						<UIDisplay Left="0" Top="0" Width="661" Height="661" IsShow="True" ZIndex="1" UsePercent="False"/>
-
-						<ImageSource UriKind="Application">Shell\Pages\AllPage\resource\主要业绩介绍.png</ImageSource>
-
-						<ClickEvent>
-							<Event>Navigate?Page=ThirdPage</Event>
-						</ClickEvent>
-					</ImageButton>
-				</Controls>
-			</XYContainerElement>
-			<XYContainerElement>
-				<UIDisplay Left="600" Top="600" Width="461" Height="460"/>
-				<Controls>
-					<ImageButton>
-						<UIDisplay Left="0" Top="0" Width="460" Height="460" IsShow="True" ZIndex="1" UsePercent="False"/>
-
-						<ImageSource UriKind="Application">Shell\Pages\AllPage\resource\实体模型互动.png</ImageSource>
-
-						<ClickEvent>
-							<Event>Navigate?Page=FourPage</Event>
-						</ClickEvent>
-					</ImageButton>
-				</Controls>
-			</XYContainerElement>
-	</Items>
-	<CustomerConfig>
-    <!-- 背景图片(旋转的底图) -->
-		<BackgroundImage UriKind="Project" Directory="Pages\AllPage\resource\组 11.png"></BackgroundImage>
-    <!-- 自动旋转相关 -->
-		<AutoRotate IsAutoPlay="True" MaxEllapsedTime="2000" RotationSpeed="10" />
-    <!-- 配置旋转元素的中心点及阻尼 -->
-		<CircularConfig Damping="0.1" Debug="True" CenterX="0.5" CenterY="0.5" />
-	</CustomerConfig>
-
-</CircularItemsElement>
+      <CustomerConfig>
+        <!-- 背景图片(旋转的底图) -->
+        <BackgroundImage UriKind="Application" Directory="Shell\Pages\CircularItems\resource\组 11.png" />
+        <!-- 自动旋转相关 -->
+        <AutoRotate IsAutoPlay="True" MaxEllapsedTime="2000" RotationSpeed="10" />
+        <!-- 配置旋转元素的中心点及阻尼 -->
+        <CircularConfig Damping="0.1" Debug="True" CenterX="0.5" CenterY="0.5" />
+      </CustomerConfig>
+    </CircularItemsElement>
 
 ```
 
@@ -107,8 +74,22 @@
 `UIDisplay` 用法参考 [CommonElement.md](CommonElement.md)。针对旋转控件：
 
 - `Width` / `Height`：定义旋转控件的显示区域，通常建议设置为正方形或足够大的区域；
+  - **重要**：`CustomerConfig/BackgroundImage` 会按此区域的 `Width/Height` 拉伸填充。若想让底图不变形，建议将 `Width/Height` 设为底图的原尺寸或等比例尺寸。
 - `ZIndex`：若页面上有悬浮按钮或弹出层，注意层级关系；
-- `UsePercent`：若需要按父容器百分比布局，可设为 `True`。
+- `UsePercent`：若需要按父容器百分比布局，可设为 `True`；
+- `ClipToBounds`：是否裁剪超出控件边界的内容。当子项（如按钮）需要显示到 `CircularItemsElement` 边界之外时，必须设为 `False`，否则会被裁剪。
+
+## 6.1 控件尺寸、旋转半径与底图变形
+
+配置 `CircularItemsElement` 的尺寸时需要同时考虑三件事：
+
+| 尺寸选择 | 底图效果 | 子项效果 | 适用场景 |
+| --- | --- | --- | --- |
+| 与底图尺寸一致 | 不变形，刚好填满 | 子项可能超出边界，需配合 `ClipToBounds="False"` | 底图是环形轨道，子项在轨道内外 |
+| 比底图大很多 | 底图被拉伸放大 | 旋转半径大，子项不易被裁剪 | 底图可拉伸，或希望整体放大 |
+| 比底图小 | 底图被压缩 | 旋转半径小，子项可能拥挤 | 一般不推荐 |
+
+建议做法：先让 `UIDisplay` 的 `Width/Height` 等于底图原尺寸，再根据需要微调。子项超出边界时加 `ClipToBounds="False"`。
 
 ## 7.Items 说明
 
@@ -119,7 +100,13 @@
 - `TextElement`：用于显示文字标签；
 - 其他简单控件。
 
-### 7.1Items 属性
+### 7.1 子项坐标说明
+
+`Items` 内子控件的 `Left/Top` 是**相对于 `CircularItemsElement` 左上角的偏移量**，允许为负数。整个子项会以 `CircularConfig` 的 `CenterX/CenterY` 为圆心做整体旋转。
+
+示例中的 `Left="-133" Top="-414"` 表示该按钮位于控件区域的左上方之外，配合 `ClipToBounds="False"` 才能完整显示。
+
+### 7.2 Items 属性
 
 | 属性        | 必填 | 说明                                                 | 示例   |
 | ----------- | ---- | ---------------------------------------------------- | ------ |
@@ -131,11 +118,12 @@
 
 | 属性        | 必填 | 说明                 | 示例                               |
 | ----------- | ---- | -------------------- | ---------------------------------- |
-| `UriKind`   | 是   | 背景图片路径解析方式 | `Project`                          |
-| `Directory` | 是   | 背景图片路径         | `Pages\AllPage\resource\组 11.png` |
+| `UriKind`   | 是   | 背景图片路径解析方式 | `Application`                      |
+| `Directory` | 是   | 背景图片路径         | `Shell\Pages\CircularItems\resource\组 11.png` |
 
-- `UriKind="Project"` 表示路径相对于 `Shell` 文件夹，不需要加 `Shell\` 前缀。
-- 背景图片会作为旋转底图显示在所有旋转项的下方。
+- `UriKind="Project"` 表示路径相对于 `Shell` 文件夹，不需要加 `Shell\` 前缀；`UriKind="Application"` 表示路径相对于应用启动目录，需要带 `Shell\` 前缀。
+- **注意**：这里用的是 `Directory` 属性，不是平时常见的 `<ImageSource>` 节点。
+- 背景图片会作为旋转底图显示在所有旋转项的下方，并且会按 `UIDisplay` 的 `Width/Height` 拉伸填充。若要保持原图比例不变形，请将 `UIDisplay` 的 `Width/Height` 设置为底图原尺寸。
 
 ### 8.2AutoRotate 节点
 
@@ -154,6 +142,15 @@
 | `CenterX` | 否   | 圆心横坐标，相对控件区域的比例。`0.5` 表示中心                   | `0.5`  |
 | `CenterY` | 否   | 圆心纵坐标，相对控件区域的比例。`0.5` 表示中心                   | `0.5`  |
 
+计算实际圆心像素位置：
+
+```
+圆心X = Left + Width × CenterX
+圆心Y = Top + Height × CenterY
+```
+
+当 `UIDisplay` 的 `Width/Height` 与底图尺寸一致，并设置 `CenterX="0.5" CenterY="0.5"` 时，圆心即为底图中心，旋转时不会晃动。
+
 ## 9.UIControlDict.xml 添加旋转控件
 
 如果使用旋转控件，需要在 `UIControlDict.xml` 中添加注册节点：
@@ -164,19 +161,69 @@
 </Element>
 ```
 
-## 10.部署说明
+## 10.整体旋转写法（固定子项相对位置）
+
+如果需要让底图和多个子项保持固定的相对位置一起旋转，可以把它们全部放在一个 `<Item>` / `<XYContainerElement>` 内。这种写法下，子项的 `Left/Top` 是相对于 `XYContainerElement` 的绝对坐标，整个组合会围绕 `CircularConfig` 的 `CenterX/CenterY` 旋转。
+
+```xml
+<CircularItemsElement Name="CircularItems">
+  <UIDisplay Left="0" Top="0" Width="2160" Height="3840" IsShow="True" ZIndex="3" UsePercent="False" />
+  <Items IsCacheUI="True">
+    <Item Left="0" Top="0" Width="2160" Height="3840" ZIndex="1" TemplateID="10001" CanRotate="True">
+      <XYContainerElement>
+        <UIDisplay Left="0" Top="0" Width="2160" Height="3840" />
+        <Controls>
+          <ImageElement Name="Background">
+            <UIDisplay Left="222" Top="1135" Width="1370" Height="1489" IsShow="True" ZIndex="1" UsePercent="False" />
+            <ImageSource UriKind="Application">Shell\Pages\CircularItems\resource\组 11.png</ImageSource>
+          </ImageElement>
+          <ImageButton>
+            <UIDisplay Left="1494" Top="1152" Width="461" Height="460" IsShow="True" ZIndex="1" UsePercent="False" />
+            <ImageSource UriKind="Application">Shell\Pages\CircularItems\resource\社会责任.png</ImageSource>
+            <ClickEvent>Navigate?Page=qiyePage</ClickEvent>
+          </ImageButton>
+          <!-- 其他按钮... -->
+        </Controls>
+      </XYContainerElement>
+    </Item>
+  </Items>
+  <CustomerConfig>
+    <AutoRotate IsAutoPlay="True" MaxEllapsedTime="2000" RotationSpeed="10" />
+    <CircularConfig Damping="0.1" Debug="True" CenterX="0.42" CenterY="0.49" />
+  </CustomerConfig>
+</CircularItemsElement>
+```
+
+注意：`CenterX/CenterY` 需要根据底图中心计算。例如底图 `Left="222" Width="1370"`，则圆心 X 为 `222 + 1370/2 = 907`，相对全屏 `2160` 即为 `0.42`。
+
+## 11.部署说明
 
 1. 将 `UI.CircularPanel.dll` 复制到应用根目录（与 `TronSensingShow.exe` 同级）；
 2. 在 `SysConfig/UIControlDict.xml` 中添加上方注册节点；
 3. 在页面 XML 中使用 `CircularItemsElement`，配置 `UIDisplay`、`Items` 和 `CustomerConfig`。
 
-## 11.常见问题
+## 12.常见问题
 
 ### 旋转项不显示
 
 - 检查 `Items` 内子控件的 `UIDisplay` 和 `ImageSource` 是否正确；
 - 检查 `UIDisplay` 的 `IsShow` 是否为 `True`；
 - 检查 `Items` 的 `IsCacheUI` 是否配置正确。
+
+### 旋转项被裁剪
+
+- 如果子项显示到 `CircularItemsElement` 边界之外，需要在 `UIDisplay` 上设置 `ClipToBounds="False"`。
+
+### 背景图片太大/太小或变形
+
+- 检查 `UIDisplay` 的 `Width/Height` 是否和底图原尺寸一致；
+- `BackgroundImage` 会按 `UIDisplay` 的 `Width/Height` 拉伸填充，尺寸不一致会导致变形或缩放异常。
+
+### 旋转时整体晃动/中心点偏移
+
+- 调整 `CircularConfig` 的 `CenterX` 和 `CenterY`，使其与底图中心重合；
+- 计算公式：`CenterX = (底图Left + 底图Width/2) / 控件Width`，`CenterY = (底图Top + 底图Height/2) / 控件Height`；
+- 开启 `Debug="True"` 可查看中心位置辅助调试。
 
 ### 不自动旋转
 
@@ -188,13 +235,9 @@
 
 - 调整 `CircularConfig` 的 `Damping` 数值，增大阻尼可让旋转更快停止。
 
-### 旋转中心位置不对
-
-- 调整 `CircularConfig` 的 `CenterX` 和 `CenterY`，`0.5` 表示控件区域的中心；
-- 开启 `Debug="True"` 可查看中心位置辅助调试。
-
 ### 背景图片不显示
 
 - 检查 `BackgroundImage` 的 `UriKind` 是否正确，`Project` 路径不需要加 `Shell\` 前缀；
+- 注意 `BackgroundImage` 用的是 `Directory` 属性，不是 `ImageSource` 节点；
 - 检查图片文件是否存在；
 - 检查 `ZIndex` 是否被旋转项遮挡。
