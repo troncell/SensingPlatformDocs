@@ -29,7 +29,7 @@
 
 ### page 页面中引用 EXCEL 配置
 
-```
+```xml
        <UIDisplay Left="289" Top="60" Width="1342" Height="1080" IsShow="True" ZIndex="3" UsePercent="False" />
       <DataProvider>dzsData?CSTable=EBook</DataProvider>
       <Items>

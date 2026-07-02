@@ -4,6 +4,8 @@
 
 3D 互动墙控件以三维墙的形式展示一系列卡片内容，用户可以通过点击卡片查看放大的详情。常用于展示企业发展历程、时间轴事件、产品演进阶段等内容。
 
+**重要提示**：`InteractiveWall3DElement` 与 `Wall3DElement` 对应的是同一个实现（`UI.Wall3D.dll` 中的 [`Wall3DControl`](../../Product/UI/UI.3DWall/Wall3DControl.cs)）。当前代码只会解析 [`Wall3DControlViewModel`](../../Product/UI/UI.3DWall/Wall3DControlViewModel.cs) 中读取的 `Scenario3D`、`Animation`、`AutoMove` 等节点。旧文档中 `<InteractiveWall3D>`、`<Layout>`、`<Zoom>`、`<CardInfoLayout>`、`<AnimationTime>` 等节点在当前实现中**不会被解析**，配置后也不会生效。请使用下方与 `Wall3DElement` 一致的 `CustomerConfig` 结构，详细参数说明也请参考 [Wall3DElement.md](Wall3DElement.md)。
+
 ## 2.适用场景
 
 - 企业发展历程展示
@@ -114,11 +116,9 @@
 如果使用 3D 互动墙控件，需要在 `UIControlDict.xml` 中添加注册节点：
 
 ```xml
-<!--UI.Wall3D 控件包-->
-<Element ViewType="InteractiveWall3DElement" AssemblyFile="UI.Wall3D.dll" TypeName="UI.Wall3D.InteractiveWall3DControl, UI.Wall3D, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-    <DataContext AssemblyFile="UI.Wall3D.dll" TypeName="UI.Wall3D.InteractiveWall3DViewModel, UI.Wall3D, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
-</Element>
-<!--UI.Wall3D End-->
+  <Element ViewType="InteractiveWall3DElement" AssemblyFile="UI.Wall3D.dll" TypeName="UI.Wall3D.Wall3DControl, UI.Wall3D, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <DataContext AssemblyFile="UI.Wall3D.dll" TypeName="UI.Wall3D.Wall3DControlViewModel, UI.Wall3D, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+  </Element>
 ```
 
 > 注：`TypeName` 中的具体类名以实际 DLL 中的类型为准。

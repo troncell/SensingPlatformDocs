@@ -4,6 +4,8 @@
 
 时间轴实际上就是根据数据库记录生成的一个水平滑动卡片和一个垂直水平卡片的组合，并在每个时间节点上动态叠加垂直方向的事件卡片。通常用于展示时间线事件、发展历程、历史记录等具有时间序列关系的数据。
 
+> **重要提示**：在当前代码实现中，**并没有独立的 `SequenceItemElement` 控件类**。实际项目里时间轴效果通常直接通过 [`SequenceItemsElement`](SequenceItemsElement.md)（滑块控件）配合 `TimeLineData` / `ExcelTimeLineData` 数据源和相应模板来实现。本文档保留 `SequenceItemElement` 相关说明，用于描述时间轴场景的 XML 配置约定，但注册到 `UIControlDict.xml` 时建议使用 `SequenceItemsElement` 指向 `UI.SweepPanel.SequenceItemsControl`。
+
 ## 2.适用场景
 
 - 企业发展历程时间轴

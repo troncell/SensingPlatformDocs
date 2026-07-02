@@ -6,6 +6,8 @@
 
 通过 `IndexChanged` 事件，可以控制界面滚动到指定点位，并在到达点位时触发相关事件（如弹出窗口、发送设备指令等）。
 
+> **注意**：文档中提到的「自定义滚动条图标（`ThumbImage`）」当前版本仅解析配置，**不会实际生效**。
+
 ## 2.适用场景
 
 - 长图文内容滚动展示
@@ -27,6 +29,8 @@
 
 ## 5.配置文件样例
 
+**这是一个外部控制的水平滑动屏，滑动到不同位置会触发不同的弹窗和选态效果**
+
 ```xml
 <ScrollViewElement>
     <UIDisplay Left="500" Top="600" Width="200" Height="400" IsShow="True" ZIndex="10" UsePercent="False" />
@@ -41,7 +45,7 @@
         </Controls>
     </XYContainerElement>
     <CustomerConfig>
-     <!--自定义滚动条图标-->
+        <!--自定义滚动条图标（当前版本未生效，仅作配置占位）-->
         <ThumbImage UriKind="Application" Width="33" Height="38">Shell\Pages\HomePage\resource\thumb.png</ThumbImage>
         <!-- thumb.png为滚动条上面的可拖动的图标，可根据具体的设计来更改
          AutoScroll是否自动滚动，默认为false   IsCanTouch 是否可以触摸滑动 Orientation 滑动方向-->
@@ -49,12 +53,13 @@
         <ScrollView Orientation = "Horizontal" ScrollWay="Horizontal" AutoScroll="false" IsCanTouch="false"/>
         <!-- 可以配置多个点位，通过事件可以让界面以一定的速度滑动到指定的点位，并且可以配置事件，滑动到指定点位的时候会触发事件 -->
           <!--PointManger: 点位管理配置
-            Ip、Port: 网络配置（可选）
+            Ip、Port: 网络配置（可选），监听 UDP 网络指令，外部设备可以通过网络控制滚动
             Move: 默认移动速度
             SweepInterval: 默认滑动间隔，单位毫秒
         -->
+
         <PointManger Ip="192.168.0.7" Port="10000" Move="4" SweepInterval="20">
-            <!--Init: 初始化事件-->
+            <!--Init: 初始化事件，控件初始化时触发。这里做了两件事：向 UDP 设备发数据，弹出一个全屏弹窗 ShowPopItems3-->
           <Init>
             <Event>ToDeviceDataEvent?Id=001&Protocol=UDP&Data=0000&IsHex=True</Event>
             <Event>PopupEvent?TargetPageName=SlidingScreen&TargetControlName=ShowPopItems3&X=0&Y=0&Height=1920&Width=1080&EventID=init&UriKind=Application&EventPath=Shell\Pages\SlidingScreen\PopItems
@@ -62,13 +67,13 @@
             <!-- <Event>Control?TargetPageName=SlidingScreen&TargetControlName=ShowPopItems4&EventID=button&From=1.0&To=0.0</Event> -->
 
           </Init>
-          <!--Inited: 初始化完成事件-->
+          <!--Inited: 初始化完成事件，初始化完成后触发，关闭刚才弹出的 ShowPopItems3-->
           <Inited>
             <Event>ClosePopup?TargetPageName=SlidingScreen&TargetControlName=ShowPopItems3&EventID=init
             </Event>
 
           </Inited>
-           <!--Stop: 停止事件-->
+           <!--Stop: 停止事件，滚动停止时触发，关闭指定弹窗-->
           <Stop>
            <Event>ClosePopup?TargetPageName=SlidingScreen&TargetControlName=ShowPopItems3&EventID=transparent</Event>
           </Stop>
@@ -82,6 +87,9 @@
             -->
           <!-- <Point TargetDistance="0" Move="4" SweepInterval="20" Index="0" /> -->
           <Point TargetDistance="850" Move="1" SweepInterval="10" Index="1" Start= "900" End = "1077">
+          <!-- ClickEvent：进入点位范围时触发。这里会弹窗 ShowPopItems，并选中 2006 控件
+                QuictEvent：离开点位范围时触发。关闭弹窗，取消选中
+                InputEvent：持续处于点位范围时触发（或外部 ToInput=true 时直接触发）。这里只做了选中 2006 -->
             <ClickEvent>
               <Event>PopupEvent?TargetPageName=SlidingScreen&TargetControlName=ShowPopItems&X=0&Y=0&Height=1080&Width=1920&EventID=2006&UriKind=Application&EventPath=Shell\Pages\SlidingScreen\PopItems
               </Event>

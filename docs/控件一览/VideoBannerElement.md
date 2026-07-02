@@ -54,7 +54,7 @@
 ```
 
 ```xml
-<!--点点示例-->
+<!--点点示例-->PagerIndex / NumberIndex 在当前代码中未解析---已是旧版不可用
 <VideoBannerElement Name="videoPlayer">
     <UIDisplay Left="114" Top="582" Width="861" Height="519" IsShow="True" ZIndex="1" UsePercent="False" />
     <DataProvider>VideoData?CSTable={$sheet}</DataProvider>
@@ -70,7 +70,7 @@
 ```
 
 ```xml
-<!--数字示例-->
+<!--数字示例-->PagerIndex / NumberIndex 在当前代码中未解析---已是旧版不可用
 <VideoBannerElement Name="videoPlayer">
     <UIDisplay Left="114" Top="582" Width="861" Height="519" IsShow="True" ZIndex="1" UsePercent="False" />
     <DataProvider>VideoData?CSTable={$sheet}</DataProvider>
@@ -196,18 +196,39 @@
 
 ### 10.2导航按钮
 
-在 `VideoBanner` 节点内可配置 `ImageButton` 作为左右导航按钮。当前代码对以下两个特殊名称做了默认定位处理：
+在 `VideoBanner` 节点内可配置 `ImageButton` 作为左右导航按钮。当前代码对以下两个特殊名称做了默认定位处理，并会自动绑定上下翻页事件：
 
 | 按钮名称           | 作用                  | 默认位置                         |
 | ------------------ | --------------------- | -------------------------------- |
 | `LeftArrowButton`  | 切换到上一个视频/图片 | 轮播区域左侧，外边距 `-40,0,0,0` |
 | `RightArrowButton` | 切换到下一个视频/图片 | 轮播区域右侧，外边距 `0,0,-40,0` |
 
-导航按钮本质上会触发 `VideoBanner` 内部的 `PreviousCommand` / `NextCommand`，无需额外配置 `ClickEvent`。
+对于这两个命名按钮，如果没有配置 `ClickEvent`，控件会自动注入 `IndexChanged` 事件实现上下翻页。因此最简配置可以省略 `ClickEvent`：
+
+```xml
+<VideoBanner Interval="10" IsFixedInterval="False">
+    <ImageButton Name="LeftArrowButton">
+        <UIDisplay Left="0" Top="0" Width="80" Height="80" IsShow="True" ZIndex="2" UsePercent="False" />
+        <ImageSource UriKind="Application">Shell\Pages\HomePage\resource\last_btn.png</ImageSource>
+    </ImageButton>
+    <ImageButton Name="RightArrowButton">
+        <UIDisplay Left="0" Top="0" Width="80" Height="80" IsShow="True" ZIndex="2" UsePercent="False" />
+        <ImageSource UriKind="Application">Shell\Pages\HomePage\resource\next_btn.png</ImageSource>
+    </ImageButton>
+</VideoBanner>
+```
+
+如果需要自定义事件行为，也可以显式配置 `ClickEvent`，此时控件不会自动注入，以你配置的为准：
+
+```xml
+<ClickEvent>IndexChanged?TargetPageName=HomePage&TargetControlName=videoBanner&IndexString=Pre&Index=-1</ClickEvent>
+```
 
 ## 11.可接受的事件
 
 ### 11.1IndexChanged 事件
+
+#### 上一页 / 下一页
 
 通过 `IndexChanged` 事件可以控制轮播切换到上一项或下一项。
 
@@ -219,14 +240,21 @@
 <ClickEvent>IndexChanged?TargetPageName=HomePage&TargetControlName=videoBanner&IndexString=Next&Index=-1</ClickEvent>
 ```
 
-| 参数                | 说明                                            | 示例          |
-| ------------------- | ----------------------------------------------- | ------------- |
-| `TargetPageName`    | 目标页面名称                                    | `HomePage`    |
-| `TargetControlName` | 目标视频滑块控件名称                            | `videoBanner` |
-| `IndexString`       | 切换方向，`Next` 下一项，`Pre` 上一项           | `Next`        |
-| `Index`             | 兼容字段，当前实现中配合 `IndexString` 使用即可 | `-1`          |
+#### 跳转到指定项
 
-> **注意**：当前代码中 `IndexChangedEvent` 的订阅与处理逻辑未在 `VideoBannerControl` 中体现，IndexChanged 的实际效果可能依赖于上层事件路由或外部命令触发。如需通过外部按钮控制切换，建议使用 `CustomerConfig/VideoBanner` 内的 `LeftArrowButton` / `RightArrowButton`。
+```xml
+<!-- 跳转到第 3 项（索引从 0 开始） -->
+<ClickEvent>IndexChanged?TargetPageName=HomePage&TargetControlName=videoBanner&Index=2</ClickEvent>
+```
+
+| 参数                | 说明                                                                              | 示例          |
+| ------------------- | --------------------------------------------------------------------------------- | ------------- |
+| `TargetPageName`    | 目标页面名称                                                                      | `HomePage`    |
+| `TargetControlName` | 目标视频滑块控件名称                                                              | `videoBanner` |
+| `IndexString`       | 切换方向，`Next` 下一项，`Pre` 上一项                                             | `Next`        |
+| `Index`             | 目标项索引（从 0 开始）。配合 `IndexString` 时请填 `-1`；单独使用时直接填目标索引 | `-1`          |
+
+> **注意**：`IndexChangedEventFirer` 要求 `Index` 参数必须存在，所以即使使用 `IndexString` 方向切换，也需要带上 `Index=-1`。
 
 ## 12.UIControlDict.xml 添加视频滑块控件
 
@@ -276,7 +304,9 @@
 
 ## 15.注意事项
 
-- 当前实现内置圆点指示器，位于轮播区域底部居中位置；
+- 当前实现内置圆点指示器，位于轮播区域底部居中位置，点击圆点可直接跳转到对应项；
+- 左右导航按钮命名为 `LeftArrowButton` / `RightArrowButton` 时会自动定位并默认注入上下翻页的 `IndexChanged` 事件，也可通过显式配置 `ClickEvent` 覆盖默认行为；
+- 切换动画期间重复点击箭头或圆点会被忽略，防止双播放器状态错乱导致蓝屏/黑屏；
 - 原配置文档中提到的 `PagerIndex` / `NumberIndex` 在当前代码中未解析，如需自定义页码样式，建议通过修改 `VideoBanner.xaml` 模板或在外部叠加控件实现；
 - 控件使用双播放器（`PART_Current` / `PART_Next`）实现切换动画，切换时带淡入效果；
 - 页面停止时（`StopPage`）会自动停止播放；

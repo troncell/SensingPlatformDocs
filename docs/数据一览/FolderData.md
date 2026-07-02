@@ -19,16 +19,16 @@
   </FolderData>
 ```
 
-![1711462029664](image/FolderData/1711462029664.png)
-2.来源为多个文件夹
-```
+![1711462029664](image/FolderData/1711462029664.png) 2.来源为多个文件夹
+
+```xml
  <FolderData Name="FolderData">
     <CustomerConfig>
 	   <Folders Name="test" ContainSubFolder="True"  Directory="test" Depth="3" FileExtensions=".jpg;.png" DefaultFolder="1" OrderBy="Asc" UriKind="Relative"  >
         <Folder Name="Detail" UriKind="Relative" Directory="Detail" IsDefault="True"/>
-        <Folder Name="Page" UriKind="Relative" Directory="Page" />      
+        <Folder Name="Page" UriKind="Relative" Directory="Page" />
 	   </Folders>
-		
+
     </CustomerConfig>
   </FolderData>
 ```
@@ -56,7 +56,7 @@
 
 ### page 页面中引用图片文件夹配置
 
-```
+```xml
 <UIDisplay Left="289" Top="0" Width="1342" Height="1080" IsShow="True" ZIndex="3" UsePercent="False" />
 <DataProvider>FolderData?CSTable=PageA</DataProvider>
 <Items>

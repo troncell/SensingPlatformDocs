@@ -4,7 +4,7 @@
 
 跳动的图片控件用于以跳动动画的方式突出显示某个按钮或图片，吸引用户注意。常用于首页入口、重点功能引导、活动推广等场景。
 
-> 注意：该控件在部分文档和代码中可能存在 `DanceingBubbleElement` 与 `DancingBubbleElement` 两种拼写，配置时请根据实际项目注册的 `ViewType` 和 XML 标签使用。
+> 注意：当前代码库中并不存在独立的 `DancingBubbleControl` / `DanceingBubbleControl` 实现。文档中保留的 `DanceingBubbleElement` / `DancingBubbleElement` 视图类型，实际应注册到 `UI.Bubble.dll` 中的 [`BubbleControl`](../../Product/UI/UI.Bubble/BubbleControl.cs)。也就是说，该控件现在走的是气泡漂浮控件的能力，配置方式与 `BubbleElement` 一致。
 
 ## 2.适用场景
 
@@ -18,7 +18,7 @@
 使用跳动的图片控件前，必须满足以下条件：
 
 1. 项目目录中存在 `UI.Common.dll`；
-2. 在 `SysConfig/UIControlDict.xml` 中注册 `DanceingBubbleElement`（或 `DancingBubbleElement`，以实际注册为准）；
+2. 在 `SysConfig/UIControlDict.xml` 中注册 `DanceingBubbleElement`（或 `DancingBubbleElement`，以实际注册为准）；，并指向 `UI.Bubble.BubbleControl`；
 3. 准备好需要显示并跳动的图片资源。
 
 ## 4.控件UI效果
