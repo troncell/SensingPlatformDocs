@@ -70,7 +70,7 @@
 
 		 <!--保存设置-->
 		<SaveSettings>
-			<Folder>Desktop\画板签名</Folder>
+			<Folder UriKind="Project" >Desktop\画板签名</Folder>
 			<FilePrefix>签名_</FilePrefix>
 			<Extension>.png</Extension>
 			<ShowMessageAfterSave>true</ShowMessageAfterSave>
